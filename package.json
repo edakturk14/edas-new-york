@@ -7,10 +7,21 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint src/",
+    "preview": "vite preview"
   },
   "keywords": [],
-  "author": "",
+  "author": "Eda Akturk <eda@newyork.guide>"
+  },
+  "bugs": {
+    "url": "https://github.com/edakturk14/edas-new-york/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edakturk14/edas-new-york.git"
+  },
   "license": "ISC",
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.11",
