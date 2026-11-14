@@ -1,0 +1,96 @@
+/**
+ * The single shared material for all static and instanced scenery: matte vertex colours, baked
+ * tint, GPU wind sway. Geometry uses compact attributes (see packWorldGeometry).
+ */
+import * as THREE from 'three';
+import { type Geo, vertexCount } from '../core/geo';
+
+export interface WorldUniforms {
+  readonly uSwayTime: THREE.IUniform<number>;
+}
+
+export function createWorldUniforms(): WorldUniforms {
+  return { uSwayTime: { value: 0 } };
+}
+
+const VERT_PARS = /* glsl */ `
+attribute vec4 aColor;
+uniform float uSwayTime;
+varying vec3 vWorldColor;
+`;
+
+const VERT_BEGIN = /* glsl */ `
+vec3 transformed = position;
+vWorldColor = aColor.rgb;
+if (aColor.a > 0.0) {
+  float ph = uSwayTime * 2.3 + position.x * 0.37 + position.z * 0.29 + position.y * 0.6;
+  transformed.x += sin(ph) * 0.085 * aColor.a;
+  transformed.z += cos(ph * 0.83 + 1.1) * 0.06 * aColor.a;
+  transformed.y += sin(ph * 1.31) * 0.02 * aColor.a;
+}
+`;
+
+function patch(material: THREE.Material, uniforms: WorldUniforms, key: string, color: boolean): void {
+  material.onBeforeCompile = (shader) => {
+    Object.assign(shader.uniforms, uniforms as unknown as Record<string, THREE.IUniform>);
+    shader.vertexShader = shader.vertexShader
+      .replace('#include <common>', `#include <common>\n${VERT_PARS}`)
+      .replace('#include <begin_vertex>', VERT_BEGIN);
+    if (color) {
+      shader.fragmentShader = shader.fragmentShader
+        .replace('#include <common>', '#include <common>\nvarying vec3 vWorldColor;')
+        .replace('#include <color_fragment>', 'diffuseColor.rgb *= vWorldColor;');
+    }
+  };
+  material.customProgramCacheKey = () => key;
+}
+
+export interface WorldMaterials {
+  readonly solid: THREE.Material;
+  /** same look as `solid`, pushed slightly back in depth: for ground overlays, terrain and terrace tops,
+   *  so anything resting exactly on them wins the depth test instead of z-fighting */
+  readonly ground: THREE.Material;
+  readonly depth: THREE.Material;
+  readonly glass: THREE.Material;
+  readonly occluder: THREE.Material;
+}
+
+export function createWorldMaterials(uniforms: WorldUniforms): WorldMaterials {
+  const solid = new THREE.MeshLambertMaterial();
+  patch(solid, uniforms, 'world-solid', true);
+  const ground = new THREE.MeshLambertMaterial({ polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 8 });
+  patch(ground, uniforms, 'world-solid', true);
+  const depth = new THREE.MeshDepthMaterial({ depthPacking: THREE.RGBADepthPacking });
+  patch(depth, uniforms, 'world-depth', false);
+  /* glass is pulled slightly forward so panes flush with their frames draw consistently */
+  const glass = new THREE.MeshLambertMaterial({ transparent: true, opacity: 0.42, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -8 });
+  patch(glass, uniforms, 'world-glass', true);
+  const occluder = new THREE.MeshBasicMaterial({ color: 0x000000 });
+  patch(occluder, uniforms, 'world-occluder', false);
+  return { solid, ground, depth, glass, occluder };
+}
+
+/** Pack a Geo into compact GPU attributes: float positions, int8 normals, uint8 colour + sway. */
+export function packWorldGeometry(g: Geo): THREE.BufferGeometry {
+  const n = vertexCount(g);
+  const normals = new Int8Array(n * 4);
+  const colors = new Uint8Array(n * 4);
+  for (let i = 0; i < n; i++) {
+    normals[i * 4] = Math.round((g.nor[i * 3] as number) * 127);
+    normals[i * 4 + 1] = Math.round((g.nor[i * 3 + 1] as number) * 127);
+    normals[i * 4 + 2] = Math.round((g.nor[i * 3 + 2] as number) * 127);
+    colors[i * 4] = Math.round(Math.min(1, Math.max(0, g.col[i * 3] as number)) * 255);
+    colors[i * 4 + 1] = Math.round(Math.min(1, Math.max(0, g.col[i * 3 + 1] as number)) * 255);
+    colors[i * 4 + 2] = Math.round(Math.min(1, Math.max(0, g.col[i * 3 + 2] as number)) * 255);
+    colors[i * 4 + 3] = Math.round(Math.min(1, Math.max(0, g.fx[i * 2 + 1] as number)) * 255);
+  }
+  const out = new THREE.BufferGeometry();
+  out.setAttribute('position', new THREE.BufferAttribute(g.pos, 3));
+  out.setAttribute('normal', new THREE.BufferAttribute(normals, 4, true));
+  out.setAttribute('aColor', new THREE.BufferAttribute(colors, 4, true));
+  out.setIndex(new THREE.BufferAttribute(n > 65535 ? g.idx : new Uint16Array(g.idx), 1));
+  out.computeBoundingSphere();
+  out.computeBoundingBox();
+  return out;
+}
+

@@ -1,0 +1,110 @@
+/**
+ * Waldo Stripes Soft — the six exact base material tokens plus controlled derivations.
+ * Everything visible in the world derives from these.
+ */
+export const PALETTE = {
+  coral: '#F28B82',
+  ivory: '#F7F3EE',
+  blue: '#8EB8E0',
+  butter: '#F2D27A',
+  sage: '#9BCB9E',
+  clay: '#D9B8A8',
+} as const;
+
+export type PaletteKey = keyof typeof PALETTE;
+
+export type RGB = readonly [number, number, number];
+
+/** sRGB hex -> linear RGB triple (0..1), matching THREE's working colour space. */
+export function hexToLinear(hex: string): RGB {
+  const h = hex.replace('#', '');
+  const toLin = (v: number): number => {
+    const c = v / 255;
+    return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  };
+  return [
+    toLin(parseInt(h.slice(0, 2), 16)),
+    toLin(parseInt(h.slice(2, 4), 16)),
+    toLin(parseInt(h.slice(4, 6), 16)),
+  ];
+}
+
+export function mixRGB(a: RGB, b: RGB, t: number): RGB {
+  return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t];
+}
+
+export function scaleRGB(a: RGB, s: number): RGB {
+  return [a[0] * s, a[1] * s, a[2] * s];
+}
+
+const WHITE: RGB = [1, 1, 1];
+const DEEP: RGB = hexToLinear('#5B4038');
+
+const base = {
+  coral: hexToLinear(PALETTE.coral),
+  ivory: hexToLinear(PALETTE.ivory),
+  blue: hexToLinear(PALETTE.blue),
+  butter: hexToLinear(PALETTE.butter),
+  sage: hexToLinear(PALETTE.sage),
+  clay: hexToLinear(PALETTE.clay),
+} as const;
+
+const light = (c: RGB, t = 0.45): RGB => mixRGB(c, WHITE, t);
+const shade = (c: RGB, t = 0.3): RGB => mixRGB(c, DEEP, t);
+
+/**
+ * Named colour tokens (linear RGB). Base six are exact; the rest are controlled light/shade
+ * derivations plus a small coordinated set of deep warm neutrals, skin and hair.
+ */
+export const C = {
+  ...base,
+  coralLight: light(base.coral, 0.4),
+  coralDeep: shade(base.coral, 0.28),
+  ivoryShade: shade(base.ivory, 0.12),
+  ivoryDeep: shade(base.ivory, 0.26),
+  blueLight: light(base.blue, 0.45),
+  blueDeep: shade(base.blue, 0.34),
+  butterLight: light(base.butter, 0.45),
+  butterDeep: shade(base.butter, 0.3),
+  sageLight: light(base.sage, 0.4),
+  sageDeep: shade(base.sage, 0.36),
+  clayLight: light(base.clay, 0.4),
+  clayDeep: shade(base.clay, 0.34),
+  /** deep warm neutrals for small crisp details */
+  timber: hexToLinear('#A9806A'),
+  timberDeep: hexToLinear('#7A5648'),
+  cocoa: hexToLinear('#5B4038'),
+  ink: hexToLinear('#3E2C2A'),
+  slate: hexToLinear('#6F7F92'),
+  stone: hexToLinear('#CFC6BC'),
+  sand: hexToLinear('#EFDDBA'),
+  white: hexToLinear('#FFFDF9'),
+} as const;
+
+export type ColorName = keyof typeof C;
+
+export const SKIN_TONES: readonly RGB[] = [
+  hexToLinear('#F6D7C3'),
+  hexToLinear('#EFC4A6'),
+  hexToLinear('#E0AC8A'),
+  hexToLinear('#C98F6B'),
+  hexToLinear('#A9714F'),
+  hexToLinear('#7F5239'),
+];
+
+export const HAIR_TONES: readonly RGB[] = [
+  hexToLinear('#3E2C2A'),
+  hexToLinear('#5B4038'),
+  hexToLinear('#7A5648'),
+  hexToLinear('#A9806A'),
+  hexToLinear('#D9B38C'),
+  hexToLinear('#E8D2A6'),
+  hexToLinear('#B8674F'),
+  hexToLinear('#D8D2CC'),
+  hexToLinear('#8C8F96'),
+];
+
+export function colorOf(name: ColorName | RGB): RGB {
+  return typeof name === 'string' ? C[name] : name;
+}
+

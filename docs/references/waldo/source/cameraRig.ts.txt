@@ -1,0 +1,409 @@
+/**
+ * The art-directed elevated three-quarter camera.
+ *
+ * In the product the scale and angle are fixed (no zoom, no orbit) and the player explores by
+ * panning: drag, two-finger scroll, or arrow keys / WASD. Clicks and taps are reported for picking.
+ * Zoom and orbit exist solely for development inspection (`interactive = true`, via `?dev=free`).
+ * Scale is expressed as pixels-per-metre so framing and level-of-detail decisions are independent
+ * of viewport size. Ctrl/pinch wheel gestures are never intercepted, so browser zoom keeps working.
+ */
+import * as THREE from 'three';
+
+export interface ViewState {
+  x: number;
+  z: number;
+  azimuth: number;
+  elevation: number;
+  ppm: number;
+}
+
+export interface WorldBounds {
+  readonly minX: number;
+  readonly maxX: number;
+  readonly minZ: number;
+  readonly maxZ: number;
+}
+
+/** distance of the orthographic camera from its look-at point (only depth range depends on it) */
+const CAMERA_DISTANCE = 520;
+const MIN_EL = 0.52;
+const MAX_EL = 1.2;
+const MAX_PPM = 150;
+const TAP_SLOP = 6;
+const TAP_MS = 450;
+
+export const DEFAULT_VIEW: Readonly<ViewState> = { x: 0, z: 6, azimuth: -0.38, elevation: 0.8, ppm: 28 };
+
+export class CameraRig {
+  /**
+   * Orthographic: every figure is drawn at exactly the same scale wherever it stands, and ground
+   * positions map to pixels with simple exact maths (see game/composition.ts).
+   */
+  readonly camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 1, 2000);
+  readonly state: ViewState = { ...DEFAULT_VIEW };
+  private readonly goal: ViewState = { ...DEFAULT_VIEW };
+  private width = 1;
+  private height = 1;
+  private minPpm = 3;
+  private fitPpm = 5;
+  private readonly pointers = new Map<number, { x: number; y: number }>();
+  private downAt = 0;
+  private downX = 0;
+  private downY = 0;
+  private moved = 0;
+  private pinchDist = 0;
+  private pinchAngle = 0;
+  private rotating = false;
+  private dirty = true;
+  private readonly keys = new Set<string>();
+  private readonly abort = new AbortController();
+  /** development-only zoom and orbit (never enabled in the product) */
+  interactive = false;
+  /** panning across the town (the product's only camera control) */
+  pannable = true;
+  /** keeps a goal view over the generated world; set by the game */
+  constrain: ((view: ViewState) => void) | null = null;
+  private flingX = 0;
+  private flingY = 0;
+  private lastMoveAt = 0;
+  /** called for a click/tap that was not a drag: canvas-relative CSS pixels */
+  onTap: ((x: number, y: number) => void) | null = null;
+  /** called whenever the user starts interacting (used to wake render-on-demand) */
+  onInteract: (() => void) | null = null;
+
+  constructor(
+    private readonly dom: HTMLElement,
+    private readonly bounds: WorldBounds,
+  ) {
+    const signal = this.abort.signal;
+    dom.addEventListener('pointerdown', this.onDown, { signal });
+    dom.addEventListener('pointermove', this.onMove, { signal });
+    dom.addEventListener('pointerup', this.onUp, { signal });
+    dom.addEventListener('pointercancel', this.onUp, { signal });
+    dom.addEventListener('wheel', this.onWheel, { passive: false, signal });
+    dom.addEventListener('contextmenu', (e) => this.interactive && e.preventDefault(), { signal });
+    window.addEventListener('keydown', this.onKeyDown, { signal });
+    window.addEventListener('keyup', this.onKeyUp, { signal });
+    window.addEventListener('blur', () => this.keys.clear(), { signal });
+  }
+
+  /** Remove every listener this rig registered. */
+  dispose(): void {
+    this.abort.abort();
+    this.onTap = null;
+    this.onInteract = null;
+  }
+
+  /** Viewport changed: recompute the zoom that frames the whole town and keep limits valid. */
+  resize(width: number, height: number): void {
+    const wasFit = Math.abs(this.goal.ppm - this.fitPpm) < 0.02 * this.fitPpm;
+    this.width = Math.max(1, width);
+    this.height = Math.max(1, height);
+    this.fitPpm = this.computeFit(DEFAULT_VIEW.azimuth, DEFAULT_VIEW.elevation);
+    this.minPpm = this.fitPpm * 0.82;
+    if (this.interactive) {
+      if (wasFit || this.goal.ppm < this.minPpm) this.goal.ppm = this.fitPpm;
+      if (this.state.ppm < this.minPpm) this.state.ppm = this.fitPpm;
+    }
+    this.dirty = true;
+  }
+
+  private computeFit(az: number, el: number): number {
+    const b = this.bounds;
+    const w = b.maxX - b.minX;
+    const d = b.maxZ - b.minZ;
+    const c = Math.abs(Math.cos(az));
+    const s = Math.abs(Math.sin(az));
+    const spanX = w * c + d * s;
+    const spanY = (w * s + d * c) * Math.sin(el) + 26 * Math.cos(el);
+    return Math.min(this.width / (spanX * 1.04), this.height / (spanY * 1.1));
+  }
+
+  reset(): void {
+    this.goal.x = DEFAULT_VIEW.x;
+    this.goal.z = DEFAULT_VIEW.z;
+    this.goal.azimuth = DEFAULT_VIEW.azimuth;
+    this.goal.elevation = DEFAULT_VIEW.elevation;
+    this.goal.ppm = this.fitPpm;
+    this.wake();
+  }
+
+  /** Jump (or glide) to a view. Used by hints, dev captures and tests. */
+  setView(v: Partial<ViewState>, immediate = false): void {
+    Object.assign(this.goal, v);
+    this.clampGoal();
+    if (immediate) Object.assign(this.state, this.goal);
+    this.wake();
+  }
+
+  get fit(): number {
+    return this.fitPpm;
+  }
+
+  get pixelsPerMetre(): number {
+    return this.state.ppm;
+  }
+
+  /** The zoom the camera is gliding toward (use for relative zoom steps). */
+  get goalPpm(): number {
+    return this.goal.ppm;
+  }
+
+  get goalAzimuth(): number {
+    return this.goal.azimuth;
+  }
+
+  /** True when the viewport is taller than wide (the whole town would be tiny). */
+  get portrait(): boolean {
+    return this.height > this.width * 1.1;
+  }
+
+  private wake(): void {
+    this.dirty = true;
+    this.onInteract?.();
+  }
+
+  private clampGoal(): void {
+    const g = this.goal;
+    g.ppm = Math.min(MAX_PPM, Math.max(this.minPpm, g.ppm));
+    g.elevation = Math.min(MAX_EL, Math.max(MIN_EL, g.elevation));
+    g.x = Math.min(this.bounds.maxX, Math.max(this.bounds.minX, g.x));
+    g.z = Math.min(this.bounds.maxZ, Math.max(this.bounds.minZ, g.z));
+    this.constrain?.(g);
+  }
+
+  private pan(dx: number, dy: number): void {
+    const g = this.goal;
+    const ca = Math.cos(g.azimuth);
+    const sa = Math.sin(g.azimuth);
+    const mx = dx / g.ppm;
+    const my = dy / (g.ppm * Math.sin(g.elevation));
+    g.x += -ca * mx - sa * my;
+    g.z += sa * mx - ca * my;
+  }
+
+  private zoomAt(factor: number, px: number, py: number): void {
+    const g = this.goal;
+    const before = g.ppm;
+    g.ppm = Math.min(MAX_PPM, Math.max(this.minPpm, g.ppm * factor));
+    const cx = px - this.width / 2;
+    const cy = py - this.height / 2;
+    const k = 1 / before - 1 / g.ppm;
+    const ca = Math.cos(g.azimuth);
+    const sa = Math.sin(g.azimuth);
+    const mx = cx * k;
+    const my = (cy * k) / Math.sin(g.elevation);
+    g.x += ca * mx + sa * my;
+    g.z += -sa * mx + ca * my;
+  }
+
+  private readonly onDown = (e: PointerEvent): void => {
+    if (this.interactive || this.pannable) this.dom.setPointerCapture(e.pointerId);
+    this.flingX = 0;
+    this.flingY = 0;
+    this.pointers.set(e.pointerId, { x: e.offsetX, y: e.offsetY });
+    if (this.pointers.size === 1) {
+      this.downAt = performance.now();
+      this.downX = e.offsetX;
+      this.downY = e.offsetY;
+      this.moved = 0;
+      this.rotating = this.interactive && (e.button === 2 || e.shiftKey || e.altKey);
+    } else if (this.pointers.size === 2) {
+      const [a, b] = [...this.pointers.values()];
+      if (a && b) {
+        this.pinchDist = Math.hypot(a.x - b.x, a.y - b.y);
+        this.pinchAngle = Math.atan2(b.y - a.y, b.x - a.x);
+      }
+      this.moved = TAP_SLOP + 1;
+    }
+    this.wake();
+  };
+
+  private readonly onMove = (e: PointerEvent): void => {
+    const p = this.pointers.get(e.pointerId);
+    if (!p) return;
+    const dx = e.offsetX - p.x;
+    const dy = e.offsetY - p.y;
+    p.x = e.offsetX;
+    p.y = e.offsetY;
+    if (this.pointers.size === 1) {
+      this.moved += Math.abs(dx) + Math.abs(dy);
+      if (!this.interactive && !this.pannable) return;
+      const now = performance.now();
+      const dtMove = Math.max(1, now - this.lastMoveAt);
+      this.lastMoveAt = now;
+      this.flingX = this.flingX * 0.6 + (dx / dtMove) * 0.4;
+      this.flingY = this.flingY * 0.6 + (dy / dtMove) * 0.4;
+      if (this.rotating && this.interactive) {
+        this.goal.azimuth -= dx * 0.006;
+        this.goal.elevation += dy * 0.004;
+      } else {
+        this.pan(dx, dy);
+      }
+    } else if (this.pointers.size === 2 && this.interactive) {
+      const [a, b] = [...this.pointers.values()];
+      if (a && b) {
+        const dist = Math.hypot(a.x - b.x, a.y - b.y);
+        const angle = Math.atan2(b.y - a.y, b.x - a.x);
+        if (this.pinchDist > 0) this.zoomAt(dist / this.pinchDist, (a.x + b.x) / 2, (a.y + b.y) / 2);
+        let da = angle - this.pinchAngle;
+        if (da > Math.PI) da -= Math.PI * 2;
+        if (da < -Math.PI) da += Math.PI * 2;
+        this.goal.azimuth -= da;
+        this.pan(dx / 2, dy / 2);
+        this.pinchDist = dist;
+        this.pinchAngle = angle;
+      }
+    }
+    this.clampGoal();
+    this.wake();
+  };
+
+  private readonly onUp = (e: PointerEvent): void => {
+    const had = this.pointers.delete(e.pointerId);
+    if (!had) return;
+    if (this.pointers.size === 0 && e.type === 'pointerup') {
+      const quick = performance.now() - this.downAt < TAP_MS;
+      const still = this.moved <= TAP_SLOP && Math.hypot(e.offsetX - this.downX, e.offsetY - this.downY) <= TAP_SLOP;
+      if (quick && still && e.button === 0) this.onTap?.(e.offsetX, e.offsetY);
+      else if (this.pannable && performance.now() - this.lastMoveAt < 60) {
+        /* a short glide after a quick drag */
+        const speed = Math.hypot(this.flingX, this.flingY);
+        if (speed > 0.35) {
+          const k = Math.min(1, 2.2 / speed) * 180;
+          this.pan(this.flingX * k, this.flingY * k);
+          this.clampGoal();
+          this.wake();
+        }
+      }
+    }
+    this.pinchDist = 0;
+  };
+
+  private readonly onWheel = (e: WheelEvent): void => {
+    /* ctrl + wheel / trackpad pinch is the browser's zoom gesture: never intercept it */
+    if (e.ctrlKey && !this.interactive) return;
+    if (!this.interactive) {
+      if (!this.pannable) return;
+      e.preventDefault();
+      const unit = e.deltaMode === 1 ? 32 : 1;
+      this.pan(-e.deltaX * unit, -e.deltaY * unit);
+      this.clampGoal();
+      this.wake();
+      return;
+    }
+    e.preventDefault();
+    if (e.shiftKey) {
+      this.goal.azimuth += (e.deltaY + e.deltaX) * 0.002;
+    } else {
+      const scale = e.ctrlKey ? 0.012 : e.deltaMode === 1 ? 0.06 : 0.0022;
+      this.zoomAt(Math.exp(-e.deltaY * scale), e.offsetX, e.offsetY);
+    }
+    this.clampGoal();
+    this.wake();
+  };
+
+  private readonly onKeyDown = (e: KeyboardEvent): void => {
+    if (!this.interactive && !this.pannable) return;
+    const t = e.target as HTMLElement | null;
+    if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT')) return;
+    if (e.metaKey || e.ctrlKey) return;
+    const k = e.key.toLowerCase();
+    const panKeys = ['arrowup', 'arrowdown', 'arrowleft', 'arrowright', 'w', 'a', 's', 'd'];
+    const devKeys = ['q', 'e', '+', '=', '-', '_'];
+    if (panKeys.includes(k) || (this.interactive && devKeys.includes(k))) {
+      this.keys.add(k);
+      this.wake();
+      if (k.startsWith('arrow')) e.preventDefault();
+    } else if (this.interactive && (k === '0' || k === 'home')) {
+      this.reset();
+    }
+  };
+
+  private readonly onKeyUp = (e: KeyboardEvent): void => {
+    this.keys.delete(e.key.toLowerCase());
+  };
+
+  private applyKeys(dt: number): void {
+    if (this.keys.size === 0) return;
+    const speed = 520 * dt;
+    const k = this.keys;
+    let dx = 0;
+    let dy = 0;
+    if (k.has('arrowleft') || k.has('a')) dx += speed;
+    if (k.has('arrowright') || k.has('d')) dx -= speed;
+    if (k.has('arrowup') || k.has('w')) dy += speed;
+    if (k.has('arrowdown') || k.has('s')) dy -= speed;
+    if (dx !== 0 || dy !== 0) this.pan(dx, dy);
+    if (k.has('q')) this.goal.azimuth += 1.2 * dt;
+    if (k.has('e')) this.goal.azimuth -= 1.2 * dt;
+    if (k.has('+') || k.has('=')) this.zoomAt(Math.exp(1.6 * dt), this.width / 2, this.height / 2);
+    if (k.has('-') || k.has('_')) this.zoomAt(Math.exp(-1.6 * dt), this.width / 2, this.height / 2);
+    this.clampGoal();
+    this.dirty = true;
+  }
+
+  /** Advance damping and place the camera. Returns true while the view is still changing. */
+  update(dt: number): boolean {
+    this.applyKeys(dt);
+    const s = this.state;
+    const g = this.goal;
+    const k = 1 - Math.exp(-dt * 14);
+    const dPpm = Math.log(g.ppm / s.ppm);
+    const delta =
+      Math.abs(g.x - s.x) * s.ppm + Math.abs(g.z - s.z) * s.ppm + Math.abs(dPpm) * 400 + Math.abs(g.azimuth - s.azimuth) * 400 + Math.abs(g.elevation - s.elevation) * 400;
+    const moving = delta > 0.05;
+    if (moving) {
+      s.x += (g.x - s.x) * k;
+      s.z += (g.z - s.z) * k;
+      s.ppm *= Math.exp(dPpm * k);
+      s.azimuth += (g.azimuth - s.azimuth) * k;
+      s.elevation += (g.elevation - s.elevation) * k;
+    } else if (this.dirty || s.x !== g.x || s.z !== g.z || s.ppm !== g.ppm || s.azimuth !== g.azimuth || s.elevation !== g.elevation) {
+      /* the glide has converged: land exactly on the goal instead of resting a hair short of it */
+      Object.assign(s, g);
+      this.dirty = true;
+    }
+    if (!moving && !this.dirty) return this.keys.size > 0;
+    this.dirty = false;
+    this.place();
+    return true;
+  }
+
+  get size(): { width: number; height: number } {
+    return { width: this.width, height: this.height };
+  }
+
+  private place(): void {
+    const s = this.state;
+    const ce = Math.cos(s.elevation);
+    const cam = this.camera;
+    const halfW = this.width / (2 * s.ppm);
+    const halfH = this.height / (2 * s.ppm);
+    cam.left = -halfW;
+    cam.right = halfW;
+    cam.top = halfH;
+    cam.bottom = -halfH;
+    cam.position.set(
+      s.x + CAMERA_DISTANCE * ce * Math.sin(s.azimuth),
+      CAMERA_DISTANCE * Math.sin(s.elevation),
+      s.z + CAMERA_DISTANCE * ce * Math.cos(s.azimuth),
+    );
+    cam.lookAt(s.x, 0, s.z);
+    /* tight depth range around the visible slab of town: more depth precision, less z-fighting */
+    const reach = Math.max(170, halfH / Math.tan(s.elevation) + 150);
+    cam.near = CAMERA_DISTANCE - reach;
+    cam.far = CAMERA_DISTANCE + reach;
+    cam.updateProjectionMatrix();
+    cam.updateMatrixWorld();
+  }
+
+  /** Radius in metres of the ground area currently on screen (for shadow fitting). */
+  viewRadius(): number {
+    const s = this.state;
+    const halfW = this.width / (2 * s.ppm);
+    const halfH = this.height / (2 * s.ppm * Math.sin(s.elevation));
+    return Math.hypot(halfW, halfH);
+  }
+}
+

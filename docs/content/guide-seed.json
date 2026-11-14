@@ -1,0 +1,1437 @@
+{
+  "schemaVersion": 1,
+  "preparedAt": "2026-11-14",
+  "title": "Eda's Travel Guide",
+  "status": "editorial seed; precise location enrichment still required",
+  "sourceOfPersonalOpinions": "Eda supplied the original list; do not invent visits or reviews.",
+  "requiredCoverage": [
+    "Manhattan",
+    "Brooklyn",
+    "Greenpoint",
+    "Williamsburg",
+    "DUMBO",
+    "Brooklyn Heights",
+    "Prospect Park",
+    "Long Island City (Queens)"
+  ],
+  "categories": [
+    {
+      "id": "cafes",
+      "label": "Cafés & bakeries"
+    },
+    {
+      "id": "food",
+      "label": "Food"
+    },
+    {
+      "id": "bars",
+      "label": "Bars"
+    },
+    {
+      "id": "museums",
+      "label": "Museums"
+    },
+    {
+      "id": "walks",
+      "label": "Walks & parks"
+    },
+    {
+      "id": "activities",
+      "label": "Activities"
+    },
+    {
+      "id": "neighborhoods",
+      "label": "Neighborhood guides"
+    }
+  ],
+  "entries": [
+    {
+      "id": "the-met",
+      "name": "The Met",
+      "sourceSection": "Museums",
+      "kind": "venue",
+      "categories": [
+        "museums"
+      ],
+      "neighborhoodHints": [
+        "upper-east-side"
+      ],
+      "tags": [],
+      "aliases": [
+        "Metropolitan Museum of Art"
+      ],
+      "edaNoteOriginal": "fav",
+      "edaNoteDisplay": "My favorite.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": true,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "moma",
+      "name": "MoMA",
+      "sourceSection": "Museums",
+      "kind": "venue",
+      "categories": [
+        "museums"
+      ],
+      "neighborhoodHints": [
+        "midtown"
+      ],
+      "tags": [],
+      "aliases": [
+        "Museum of Modern Art"
+      ],
+      "edaNoteOriginal": "more modern/contemporary art",
+      "edaNoteDisplay": "More modern/contemporary art.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "american-museum-of-natural-history",
+      "name": "American Museum of Natural History",
+      "sourceSection": "Museums",
+      "kind": "venue",
+      "categories": [
+        "museums"
+      ],
+      "neighborhoodHints": [
+        "upper-west-side"
+      ],
+      "tags": [],
+      "aliases": [
+        "AMNH",
+        "Natural History"
+      ],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "guggenheim",
+      "name": "Guggenheim",
+      "sourceSection": "Museums",
+      "kind": "venue",
+      "categories": [
+        "museums"
+      ],
+      "neighborhoodHints": [
+        "upper-east-side"
+      ],
+      "tags": [],
+      "aliases": [],
+      "edaNoteOriginal": "I haven’t been to it",
+      "edaNoteDisplay": "I haven’t been yet.",
+      "visitStatus": "not-visited",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "central-park",
+      "name": "Central Park",
+      "sourceSection": "Outdoors / walks",
+      "kind": "area",
+      "categories": [
+        "walks"
+      ],
+      "neighborhoodHints": [
+        "central-park"
+      ],
+      "tags": [
+        "park"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "brooklyn-bridge-park-and-heights",
+      "name": "Brooklyn Bridge Park + Brooklyn Heights",
+      "sourceSection": "Outdoors / walks",
+      "kind": "walk",
+      "categories": [
+        "walks"
+      ],
+      "neighborhoodHints": [
+        "dumbo",
+        "brooklyn-heights"
+      ],
+      "tags": [
+        "waterfront",
+        "park"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "route-or-area",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "brooklyn-bridge-walk",
+      "name": "Brooklyn Bridge",
+      "sourceSection": "Outdoors / walks",
+      "kind": "walk",
+      "categories": [
+        "walks"
+      ],
+      "neighborhoodHints": [
+        "dumbo",
+        "lower-manhattan"
+      ],
+      "tags": [
+        "bridge",
+        "walk"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": "Walk Brooklyn → Manhattan",
+      "edaNoteDisplay": "Walk from Brooklyn to Manhattan.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "route-or-area",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "high-line",
+      "name": "The High Line",
+      "sourceSection": "Outdoors / walks",
+      "kind": "walk",
+      "categories": [
+        "walks"
+      ],
+      "neighborhoodHints": [
+        "chelsea",
+        "meatpacking-district"
+      ],
+      "tags": [
+        "park",
+        "walk"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": "Elevated park through Chelsea. Touristy but still worth doing once. Combine it with Chelsea Market/Meatpacking/West Village.",
+      "edaNoteDisplay": "Elevated park through Chelsea. Touristy but still worth doing once. Combine it with Chelsea Market/Meatpacking/West Village.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "route-or-area",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "hudson-river-park",
+      "name": "West Side Highway / Hudson River Park",
+      "sourceSection": "Outdoors / walks",
+      "kind": "walk",
+      "categories": [
+        "walks"
+      ],
+      "neighborhoodHints": [
+        "manhattan-west-side"
+      ],
+      "tags": [
+        "waterfront",
+        "sunset"
+      ],
+      "aliases": [
+        "West Side Highway"
+      ],
+      "edaNoteOriginal": "Especially nice around sunset.",
+      "edaNoteDisplay": "Especially nice around sunset.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "route-or-area",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "prospect-park",
+      "name": "Prospect Park",
+      "sourceSection": "Outdoors / walks",
+      "kind": "area",
+      "categories": [
+        "walks"
+      ],
+      "neighborhoodHints": [
+        "prospect-park"
+      ],
+      "tags": [
+        "park"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "route-or-area",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "greenpoint-waterfront",
+      "name": "Greenpoint waterfront",
+      "sourceSection": "Outdoors / walks",
+      "kind": "walk",
+      "categories": [
+        "walks"
+      ],
+      "neighborhoodHints": [
+        "greenpoint"
+      ],
+      "tags": [
+        "waterfront",
+        "ferry"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": "Transmitter Park → Greenpoint Ferry",
+      "edaNoteDisplay": "Transmitter Park to the Greenpoint Ferry.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "route-or-area",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "west-village",
+      "name": "West Village",
+      "sourceSection": "Neighborhoods worth wandering",
+      "kind": "neighborhood",
+      "categories": [
+        "neighborhoods"
+      ],
+      "neighborhoodHints": [
+        "west-village"
+      ],
+      "tags": [
+        "cafes",
+        "restaurants",
+        "wandering"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": "cafes, rest, pictures",
+      "edaNoteDisplay": "Cafés, restaurants, and pictures.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "route-or-area",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "soho-nolita",
+      "name": "SoHo + Nolita",
+      "sourceSection": "Neighborhoods worth wandering",
+      "kind": "neighborhood",
+      "categories": [
+        "neighborhoods"
+      ],
+      "neighborhoodHints": [
+        "soho",
+        "nolita"
+      ],
+      "tags": [
+        "shopping",
+        "architecture",
+        "cafes"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": "Shopping, architecture, cafés. Good in the afternoon.",
+      "edaNoteDisplay": "Shopping, architecture, cafés. Good in the afternoon.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "route-or-area",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "lower-east-side",
+      "name": "Lower East Side",
+      "sourceSection": "Neighborhoods worth wandering",
+      "kind": "neighborhood",
+      "categories": [
+        "neighborhoods"
+      ],
+      "neighborhoodHints": [
+        "lower-east-side"
+      ],
+      "tags": [],
+      "aliases": [
+        "LES"
+      ],
+      "edaNoteOriginal": "energetic and young",
+      "edaNoteDisplay": "Energetic and young.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "route-or-area",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "east-village",
+      "name": "East Village",
+      "sourceSection": "Neighborhoods worth wandering",
+      "kind": "neighborhood",
+      "categories": [
+        "neighborhoods"
+      ],
+      "neighborhoodHints": [
+        "east-village"
+      ],
+      "tags": [],
+      "aliases": [],
+      "edaNoteOriginal": "restaurants",
+      "edaNoteDisplay": "Restaurants.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "route-or-area",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "williamsburg",
+      "name": "Williamsburg",
+      "sourceSection": "Neighborhoods worth wandering",
+      "kind": "neighborhood",
+      "categories": [
+        "neighborhoods"
+      ],
+      "neighborhoodHints": [
+        "williamsburg"
+      ],
+      "tags": [],
+      "aliases": [],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "route-or-area",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "brooklyn-heights-dumbo",
+      "name": "Brooklyn Heights + DUMBO",
+      "sourceSection": "Neighborhoods worth wandering",
+      "kind": "neighborhood",
+      "categories": [
+        "neighborhoods"
+      ],
+      "neighborhoodHints": [
+        "brooklyn-heights",
+        "dumbo"
+      ],
+      "tags": [
+        "first-visit"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": "Very pretty, very NYC, perfect for first-time visitors.",
+      "edaNoteDisplay": "Very pretty, very NYC, perfect for first-time visitors.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "route-or-area",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "upper-west-side",
+      "name": "Upper West Side",
+      "sourceSection": "Neighborhoods worth wandering",
+      "kind": "neighborhood",
+      "categories": [
+        "neighborhoods"
+      ],
+      "neighborhoodHints": [
+        "upper-west-side"
+      ],
+      "tags": [],
+      "aliases": [
+        "UWS"
+      ],
+      "edaNoteOriginal": "Central Park + Natural History. Much more residential.",
+      "edaNoteDisplay": "Central Park + Natural History. Much more residential.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "route-or-area",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "upper-east-side-museum-mile",
+      "name": "Upper East Side / Museum Mile",
+      "sourceSection": "Neighborhoods worth wandering",
+      "kind": "neighborhood",
+      "categories": [
+        "neighborhoods"
+      ],
+      "neighborhoodHints": [
+        "upper-east-side"
+      ],
+      "tags": [],
+      "aliases": [
+        "UES",
+        "Museum Mile"
+      ],
+      "edaNoteOriginal": "Met/Guggenheim + Central Park + classic old Manhattan.",
+      "edaNoteDisplay": "Met/Guggenheim + Central Park + classic old Manhattan.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "route-or-area",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "sourceSection": "Activities",
+      "kind": "activity-guide",
+      "categories": [
+        "activities"
+      ],
+      "neighborhoodHints": [],
+      "tags": [],
+      "aliases": [],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "no-single-location",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "broadway",
+      "name": "Broadway",
+      "sourceSection": "Activities",
+      "kind": "activity-guide",
+      "categories": [
+        "activities"
+      ],
+      "neighborhoodHints": [
+        "theater-district"
+      ],
+      "tags": [
+        "theater"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": "Check TodayTix.",
+      "edaNoteDisplay": "Check TodayTix.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "no-single-location",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "comedy-cellar",
+      "name": "Comedy Cellar",
+      "sourceSection": "Activities",
+      "kind": "venue",
+      "categories": [
+        "activities"
+      ],
+      "neighborhoodHints": [
+        "greenwich-village"
+      ],
+      "tags": [
+        "comedy"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "branch-needs-resolution",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "nyc-ferry",
+      "name": "NYC Ferry",
+      "sourceSection": "Activities",
+      "kind": "activity-guide",
+      "categories": [
+        "activities"
+      ],
+      "neighborhoodHints": [],
+      "tags": [
+        "ferry",
+        "waterfront"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "network",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "empire-state-observatory",
+      "name": "Empire State observation deck",
+      "sourceSection": "Activities",
+      "kind": "venue",
+      "categories": [
+        "activities"
+      ],
+      "neighborhoodHints": [
+        "midtown"
+      ],
+      "tags": [
+        "observation-deck"
+      ],
+      "aliases": [
+        "Empire State Building"
+      ],
+      "edaNoteOriginal": "Empire State",
+      "edaNoteDisplay": "Empire State",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "apollo-bagels",
+      "name": "Apollo Bagels",
+      "sourceSection": "Quick NYC food",
+      "kind": "brand",
+      "categories": [
+        "cafes",
+        "food"
+      ],
+      "neighborhoodHints": [],
+      "tags": [
+        "bagels",
+        "bakery"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "multiple-locations-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "tompkins-square-bagels",
+      "name": "Tompkins Square Bagels",
+      "sourceSection": "Quick NYC food",
+      "kind": "brand",
+      "categories": [
+        "cafes",
+        "food"
+      ],
+      "neighborhoodHints": [
+        "east-village"
+      ],
+      "tags": [
+        "bagels",
+        "bakery"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": "Great if you’re already in the East Village.",
+      "edaNoteDisplay": "Great if you’re already in the East Village.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "branch-needs-resolution",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "lindustrie-pizzeria",
+      "name": "L’industrie Pizzeria",
+      "sourceSection": "Quick NYC food",
+      "kind": "brand",
+      "categories": [
+        "food"
+      ],
+      "neighborhoodHints": [],
+      "tags": [
+        "pizza"
+      ],
+      "aliases": [
+        "L'industrie",
+        "Lindustrie"
+      ],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "multiple-locations-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "lucali",
+      "name": "Lucali",
+      "sourceSection": "Quick NYC food",
+      "kind": "venue",
+      "categories": [
+        "food"
+      ],
+      "neighborhoodHints": [
+        "carroll-gardens"
+      ],
+      "tags": [
+        "pizza"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": "Pizza; I haven’t been",
+      "edaNoteDisplay": "Pizza. I haven’t been yet.",
+      "visitStatus": "not-visited",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "los-tacos-no-1",
+      "name": "LOS TACOS No.1",
+      "sourceSection": "Quick NYC food",
+      "kind": "brand",
+      "categories": [
+        "food"
+      ],
+      "neighborhoodHints": [],
+      "tags": [
+        "tacos"
+      ],
+      "aliases": [
+        "Los Tacos No 1"
+      ],
+      "edaNoteOriginal": "few locations",
+      "edaNoteDisplay": "A few locations.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "multiple-locations-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "taqueria-ramirez",
+      "name": "Taqueria Ramirez",
+      "sourceSection": "Quick NYC food",
+      "kind": "venue",
+      "categories": [
+        "food"
+      ],
+      "neighborhoodHints": [
+        "greenpoint"
+      ],
+      "tags": [
+        "tacos",
+        "spicy"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": "spicy!! — Greenpoint",
+      "edaNoteDisplay": "Spicy!!",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "xian-famous-foods",
+      "name": "Xi’an Famous Foods",
+      "sourceSection": "Quick NYC food",
+      "kind": "brand",
+      "categories": [
+        "food"
+      ],
+      "neighborhoodHints": [],
+      "tags": [
+        "noodles",
+        "spicy"
+      ],
+      "aliases": [
+        "Xi'an Famous Foods",
+        "Xian"
+      ],
+      "edaNoteOriginal": "Hand-pulled spicy noodles",
+      "edaNoteDisplay": "Hand-pulled spicy noodles",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "multiple-locations-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "chinatown-dumplings",
+      "name": "Chinatown dumplings",
+      "sourceSection": "Quick NYC food",
+      "kind": "area-guide",
+      "categories": [
+        "food"
+      ],
+      "neighborhoodHints": [
+        "chinatown"
+      ],
+      "tags": [
+        "dumplings"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "no-single-location",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "katzs-delicatessen",
+      "name": "Katz’s Delicatessen",
+      "sourceSection": "Quick NYC food",
+      "kind": "venue",
+      "categories": [
+        "food"
+      ],
+      "neighborhoodHints": [
+        "lower-east-side"
+      ],
+      "tags": [
+        "deli"
+      ],
+      "aliases": [
+        "Katz's",
+        "Katzs"
+      ],
+      "edaNoteOriginal": "I haven’t been but super popular",
+      "edaNoteDisplay": "I haven’t been, but it’s super popular.",
+      "visitStatus": "not-visited",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "levain-bakery",
+      "name": "Levain Bakery",
+      "sourceSection": "Quick NYC food",
+      "kind": "brand",
+      "categories": [
+        "cafes",
+        "food"
+      ],
+      "neighborhoodHints": [],
+      "tags": [
+        "bakery",
+        "cookies",
+        "dessert"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": "cookies!!!",
+      "edaNoteDisplay": "Cookies!!!",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "multiple-locations-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "caffe-panna",
+      "name": "Caffè Panna",
+      "sourceSection": "Quick NYC food",
+      "kind": "brand",
+      "categories": [
+        "food"
+      ],
+      "neighborhoodHints": [],
+      "tags": [
+        "ice-cream",
+        "dessert"
+      ],
+      "aliases": [
+        "Caffe Panna"
+      ],
+      "edaNoteOriginal": "ice-cream!!",
+      "edaNoteDisplay": "Ice cream!!",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "multiple-locations-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "radio-bakery",
+      "name": "Radio Bakery",
+      "sourceSection": "Quick NYC food",
+      "kind": "venue",
+      "categories": [
+        "cafes",
+        "food"
+      ],
+      "neighborhoodHints": [
+        "greenpoint"
+      ],
+      "tags": [
+        "bakery"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": "amazing, in Greenpoint",
+      "edaNoteDisplay": "Amazing, in Greenpoint.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "greenpoint-specified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        },
+        {
+          "type": "official",
+          "url": "https://www.radiobakery.nyc/locations-1",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "Greenpoint branch address: 135 India Street, Brooklyn"
+          ]
+        }
+      ],
+      "addressEvidence": {
+        "address": "135 India Street, Brooklyn, NY",
+        "branch": "Greenpoint",
+        "coordinates": null,
+        "geocodingStatus": "pending"
+      }
+    },
+    {
+      "id": "thai-diner",
+      "name": "Thai Diner",
+      "sourceSection": "Restaurants",
+      "kind": "venue",
+      "categories": [
+        "food"
+      ],
+      "neighborhoodHints": [
+        "nolita"
+      ],
+      "tags": [
+        "restaurant",
+        "thai"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "fish-cheeks",
+      "name": "Fish Cheeks",
+      "sourceSection": "Restaurants",
+      "kind": "brand",
+      "categories": [
+        "food"
+      ],
+      "neighborhoodHints": [],
+      "tags": [
+        "restaurant",
+        "thai"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "branch-needs-resolution",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "chez-ma-tante",
+      "name": "Chez Ma Tante",
+      "sourceSection": "Restaurants",
+      "kind": "venue",
+      "categories": [
+        "food"
+      ],
+      "neighborhoodHints": [
+        "greenpoint"
+      ],
+      "tags": [
+        "restaurant",
+        "brunch"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": "brunch",
+      "edaNoteDisplay": "Brunch.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "bernies",
+      "name": "Bernie’s",
+      "sourceSection": "Restaurants",
+      "kind": "venue",
+      "categories": [
+        "food"
+      ],
+      "neighborhoodHints": [
+        "greenpoint"
+      ],
+      "tags": [
+        "restaurant"
+      ],
+      "aliases": [
+        "Bernies",
+        "Bernie's"
+      ],
+      "edaNoteOriginal": "I haven’t been",
+      "edaNoteDisplay": "I haven’t been yet.",
+      "visitStatus": "not-visited",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "westlight",
+      "name": "Westlight",
+      "sourceSection": "Bar",
+      "kind": "venue",
+      "categories": [
+        "bars"
+      ],
+      "neighborhoodHints": [
+        "williamsburg"
+      ],
+      "tags": [
+        "rooftop"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": "rooftop",
+      "edaNoteDisplay": "Rooftop.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "bar-pisellino",
+      "name": "Bar Pisellino",
+      "sourceSection": "Bar",
+      "kind": "venue",
+      "categories": [
+        "bars",
+        "cafes"
+      ],
+      "neighborhoodHints": [
+        "west-village"
+      ],
+      "tags": [
+        "bar",
+        "cafe"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        },
+        {
+          "type": "official",
+          "url": "https://barpisellino.com/",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "espresso service",
+            "West Village address: 52 Grove Street & 92 Seventh Avenue",
+            "official site says no reservations"
+          ]
+        }
+      ],
+      "addressEvidence": {
+        "address": "52 Grove Street & 92 Seventh Avenue, New York, NY",
+        "coordinates": null,
+        "geocodingStatus": "pending"
+      }
+    },
+    {
+      "id": "dante",
+      "name": "Dante",
+      "sourceSection": "Bar",
+      "kind": "brand",
+      "categories": [
+        "bars"
+      ],
+      "neighborhoodHints": [],
+      "tags": [
+        "cocktails",
+        "martini"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": "martini!!",
+      "edaNoteDisplay": "Martini!!",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "branch-needs-resolution",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "editorial-only",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/eda-original-notes.md",
+          "providedAt": "2026-11-14"
+        }
+      ]
+    }
+  ]
+}
