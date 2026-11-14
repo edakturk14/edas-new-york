@@ -9,12 +9,13 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint src/",
+    "lint": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "test:browser": "node scripts/check-marker-layout.mjs",
     "preview": "vite preview"
   },
   "keywords": [],
-  "author": "Eda Akturk <eda@newyork.guide>"
-  },
+  "author": "Eda Akturk <eda@newyork.guide>",
   "bugs": {
     "url": "https://github.com/edakturk14/edas-new-york/issues"
   },
@@ -22,18 +23,19 @@
     "type": "git",
     "url": "https://github.com/edakturk14/edas-new-york.git"
   },
-  "license": "ISC",
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.11",
-    "@tailwindcss/typography": "^0.5.20",
-    "@types/node": "^26.6.6",
-    "typescript": "^7.0.2",
-    "vite": "^8.3.8"
+    "@types/node": "22.13.1",
+    "@types/react": "19.0.8",
+    "@types/react-dom": "19.0.3",
+    "tsx": "4.20.6",
+    "typescript": "5.7.3",
+    "vite": "6.4.6"
   },
   "dependencies": {
-    "mapbox-gl": "^3.35.0",
-    "maplibre-gl": "^6.18.0",
-    "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "@fontsource/dm-sans": "5.2.6",
+    "@fontsource/pixelify-sans": "5.2.6",
+    "maplibre-gl": "6.18.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
   }
 }

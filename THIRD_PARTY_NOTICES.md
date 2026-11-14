@@ -1,5 +1,11 @@
 # Third-party notices
 
+## Runtime map and fonts
+
+MapLibre GL JS is BSD-3-Clause licensed. OpenFreeMap/OpenMapTiles map tiles derive from © OpenStreetMap contributors (ODbL). The bounded local `public/data/nyc-overview.geojson` building layer derives from OpenFreeMap's 20261101 tile snapshot, prepared 2026-11-14; it contains sampled real footprints, not original geographic data. Preserve the visible map attribution and OpenStreetMap copyright link. The preparation script's download conforms to the provider's bounded offline-download terms inspected that day.
+
+DM Sans and Pixelify Sans are bundled from Fontsource under the SIL Open Font License; license files remain in their installed packages. All application icons/category illustrations are original SVG path artwork. No generated storefront photographs or full reference mockups are runtime imagery. Waldo source was inspected as a design reference, not copied into the runtime.
+
 ## Waldo Stripes Soft reference snapshots
 
 The files in `docs/references/waldo/source/` are unmodified inspection copies from [gokayfem/waldo-stripes-soft](https://github.com/gokayfem/waldo-stripes-soft), commit `ac4f9688f8ed2351a692d75c341c8f261abbfe76`.

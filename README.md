@@ -2,7 +2,13 @@
 
 **Eda's Travel Guide** is a personal, interactive New York guide for friends visiting the city: Eda's recommendations, a playful miniature city map, easy café and food discovery, and saved places that are useful on a phone.
 
-This repository currently contains the **implementation handoff**, curated source content, and visual references. It does not yet contain the working application. Factory Droid should implement the app from this package.
+The working React/TypeScript app is in `src/`, alongside the original implementation handoff and visual references.
+
+## Run locally
+
+Use Node 20 or newer. Run `npm install`, then `npm run dev` for development. Run `npm test` for the 11 focused content/state tests and `npm run lint` for TypeScript checks. For the production preview run `npm run build`, then `npm run preview -- --host 127.0.0.1 --port 4173` and open http://127.0.0.1:4173. No account, token, or environment secrets are needed. The geographic basemap needs internet access; the list and device-local saves remain usable if the map fails.
+
+To edit recommendations, update `docs/content/guide-seed.json`, keeping IDs and Eda's original notes stable. Verified branches live separately in `src/data/locations.json`; include address, geographic coordinates, branch label, source URLs and fact-check date. Areas and broad activities do not need invented point coordinates. Run `npm test` and preview the result after edits. Save data stays in this browser under `edas-new-york:saved:v1`.
 
 ![Approved visual direction: a wide miniature New York map](docs/design/approved-city-overview.webp)
 

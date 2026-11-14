@@ -1,0 +1,434 @@
+[
+  {
+    "id": "radio-bakery-greenpoint",
+    "entryId": "radio-bakery",
+    "branchLabel": "Greenpoint",
+    "address": "135 India Street, Brooklyn, NY 11222",
+    "neighborhoodIds": [
+      "greenpoint"
+    ],
+    "coordinates": [
+      -73.9550678,
+      40.7323915
+    ],
+    "coordinateSource": "https://www.radiobakery.nyc/locations-1",
+    "addressSource": "https://www.radiobakery.nyc/locations-1",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.radiobakery.nyc/locations-1",
+    "status": "verified"
+  },
+  {
+    "id": "taqueria-ramirez-greenpoint",
+    "entryId": "taqueria-ramirez",
+    "branchLabel": "Greenpoint · entrance on Oak Street",
+    "address": "94 Franklin Street, Brooklyn, NY 11222 (entrance on Oak Street)",
+    "neighborhoodIds": [
+      "greenpoint"
+    ],
+    "coordinates": [
+      -73.9570065,
+      40.7278873
+    ],
+    "coordinateSource": "https://maps.apple.com/place?address=94+Franklin+St%2C+Brooklyn%2C+NY+11222%2C+United+States&coordinate=40.7278873%2C-73.9570065&name=Taqueria+Ramirez&place-id=I8C2E315FCD023767",
+    "addressSource": "https://taqueriaramirezbk.com/",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://taqueriaramirezbk.com/",
+    "status": "verified"
+  },
+  {
+    "id": "the-met-fifth-avenue",
+    "entryId": "the-met",
+    "branchLabel": "Fifth Avenue",
+    "address": "1000 Fifth Avenue, New York, NY 10028",
+    "neighborhoodIds": [
+      "upper-east-side"
+    ],
+    "coordinates": [
+      -73.963244,
+      40.7794366
+    ],
+    "coordinateSource": "https://maps.app.goo.gl/DFMAwzFD8mHbQmsJA",
+    "addressSource": "https://www.metmuseum.org/plan-your-visit",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.metmuseum.org/plan-your-visit",
+    "status": "verified"
+  },
+  {
+    "id": "westlight-williamsburg",
+    "entryId": "westlight",
+    "branchLabel": "Williamsburg · The William Vale, 22nd floor",
+    "address": "111 N 12th Street, 22nd Floor, Brooklyn, NY 11249",
+    "neighborhoodIds": [
+      "williamsburg"
+    ],
+    "coordinates": [
+      -73.956721,
+      40.722088
+    ],
+    "coordinateSource": "https://maps.apple.com/place?place-id=I998CC86C8A5C5F4A&address=111+N+12th+St%2C+FL+22%2C+Brooklyn%2C+NY+11249%2C+United+States&coordinate=40.722088%2C-73.956721&name=Westlight",
+    "addressSource": "https://www.westlightnyc.com/location/westlight-/",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.westlightnyc.com/location/westlight-/",
+    "status": "verified"
+  },
+  {
+    "id": "moma-midtown",
+    "entryId": "moma",
+    "branchLabel": "Midtown Manhattan",
+    "address": "11 West 53 Street, New York, NY 10019",
+    "neighborhoodIds": [
+      "midtown"
+    ],
+    "coordinates": [
+      -73.9774275,
+      40.7615
+    ],
+    "coordinateSource": "https://maps.apple.com/place?address=11+W+53rd+St,+New+York,+NY++10019,+United+States&coordinate=40.7615,-73.9774275&name=MoMA&place-id=I65A54A72CE9E45D6",
+    "addressSource": "https://www.moma.org/visit/",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.moma.org/visit/",
+    "status": "verified"
+  },
+  {
+    "id": "american-museum-of-natural-history-upper-west-side",
+    "entryId": "american-museum-of-natural-history",
+    "branchLabel": "Upper West Side · museum location, multiple entrances",
+    "address": "200 Central Park West, New York, NY 10024",
+    "neighborhoodIds": [
+      "upper-west-side"
+    ],
+    "coordinates": [
+      -73.973366,
+      40.781017
+    ],
+    "coordinateSource": "https://maps.apple.com/place?place-id=IF149E70A3B3C4CB2&address=200+Central+Park+W%2C+New+York%2C+NY+10024%2C+United+States&coordinate=40.781017%2C-73.973366&name=American+Museum+of+Natural+History",
+    "addressSource": "https://www.amnh.org/plan-your-visit",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.amnh.org/plan-your-visit",
+    "status": "verified"
+  },
+  {
+    "id": "guggenheim-fifth-avenue",
+    "entryId": "guggenheim",
+    "branchLabel": "Upper East Side",
+    "address": "1071 Fifth Avenue, New York, NY 10128",
+    "neighborhoodIds": [
+      "upper-east-side"
+    ],
+    "coordinates": [
+      -73.9589706,
+      40.7829796
+    ],
+    "coordinateSource": "https://www.guggenheim.org/plan-your-visit",
+    "addressSource": "https://www.guggenheim.org/plan-your-visit",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.guggenheim.org/plan-your-visit",
+    "status": "verified"
+  },
+  {
+    "id": "bar-pisellino-west-village",
+    "entryId": "bar-pisellino",
+    "branchLabel": "West Village",
+    "address": "52 Grove Street & 92 Seventh Avenue, New York, NY 10014",
+    "neighborhoodIds": [
+      "west-village"
+    ],
+    "coordinates": [
+      -74.003439,
+      40.73297
+    ],
+    "coordinateSource": "https://maps.apple.com/place?place-id=I510A6498442D50D9&coordinate=40.732970%2C-74.003439&name=Bar+Pisellino",
+    "addressSource": "https://barpisellino.com/",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://barpisellino.com/",
+    "status": "verified"
+  },
+  {
+    "id": "chez-ma-tante-greenpoint",
+    "entryId": "chez-ma-tante",
+    "branchLabel": "Greenpoint",
+    "address": "90 Calyer Street, Brooklyn, NY 11222",
+    "neighborhoodIds": [
+      "greenpoint"
+    ],
+    "coordinates": [
+      -73.9574205,
+      40.7269214
+    ],
+    "coordinateSource": "https://maps.apple.com/place?address=90+Calyer+St%2C+Brooklyn%2C+NY+11222%2C+United+States&coordinate=40.7269214%2C-73.9574205&name=Chez+Ma+Tante&place-id=IB5D632391B5DF325",
+    "addressSource": "https://chezmatantebk.com/CONTACT-US",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://chezmatantebk.com/CONTACT-US",
+    "status": "verified"
+  },
+  {
+    "id": "bernies-greenpoint",
+    "entryId": "bernies",
+    "branchLabel": "Greenpoint",
+    "address": "332 Driggs Avenue, Brooklyn, NY 11222",
+    "neighborhoodIds": [
+      "greenpoint"
+    ],
+    "coordinates": [
+      -73.9505848,
+      40.7219124
+    ],
+    "coordinateSource": "https://maps.apple.com/place?place-id=IEC44F1DBA9916E38&address=332+Driggs+Ave%2C+Brooklyn%2C+NY++11222%2C+United+States&coordinate=40.7219124%2C-73.9505848&name=Bernie%27s+Restaurant",
+    "addressSource": "https://www.berniesnyc.com/location/bernies/",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.berniesnyc.com/location/bernies/",
+    "status": "verified"
+  },
+  {
+    "id": "thai-diner-nolita",
+    "entryId": "thai-diner",
+    "branchLabel": "Nolita",
+    "address": "186 Mott Street, New York, NY 10012",
+    "neighborhoodIds": [
+      "nolita"
+    ],
+    "coordinates": [
+      -73.99565,
+      40.7207143
+    ],
+    "coordinateSource": "https://www.thaidiner.com/",
+    "addressSource": "https://www.thaidiner.com/",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.thaidiner.com/",
+    "status": "verified"
+  },
+  {
+    "id": "lucali-carroll-gardens",
+    "entryId": "lucali",
+    "branchLabel": "Carroll Gardens",
+    "address": "575 Henry Street, Brooklyn, NY 11231",
+    "neighborhoodIds": [
+      "carroll-gardens"
+    ],
+    "coordinates": [
+      -74.0003604,
+      40.6818178
+    ],
+    "coordinateSource": "https://maps.apple.com/place?address=575+Henry+St%2C+Brooklyn%2C+NY+11231%2C+United+States&coordinate=40.6818178%2C-74.0003604&name=Lucali&place-id=I489A4573AE22CBCA",
+    "addressSource": "https://www.lucali.com/location/lucali-brooklyn/",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.lucali.com/location/lucali-brooklyn/",
+    "status": "verified"
+  },
+  {
+    "id": "katzs-delicatessen-lower-east-side",
+    "entryId": "katzs-delicatessen",
+    "branchLabel": "Lower East Side",
+    "address": "205 East Houston Street, New York, NY 10002",
+    "neighborhoodIds": [
+      "lower-east-side"
+    ],
+    "coordinates": [
+      -73.9874804,
+      40.7222501
+    ],
+    "coordinateSource": "https://maps.apple.com/place?address=205+E+Houston+St%2C+New+York%2C+NY+10002%2C+United+States&coordinate=40.7222501%2C-73.9874804&name=Katz%27s+Delicatessen&place-id=IBB4C75E7EBE40E08",
+    "addressSource": "https://katzsdelicatessen.com/address",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://katzsdelicatessen.com/address",
+    "status": "verified"
+  },
+  {
+    "id": "apollo-bagels-west-village",
+    "entryId": "apollo-bagels",
+    "branchLabel": "West Village · one researched branch",
+    "address": "73 Greenwich Avenue, New York, NY 10014",
+    "neighborhoodIds": [
+      "west-village"
+    ],
+    "coordinates": [
+      -74.001359,
+      40.736641
+    ],
+    "coordinateSource": "https://maps.apple.com/place?place-id=I82958B6F88E4610&address=73+Greenwich+Ave%2C+New+York%2C+NY++10014%2C+United+States&coordinate=40.736641%2C-74.001359&name=Apollo+Bagels",
+    "addressSource": "https://apollobagels.com/locations",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://apollobagels.com/locations",
+    "status": "verified"
+  },
+  {
+    "id": "tompkins-square-bagels-avenue-a",
+    "entryId": "tompkins-square-bagels",
+    "branchLabel": "East Village · Avenue A",
+    "address": "165 Avenue A, New York, NY 10009",
+    "neighborhoodIds": [
+      "east-village"
+    ],
+    "coordinates": [
+      -73.982291,
+      40.728228
+    ],
+    "coordinateSource": "https://www.tompkinssquarebagels.com/",
+    "addressSource": "https://www.tompkinssquarebagels.com/location/east-village-bagel-shop-avenue-a/",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.tompkinssquarebagels.com/location/east-village-bagel-shop-avenue-a/",
+    "status": "verified"
+  },
+  {
+    "id": "lindustrie-pizzeria-williamsburg",
+    "entryId": "lindustrie-pizzeria",
+    "branchLabel": "Williamsburg · one researched branch",
+    "address": "254 South 2nd Street, Brooklyn, NY 11211",
+    "neighborhoodIds": [
+      "williamsburg"
+    ],
+    "coordinates": [
+      -73.9578051,
+      40.7115899
+    ],
+    "coordinateSource": "https://maps.apple.com/place?address=254+S+2nd+St%2C+Brooklyn%2C+NY+11211%2C+United+States&coordinate=40.7115899%2C-73.9578051&name=L%27industrie+Pizzeria&place-id=I434686477C2F10F7",
+    "addressSource": "https://www.lindustriebk.com/s/order?location=11ee4d8415e0d69ca4123cecef6dbae8",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.lindustriebk.com/s/order?location=11ee4d8415e0d69ca4123cecef6dbae8",
+    "status": "verified"
+  },
+  {
+    "id": "los-tacos-no-1-chelsea-market",
+    "entryId": "los-tacos-no-1",
+    "branchLabel": "Chelsea Market · one researched branch",
+    "address": "75 9th Avenue, New York, NY 10011",
+    "neighborhoodIds": [
+      "chelsea"
+    ],
+    "coordinates": [
+      -74.0059673,
+      40.7422137
+    ],
+    "coordinateSource": "https://maps.apple.com/place?address=75+Ninth+Ave%2C+New+York%2C+NY+10011%2C+United+States&coordinate=40.7422137%2C-74.0059673&name=Los+Tacos+No.+1&place-id=I93BF259C4BFD7134",
+    "addressSource": "https://www.lostacos1.com/location/los-tacos-chelsea-market/",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.lostacos1.com/location/los-tacos-chelsea-market/",
+    "status": "verified"
+  },
+  {
+    "id": "xian-famous-foods-chinatown",
+    "entryId": "xian-famous-foods",
+    "branchLabel": "Chinatown · one researched branch",
+    "address": "45 Bayard Street, New York, NY 10013",
+    "neighborhoodIds": [
+      "chinatown"
+    ],
+    "coordinates": [
+      -73.9973487,
+      40.7150821
+    ],
+    "coordinateSource": "https://maps.apple.com/place?address=45+Bayard+St%2C+New+York%2C+NY+10013%2C+United+States&coordinate=40.7150821%2C-73.9973487&name=Xi%27an+Famous+Foods&place-id=IFAA8741BEB13A07D",
+    "addressSource": "https://www.xianfoods.com/locations",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.xianfoods.com/locations",
+    "status": "verified"
+  },
+  {
+    "id": "levain-bakery-williamsburg",
+    "entryId": "levain-bakery",
+    "branchLabel": "Williamsburg · one researched branch",
+    "address": "164 N 4th Street, Brooklyn, NY 11211",
+    "neighborhoodIds": [
+      "williamsburg"
+    ],
+    "coordinates": [
+      -73.9591843,
+      40.7156988
+    ],
+    "coordinateSource": "https://goo.gl/maps/hFyxAexDtrk3uT4u6",
+    "addressSource": "https://levainbakery.com/pages/williamsburg",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://levainbakery.com/pages/williamsburg",
+    "status": "verified"
+  },
+  {
+    "id": "caffe-panna-greenpoint",
+    "entryId": "caffe-panna",
+    "branchLabel": "Greenpoint · one researched branch",
+    "address": "16 Norman Avenue, Brooklyn, NY 11222",
+    "neighborhoodIds": [
+      "greenpoint"
+    ],
+    "coordinates": [
+      -73.954769,
+      40.724259
+    ],
+    "coordinateSource": "https://maps.apple.com/place?place-id=IBF2C1F9118A0CB65&address=16+Norman+Ave%2C+Brooklyn%2C+NY++11222%2C+United+States&coordinate=40.724259%2C-73.954769&name=Caff%C3%A8+Panna",
+    "addressSource": "https://www.caffepanna.com/about/",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.caffepanna.com/about/",
+    "status": "verified"
+  },
+  {
+    "id": "fish-cheeks-noho",
+    "entryId": "fish-cheeks",
+    "branchLabel": "NoHo · one researched branch",
+    "address": "55 Bond Street, New York, NY 10012",
+    "neighborhoodIds": [
+      "noho"
+    ],
+    "coordinates": [
+      -73.9926403,
+      40.7257302
+    ],
+    "coordinateSource": "https://maps.apple.com/place?address=55+Bond+St%2C+New+York%2C+NY++10012%2C+United+States&coordinate=40.7257302%2C-73.9926403&name=Fish+Cheeks&place-id=I93799E99134E8B08",
+    "addressSource": "https://www.fishcheeksnyc.com/location/fish-cheeks/",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.fishcheeksnyc.com/location/fish-cheeks/",
+    "status": "verified"
+  },
+  {
+    "id": "dante-macdougal-street",
+    "entryId": "dante",
+    "branchLabel": "Greenwich Village · MacDougal Street",
+    "address": "79–81 MacDougal Street, New York, NY 10012",
+    "neighborhoodIds": [
+      "greenwich-village"
+    ],
+    "coordinates": [
+      -74.0017068,
+      40.7288036
+    ],
+    "coordinateSource": "https://maps.apple.com/place?address=79-81+MacDougal+St%2C+New+York%2C+NY+10012%2C+United+States&coordinate=40.7288036%2C-74.0017068&name=Dante&place-id=IA68155EC4D53A710",
+    "addressSource": "https://www.dante-nyc.com/location/dante-nyc/",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.dante-nyc.com/location/dante-nyc/",
+    "status": "verified"
+  },
+  {
+    "id": "comedy-cellar-macdougal-street",
+    "entryId": "comedy-cellar",
+    "branchLabel": "MacDougal Street · check your booked venue",
+    "address": "117 MacDougal Street, New York, NY 10012",
+    "neighborhoodIds": [
+      "greenwich-village"
+    ],
+    "coordinates": [
+      -74.00058,
+      40.730206
+    ],
+    "coordinateSource": "https://maps.apple.com/place?place-id=I75F5375C33310B20&address=117+MacDougal+St%2C+New+York%2C+NY+10012%2C+United+States&coordinate=40.730206%2C-74.000580&name=Comedy+Cellar",
+    "addressSource": "https://www.comedycellar.com/olive-tree-cafe/",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.comedycellar.com/olive-tree-cafe/",
+    "status": "verified"
+  },
+  {
+    "id": "empire-state-observatory-midtown",
+    "entryId": "empire-state-observatory",
+    "branchLabel": "Midtown · visitor entrance on West 34th Street",
+    "address": "20 West 34th Street, New York, NY 10001",
+    "neighborhoodIds": [
+      "midtown"
+    ],
+    "coordinates": [
+      -73.9856644,
+      40.7484405
+    ],
+    "coordinateSource": "https://maps.app.goo.gl/p4Wu8kSU3F5RWFkY9",
+    "addressSource": "https://www.esbnyc.com/visit/map-and-directions",
+    "verifiedAt": "2026-11-14",
+    "officialUrl": "https://www.esbnyc.com/visit/map-and-directions",
+    "status": "verified"
+  }
+]
