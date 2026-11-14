@@ -158,7 +158,7 @@
     "coordinateSource": "https://maps.apple.com/place?address=90+Calyer+St%2C+Brooklyn%2C+NY+11222%2C+United+States&coordinate=40.7269214%2C-73.9574205&name=Chez+Ma+Tante&place-id=IB5D632391B5DF325",
     "addressSource": "https://chezmatantebk.com/CONTACT-US",
     "verifiedAt": "2026-11-14",
-    "officialUrl": "https://chezmatantebk.com/CONTACT-US",
+    "officialUrl": "https://chezmatantebk.com/",
     "status": "verified"
   },
   {
@@ -416,7 +416,7 @@
   {
     "id": "empire-state-observatory-midtown",
     "entryId": "empire-state-observatory",
-    "branchLabel": "Midtown · visitor entrance on West 34th Street",
+    "branchLabel": "Midtown Manhattan · observation deck visitor entrance on West 34th Street",
     "address": "20 West 34th Street, New York, NY 10001",
     "neighborhoodIds": [
       "midtown"
@@ -428,7 +428,156 @@
     "coordinateSource": "https://maps.app.goo.gl/p4Wu8kSU3F5RWFkY9",
     "addressSource": "https://www.esbnyc.com/visit/map-and-directions",
     "verifiedAt": "2026-11-14",
-    "officialUrl": "https://www.esbnyc.com/visit/map-and-directions",
+    "officialUrl": "https://www.esbnyc.com/",
+    "status": "verified"
+  },
+  {
+    "id": "rule-of-thirds-greenpoint",
+    "entryId": "rule-of-thirds",
+    "branchLabel": "Greenpoint",
+    "address": "171 Banker Street, Brooklyn, NY 11222",
+    "neighborhoodIds": [
+      "greenpoint"
+    ],
+    "coordinates": [
+      -73.955074,
+      40.724648
+    ],
+    "coordinateSource": "https://maps.apple.com/place?place-id=IC5E17AC5212DCE2D&address=171+Banker+St%2C+Brooklyn%2C+NY+11222%2C+United+States&coordinate=40.724648%2C-73.955074&name=Rule+of+Thirds",
+    "addressSource": "https://www.thirdsbk.com/location/brooklyn/",
+    "officialUrl": "https://www.thirdsbk.com/",
+    "verifiedAt": "2026-11-14",
+    "status": "verified"
+  },
+  {
+    "id": "bakeri-greenpoint",
+    "entryId": "bakeri",
+    "branchLabel": "Greenpoint · Freeman Street",
+    "address": "105 Freeman Street, Brooklyn, NY 11222",
+    "neighborhoodIds": [
+      "greenpoint"
+    ],
+    "coordinates": [
+      -73.957542,
+      40.734328
+    ],
+    "coordinateSource": "https://maps.apple.com/place?place-id=I20719FBD215D20BC&address=105+Freeman+St%2C+Brooklyn%2C+NY+11222%2C+United+States&coordinate=40.734328%2C-73.957542&name=Bakeri",
+    "addressSource": "https://www.bakeribrooklyn.com/about",
+    "officialUrl": "https://www.bakeribrooklyn.com/",
+    "saveId": "bakeri-greenpoint",
+    "groupId": "bakeri",
+    "verifiedAt": "2026-11-14",
+    "status": "verified"
+  },
+  {
+    "id": "bakeri-williamsburg",
+    "entryId": "bakeri",
+    "branchLabel": "Williamsburg · Wythe Avenue",
+    "address": "150 Wythe Avenue, Brooklyn, NY",
+    "neighborhoodIds": [
+      "williamsburg"
+    ],
+    "coordinates": [
+      -73.960103,
+      40.720036
+    ],
+    "coordinateSource": "https://maps.apple.com/place?place-id=IC3E23B149073ABA8&address=150+Wythe+Ave%2C+Brooklyn%2C+NY+11249%2C+United+States&coordinate=40.720036%2C-73.960103&name=Bakeri",
+    "addressSource": "https://www.bakeribrooklyn.com/about",
+    "officialUrl": "https://www.bakeribrooklyn.com/",
+    "saveId": "bakeri-williamsburg",
+    "groupId": "bakeri",
+    "verifiedAt": "2026-11-14",
+    "status": "verified"
+  },
+  {
+    "id": "beco-williamsburg",
+    "entryId": "beco",
+    "branchLabel": "Williamsburg",
+    "address": "45 Richardson Street, Brooklyn, NY 11211",
+    "neighborhoodIds": [
+      "williamsburg"
+    ],
+    "coordinates": [
+      -73.950448,
+      40.718358
+    ],
+    "coordinateSource": "https://maps.apple.com/place?place-id=I53A7108F10839012&address=45+Richardson+St%2C+Brooklyn%2C+NY+11211%2C+United+States&coordinate=40.718358%2C-73.950448&name=Beco",
+    "addressSource": "https://www.becobar.com/",
+    "officialUrl": "https://www.becobar.com/",
+    "verifiedAt": "2026-11-14",
+    "status": "verified"
+  },
+  {
+    "id": "raouls-soho",
+    "entryId": "raouls",
+    "branchLabel": "SoHo",
+    "address": "180 Prince Street, New York, NY 10012",
+    "neighborhoodIds": [
+      "soho"
+    ],
+    "coordinates": [
+      -74.0020998,
+      40.7262496
+    ],
+    "coordinateSource": "https://maps.apple.com/place?address=180+Prince+St%2C+New+York%2C+NY++10012%2C+United+States&auid=16765351400549653879&ll=40.7262496%2C-74.0020998&lsp=9902&q=Raoul%27s",
+    "addressSource": "https://raouls.com/",
+    "officialUrl": "https://raouls.com/",
+    "reservationUrl": "https://resy.com/cities/ny/raoulsrestaurant",
+    "verifiedAt": "2026-11-14",
+    "status": "verified"
+  },
+  {
+    "id": "oscar-wilde-nomad",
+    "entryId": "oscar-wilde",
+    "branchLabel": "NoMad · West 27th Street",
+    "address": "45 West 27th Street, New York, NY 10001",
+    "neighborhoodIds": [
+      "nomad"
+    ],
+    "coordinates": [
+      -73.9899638,
+      40.7452442
+    ],
+    "coordinateSource": "https://maps.apple.com/place?address=45+W+27th+St%2C+New+York%2C+NY+10001%2C+United+States&coordinate=40.7452442%2C-73.9899638&name=Oscar+Wilde&place-id=I5EF8204E0D3218DA",
+    "addressSource": "https://www.oscarwildenyc.com/contact",
+    "officialUrl": "https://www.oscarwildenyc.com/",
+    "verifiedAt": "2026-11-14",
+    "status": "verified"
+  },
+  {
+    "id": "edge-hudson-yards",
+    "entryId": "edge",
+    "branchLabel": "Hudson Yards · entrance via The Shops, Level 4",
+    "address": "30 Hudson Yards, Level 4 of The Shops & Restaurants, New York, NY 10001",
+    "neighborhoodIds": [
+      "hudson-yards"
+    ],
+    "coordinates": [
+      -74.000609,
+      40.753798
+    ],
+    "coordinateSource": "https://maps.apple.com/place?place-id=IE12D19860A663E0&address=30+Hudson+Yards%2C+FL+4%2C+New+York%2C+NY++10001%2C+United+States&coordinate=40.753798%2C-74.000609&name=Edge",
+    "addressSource": "https://www.edgenyc.com/visit/getting-here/",
+    "officialUrl": "https://www.edgenyc.com/",
+    "verifiedAt": "2026-11-14",
+    "status": "verified"
+  },
+  {
+    "id": "nypl-schwarzman-fifth-avenue",
+    "entryId": "nypl-schwarzman",
+    "branchLabel": "Midtown Manhattan · Fifth Avenue building; accessible entrances at 40th and 42nd Streets",
+    "address": "476 Fifth Avenue at 42nd Street, New York, NY 10018",
+    "neighborhoodIds": [
+      "midtown"
+    ],
+    "coordinates": [
+      -73.982253,
+      40.753184
+    ],
+    "coordinateSource": "https://maps.apple.com/place?place-id=I88F02FEA4499C61D&address=Fifth+Avenue+and+42nd+Street%2C+New+York%2C+NY+10018%2C+United+States&coordinate=40.753184%2C-73.982253&name=New+York+Public+Library",
+    "addressSource": "https://www.nypl.org/spotlight/schwarzman-plan-your-visit",
+    "officialUrl": "https://www.nypl.org/locations/schwarzman",
+    "verifiedAt": "2026-11-14",
     "status": "verified"
   }
 ]

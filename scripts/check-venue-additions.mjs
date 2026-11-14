@@ -1,0 +1,38 @@
+// The isolated local headless browser was explicitly approved for local QA.
+import assert from 'node:assert/strict';
+import {execFileSync} from 'node:child_process';
+const env={...process.env};delete env.AGENT_BROWSER_CDP;delete env.FACTORY_DESKTOP_CDP_PORT;delete env.AGENT_BROWSER_PIN_TAB;
+const run=(...args)=>execFileSync('agent-browser',['--session','eda-venue-additions-regression',...args],{env,encoding:'utf8',stdio:['ignore','pipe','pipe']});
+const evaluate=expression=>JSON.parse(run('eval',expression));
+const items=[
+ ['chez-ma-tante','Chez Ma Tante','A neighborhood restaurant in Greenpoint.','Go for the pancakes.','90 Calyer Street'],
+ ['rule-of-thirds','Rule of Thirds','A Japanese restaurant inspired by izakaya culture.','Brunch or dinner.','171 Banker Street'],
+ ['bakeri','Bakeri','A neighborhood bakery and café serving bread and pastries.','Date cake and tahini cookies.','105 Freeman Street'],
+ ['beco','Beco','A Brazilian bar and restaurant.','Brazilian food and a cool vibe.','45 Richardson Street'],
+ ['raouls','Raoul’s','A French bistro in SoHo.','Steak and frites.','180 Prince Street'],
+ ['oscar-wilde','Oscar Wilde','A bar and restaurant with elaborate Victorian-style interiors.','Cool spot.','45 West 27th Street']
+];
+const saved=()=>evaluate(`JSON.parse(localStorage.getItem('edas-new-york:saved:v1')??'{"items":[]}').items`);
+const names=()=>evaluate(`[...document.querySelectorAll('.place-name')].map(e=>e.textContent)`);
+const detail=()=>evaluate(`(()=>({description:document.querySelector('.place-description')?.textContent,note:document.querySelector('.eda-note p')?.textContent,href:document.querySelector('.detail-actions a')?.href,branch:document.querySelector('.branch-select select')?.value,availability:document.querySelector('.availability-note')?.textContent,overflow:document.documentElement.scrollWidth>innerWidth}))()`);
+const button=(name)=>run('find','role','button','click','--name',name.replace('Bakeri · Greenpoint','Bakeri · Greenpoint · Freeman Street').replace('Bakeri · Williamsburg','Bakeri · Williamsburg · Wythe Avenue'),'--exact');
+const clickBranch=selector=>{evaluate(`document.querySelector(${JSON.stringify(selector)}).scrollIntoView({block:'center'})`);run('click',selector);};
+function phoneMarker(id,locationId){run('wait','--fn',`(()=>{const el=document.querySelector('.place-pin[data-entry-id="${id}"]${locationId?`[data-location-id="${locationId}"]`:''}');if(!el)return false;const p=el.getBoundingClientRect();const sheet=document.querySelector('.drawer');return p.top>220&&p.bottom<sheet.getBoundingClientRect().top&&p.left>=0&&p.right<=innerWidth&&getComputedStyle(sheet).opacity==='1'})()`);}
+function checkDetails(item){const [,name,description,note,address]=item;const d=detail();assert.equal(d.description,description);assert.equal(d.note,`“${note}”`);assert(!d.note.includes(description));assert(new URL(d.href).searchParams.get('destination').includes(address));assert.equal(d.overflow,false);if(name==='Rule of Thirds')assert.match(d.availability,/weekends and some holiday Mondays, not daily/);if(name==='Bakeri')assert.match(d.availability,/not a guarantee of daily availability/);if(name==='Raoul’s')assert.equal(evaluate('document.querySelector(".reservation-link").href'),'https://resy.com/cities/ny/raoulsrestaurant');}
+try{
+run('open','http://127.0.0.1:4173/');run('set','viewport','1440','900');
+for(const [category,expected] of [['Brunch',['Chez Ma Tante','Rule of Thirds']],['Dinner',['Rule of Thirds','Raoul’s']]]){button(category);assert.deepEqual(names(),expected);}
+for(const [category,expected] of [['Food',['Chez Ma Tante','Rule of Thirds','Beco','Raoul’s','Oscar Wilde']],['Bars',['Beco','Oscar Wilde']],['Cafés & bakeries',['Bakeri']]]){button(category);for(const name of expected)assert(names().includes(name),`${category} includes ${name}`);}
+run('select','select[aria-label="Neighborhood"]','greenpoint');assert.deepEqual(names(),['Radio Bakery','Bakeri']);run('wait','--fn',`!!document.querySelector('.place-pin[data-location-id="bakeri-greenpoint"]')`);assert.equal(evaluate(`!!document.querySelector('.place-pin[data-location-id="bakeri-williamsburg"]')`),false);
+for(const item of items){const [id,name]=item;run('open',`http://127.0.0.1:4173/?place=${id}`);checkDetails(item);const label=name+(id==='bakeri'?' · Greenpoint':'');run('wait','--fn',`!!document.querySelector('.place-pin[data-entry-id="${id}"]')`);run('wait','--fn',`(()=>{const p=document.querySelector('.place-pin[data-entry-id="${id}"]').getBoundingClientRect();return p.left>390&&p.right<innerWidth&&p.top>210&&p.bottom<innerHeight-90})()`);run('click',`.place-pin[data-entry-id="${id}"]`);checkDetails(item);button(`Save ${label}`);assert.equal(saved().length,1);run('click','.desktop-saved');assert.deepEqual(names(),[name]);button(name);checkDetails(item);button(`Remove ${label} from Saved`);assert.equal(saved().length,0);button('Close panel');assert.equal(names().length,0);console.log('Map, detail, Saved, unsave:',name);}
+run('open','http://127.0.0.1:4173/?place=bakeri');assert.equal(detail().branch,'bakeri-greenpoint');run('wait','--fn','document.querySelectorAll(".place-pin[data-entry-id=bakeri]").length===2');
+button('Save Bakeri · Greenpoint');run('select','.branch-select select','bakeri-williamsburg');assert(new URL(detail().href).searchParams.get('destination').includes('150 Wythe Avenue'));button('Save Bakeri · Williamsburg');assert.deepEqual(saved().map(s=>s.saveId),['bakeri-greenpoint','bakeri-williamsburg']);
+run('click','.desktop-saved');assert.deepEqual(names(),['Bakeri']);assert.equal(evaluate('document.querySelectorAll(".branch-row").length'),2);assert.equal(evaluate('document.querySelectorAll(".place-pin").length'),2);button('Remove Bakeri · Williamsburg from Saved');assert.deepEqual(saved().map(s=>s.saveId),['bakeri-greenpoint']);button('Undo');assert.deepEqual(saved().map(s=>s.saveId).sort(),['bakeri-greenpoint','bakeri-williamsburg']);
+run('screenshot','/Users/edaakturk/Desktop/Factory/edas-new-york/screenshots/desktop-bakeri-saved.png');
+run('open','http://127.0.0.1:4173/');run('click','.desktop-saved');assert.deepEqual(names(),['Bakeri']);assert.equal(evaluate('document.querySelectorAll(".branch-row").length'),2);run('click','.branch-row:nth-child(2) .branch-open');assert.equal(detail().branch,'bakeri-williamsburg');assert(new URL(detail().href).searchParams.get('destination').includes('150 Wythe Avenue'));assert.equal(new URL(evaluate('location.href')).searchParams.get('location'),'bakeri-williamsburg');
+run('set','viewport','390','844');assert.equal(detail().overflow,false);phoneMarker('bakeri','bakeri-williamsburg');run('screenshot','/Users/edaakturk/Desktop/Factory/edas-new-york/screenshots/mobile-bakeri-williamsburg.png');button('Remove Bakeri · Williamsburg from Saved');assert.deepEqual(saved().map(s=>s.saveId),['bakeri-greenpoint']);button('Close panel');assert.equal(evaluate('document.querySelectorAll(".branch-row").length'),1);clickBranch('.branch-open');assert.equal(detail().branch,'bakeri-greenpoint');button('Remove Bakeri · Greenpoint from Saved');assert.equal(saved().length,0);
+for(const item of items){run('open',`http://127.0.0.1:4173/?place=${item[0]}`);checkDetails(item);phoneMarker(item[0],item[0]==='bakeri'?'bakeri-greenpoint':undefined);}
+run('screenshot','/Users/edaakturk/Desktop/Factory/edas-new-york/screenshots/mobile-oscar-wilde.png');
+run('set','viewport','360','800');assert.equal(detail().overflow,false);run('set','viewport','768','1024');assert.equal(detail().overflow,false);
+console.log('All new venue filters/copy/directions/map/Saved, Bakeri independent branch bookmarks, reload and Undo passed.');
+}finally{console.log(run('close'));}

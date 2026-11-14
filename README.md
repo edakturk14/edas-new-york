@@ -6,7 +6,7 @@ The working React/TypeScript app is in `src/`, alongside the original implementa
 
 ## Run locally
 
-Use Node 20 or newer. Run `npm install`, then `npm run dev` for development. Run `npm test` for the 11 focused content/state tests and `npm run lint` for TypeScript checks. For the production preview run `npm run build`, then `npm run preview -- --host 127.0.0.1 --port 4173` and open http://127.0.0.1:4173. No account, token, or environment secrets are needed. The geographic basemap needs internet access; the list and device-local saves remain usable if the map fails.
+Use Node 20 or newer. Run `npm install`, then `npm run dev` for development. Run `npm test` for the 19 focused content/state/photo tests and `npm run lint` for TypeScript checks. For the production preview run `npm run build`, then `npm run preview -- --host 127.0.0.1 --port 4173` and open http://127.0.0.1:4173. With that preview running, `npm run test:browser` runs seven isolated local browser regressions using the installed `agent-browser` CLI. No account, token, or environment secrets are needed. The geographic basemap needs internet access; the list and device-local saves remain usable if the map fails.
 
 To edit recommendations, update `docs/content/guide-seed.json`, keeping IDs and Eda's original notes stable. Verified branches live separately in `src/data/locations.json`; include address, geographic coordinates, branch label, source URLs and fact-check date. Areas and broad activities do not need invented point coordinates. Run `npm test` and preview the result after edits. Save data stays in this browser under `edas-new-york:saved:v1`.
 
@@ -24,7 +24,7 @@ To edit recommendations, update `docs/content/guide-seed.json`, keeping IDs and 
 ## Content and assets
 
 - [Eda's original New York notes](docs/content/eda-original-notes.md): source of truth for her personal recommendations and opinions.
-- [Structured seed content](docs/content/guide-seed.json): all 43 original guide entries, with stable IDs, categories, provenance, and explicit unknowns.
+- [Structured seed content](docs/content/guide-seed.json): 52 guide entries, including all 43 original IDs and the owner's subsequent additions, with categories, provenance, and explicit unknowns.
 - [Visitor notes](docs/content/visitor-notes.md): publishable guidance and corrections to time-sensitive details.
 - [Design tokens](docs/design/tokens.json): colors, dimensions, type roles, and motion values.
 - [Sources and verification](docs/SOURCES.md): official technical/transit references and research requirements.

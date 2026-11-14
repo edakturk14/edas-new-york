@@ -42,6 +42,14 @@
     {
       "id": "neighborhoods",
       "label": "Neighborhood guides"
+    },
+    {
+      "id": "brunch",
+      "label": "Brunch"
+    },
+    {
+      "id": "dinner",
+      "label": "Dinner"
     }
   ],
   "entries": [
@@ -767,7 +775,7 @@
     },
     {
       "id": "empire-state-observatory",
-      "name": "Empire State observation deck",
+      "name": "Empire State Building",
       "sourceSection": "Activities",
       "kind": "venue",
       "categories": [
@@ -795,8 +803,27 @@
           "type": "owner-provided",
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
+        },
+        {
+          "type": "owner-provided",
+          "reference": "User landmark update",
+          "providedAt": "2026-11-14"
+        },
+        {
+          "type": "official",
+          "url": "https://www.esbnyc.com/visit/map-and-directions",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "observation deck visitor entrance at 20 West 34th Street"
+          ]
         }
-      ]
+      ],
+      "description": "The classic NYC skyscraper experience, with observation decks above Midtown.",
+      "shortLabel": "The iconic one",
+      "officialUrl": "https://www.esbnyc.com/",
+      "defaultLocationId": "empire-state-observatory-midtown",
+      "accessNote": "Observation deck visitor entrance: 20 West 34th Street, between Fifth and Sixth Avenues.",
+      "accessSourceUrl": "https://www.esbnyc.com/visit/map-and-directions"
     },
     {
       "id": "apollo-bagels",
@@ -1264,18 +1291,19 @@
       "sourceSection": "Restaurants",
       "kind": "venue",
       "categories": [
-        "food"
+        "food",
+        "brunch"
       ],
       "neighborhoodHints": [
         "greenpoint"
       ],
       "tags": [
-        "restaurant",
+        "pancakes",
         "brunch"
       ],
       "aliases": [],
-      "edaNoteOriginal": "brunch",
-      "edaNoteDisplay": "Brunch.",
+      "edaNoteOriginal": "Go for the pancakes.",
+      "edaNoteDisplay": "Go for the pancakes.",
       "visitStatus": "not-stated",
       "isExplicitFavorite": false,
       "locationScope": "single-or-unspecified",
@@ -1287,8 +1315,32 @@
           "type": "owner-provided",
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
+        },
+        {
+          "type": "owner-provided",
+          "reference": "User venue update",
+          "providedAt": "2026-11-14"
+        },
+        {
+          "type": "official",
+          "url": "https://chezmatantebk.com/",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "restaurant description and brunch menu"
+          ]
+        },
+        {
+          "type": "official",
+          "url": "https://chezmatantebk.com/CONTACT-US",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "90 Calyer Street, Greenpoint address"
+          ]
         }
-      ]
+      ],
+      "description": "A neighborhood restaurant in Greenpoint.",
+      "officialUrl": "https://chezmatantebk.com/",
+      "defaultLocationId": "chez-ma-tante-greenpoint"
     },
     {
       "id": "bernies",
@@ -1430,6 +1482,500 @@
           "type": "owner-provided",
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "rule-of-thirds",
+      "name": "Rule of Thirds",
+      "categories": [
+        "food",
+        "brunch",
+        "dinner"
+      ],
+      "neighborhoodHints": [
+        "greenpoint"
+      ],
+      "description": "A Japanese restaurant inspired by izakaya culture.",
+      "tags": [
+        "Japanese",
+        "brunch",
+        "dinner"
+      ],
+      "officialUrl": "https://www.thirdsbk.com/",
+      "defaultLocationId": "rule-of-thirds-greenpoint",
+      "availabilityNote": "Brunch is served on weekends and some holiday Mondays, not daily. Check the restaurant's current schedule.",
+      "sourceSection": "Restaurants",
+      "kind": "venue",
+      "aliases": [],
+      "edaNoteOriginal": "Brunch or dinner.",
+      "edaNoteDisplay": "Brunch or dinner.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "venue-location-verified",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "User venue update",
+          "providedAt": "2026-11-14"
+        },
+        {
+          "type": "official",
+          "url": "https://www.thirdsbk.com/",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "general venue description"
+          ]
+        },
+        {
+          "type": "official",
+          "url": "https://www.thirdsbk.com/location/brooklyn/",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "venue address"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bakeri",
+      "name": "Bakeri",
+      "kind": "brand",
+      "categories": [
+        "cafes"
+      ],
+      "neighborhoodHints": [
+        "greenpoint",
+        "williamsburg"
+      ],
+      "description": "A neighborhood bakery and café serving bread and pastries.",
+      "tags": [
+        "bakery",
+        "café",
+        "pastries",
+        "sweet treats"
+      ],
+      "officialUrl": "https://www.bakeribrooklyn.com/",
+      "defaultLocationId": "bakeri-greenpoint",
+      "availabilityNote": "Eda's suggested treats are recommendations, not a guarantee of daily availability.",
+      "sourceSection": "Quick NYC food",
+      "aliases": [],
+      "edaNoteOriginal": "Date cake and tahini cookies.",
+      "edaNoteDisplay": "Date cake and tahini cookies.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "multiple-locations",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "venue-location-verified",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "User venue update",
+          "providedAt": "2026-11-14"
+        },
+        {
+          "type": "official",
+          "url": "https://www.bakeribrooklyn.com/",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "general venue description"
+          ]
+        },
+        {
+          "type": "official",
+          "url": "https://www.bakeribrooklyn.com/about",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "venue address"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beco",
+      "name": "Beco",
+      "categories": [
+        "food",
+        "bars"
+      ],
+      "neighborhoodHints": [
+        "williamsburg"
+      ],
+      "description": "A Brazilian bar and restaurant.",
+      "tags": [
+        "Brazilian",
+        "casual",
+        "drinks"
+      ],
+      "officialUrl": "https://www.becobar.com/",
+      "defaultLocationId": "beco-williamsburg",
+      "sourceSection": "Restaurants",
+      "kind": "venue",
+      "aliases": [],
+      "edaNoteOriginal": "Brazilian food and a cool vibe.",
+      "edaNoteDisplay": "Brazilian food and a cool vibe.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "venue-location-verified",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "User venue update",
+          "providedAt": "2026-11-14"
+        },
+        {
+          "type": "official",
+          "url": "https://www.becobar.com/",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "general venue description"
+          ]
+        },
+        {
+          "type": "official",
+          "url": "https://www.becobar.com/",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "venue address"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "raouls",
+      "name": "Raoul’s",
+      "categories": [
+        "food",
+        "dinner"
+      ],
+      "neighborhoodHints": [
+        "soho"
+      ],
+      "description": "A French bistro in SoHo.",
+      "tags": [
+        "French",
+        "steak",
+        "dinner"
+      ],
+      "officialUrl": "https://raouls.com/",
+      "defaultLocationId": "raouls-soho",
+      "reservationUrl": "https://resy.com/cities/ny/raoulsrestaurant",
+      "sourceSection": "Restaurants",
+      "kind": "venue",
+      "aliases": [
+        "Raoul's",
+        "Raouls"
+      ],
+      "edaNoteOriginal": "Steak and frites.",
+      "edaNoteDisplay": "Steak and frites.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "venue-location-verified",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "User venue update",
+          "providedAt": "2026-11-14"
+        },
+        {
+          "type": "official",
+          "url": "https://raouls.com/",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "general venue description"
+          ]
+        },
+        {
+          "type": "official",
+          "url": "https://raouls.com/",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "venue address"
+          ]
+        },
+        {
+          "type": "official",
+          "url": "https://raouls.com/",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "official reservation link: https://resy.com/cities/ny/raoulsrestaurant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oscar-wilde",
+      "name": "Oscar Wilde",
+      "categories": [
+        "bars",
+        "food"
+      ],
+      "neighborhoodHints": [
+        "nomad"
+      ],
+      "description": "A bar and restaurant with elaborate Victorian-style interiors.",
+      "tags": [
+        "cocktails",
+        "elaborate interiors",
+        "drinks"
+      ],
+      "officialUrl": "https://www.oscarwildenyc.com/",
+      "defaultLocationId": "oscar-wilde-nomad",
+      "sourceSection": "Bar",
+      "kind": "venue",
+      "aliases": [],
+      "edaNoteOriginal": "Cool spot.",
+      "edaNoteDisplay": "Cool spot.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "venue-location-verified",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "User venue update",
+          "providedAt": "2026-11-14"
+        },
+        {
+          "type": "official",
+          "url": "https://www.oscarwildenyc.com/",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "general venue description"
+          ]
+        },
+        {
+          "type": "official",
+          "url": "https://www.oscarwildenyc.com/contact",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "venue address"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceSection": "Activities",
+      "kind": "venue",
+      "categories": [
+        "activities"
+      ],
+      "neighborhoodHints": [
+        "hudson-yards"
+      ],
+      "tags": [
+        "observation-deck",
+        "glass-floor"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "venue-location-verified",
+      "id": "edge",
+      "name": "Edge",
+      "description": "An outdoor sky deck with angled glass walls, a glass-floor section, and sweeping city views.",
+      "shortLabel": "Outdoor deck + glass floor",
+      "officialUrl": "https://www.edgenyc.com/",
+      "defaultLocationId": "edge-hudson-yards",
+      "pairings": [
+        "The High Line",
+        "Chelsea Market"
+      ],
+      "accessNote": "Enter The Shops & Restaurants at Hudson Yards and take the elevators to Level 4 for the Edge entrance. The sky deck is at 30 Hudson Yards; do not use a generic tower lobby entrance.",
+      "accessSourceUrl": "https://www.edgenyc.com/visit/getting-here/",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "User landmark update",
+          "providedAt": "2026-11-14"
+        },
+        {
+          "type": "official",
+          "url": "https://www.edgenyc.com/visit/getting-here/",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "visitor access through The Shops & Restaurants at Hudson Yards, Level 4",
+            "location at 30 Hudson Yards"
+          ]
+        },
+        {
+          "type": "official",
+          "url": "https://www.hudsonyardsnewyork.com/discover/edge",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "outdoor deck, angled glass walls and glass floor"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceSection": "Activities",
+      "kind": "area",
+      "categories": [
+        "activities"
+      ],
+      "neighborhoodHints": [
+        "midtown"
+      ],
+      "tags": [
+        "first-visit",
+        "landmark"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "route-or-area",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "area-overview-verified",
+      "id": "times-square",
+      "name": "Times Square",
+      "description": "Classic stop for a first visit.",
+      "suggestedTip": "Consider a short evening stop before or after a Broadway show.",
+      "officialUrl": "https://www.timessquarenyc.org/",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "User landmark update",
+          "providedAt": "2026-11-14"
+        },
+        {
+          "type": "official",
+          "url": "https://www.timessquarenyc.org/explore/getting-around-and-parking",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "pedestrian Broadway plazas between 42nd and 47th Streets; area, not a single entrance"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceSection": "Outdoors / walks",
+      "kind": "area",
+      "categories": [
+        "walks"
+      ],
+      "neighborhoodHints": [
+        "midtown"
+      ],
+      "tags": [
+        "park"
+      ],
+      "aliases": [],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "route-or-area",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "area-overview-verified",
+      "id": "bryant-park",
+      "name": "Bryant Park",
+      "description": "A park break in the middle of Midtown.",
+      "pairings": [
+        "New York Public Library — Stephen A. Schwarzman Building"
+      ],
+      "seasonalNote": "Seasonal events and attractions vary. Check Bryant Park's current calendar before planning around an event.",
+      "officialUrl": "https://bryantpark.org/",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "User landmark update",
+          "providedAt": "2026-11-14"
+        },
+        {
+          "type": "official",
+          "url": "https://bryantpark.org/the-park/hours-and-directions",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "park between 40th and 42nd Streets and Fifth and Sixth Avenues, behind the Stephen A. Schwarzman Building"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceSection": "Activities",
+      "kind": "venue",
+      "categories": [
+        "activities"
+      ],
+      "neighborhoodHints": [
+        "midtown"
+      ],
+      "tags": [
+        "library",
+        "architecture"
+      ],
+      "aliases": [
+        "New York Public Library",
+        "NYPL",
+        "Stephen A. Schwarzman Building",
+        "New York Public Library main branch"
+      ],
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "venue-location-verified",
+      "id": "nypl-schwarzman",
+      "name": "New York Public Library — Stephen A. Schwarzman Building",
+      "description": "The landmark Fifth Avenue library with the stone lions outside.",
+      "officialUrl": "https://www.nypl.org/locations/schwarzman",
+      "defaultLocationId": "nypl-schwarzman-fifth-avenue",
+      "accessNote": "This is a working research library. Sightseeing access to the Rose Main Reading Room is limited to NYPL's designated visiting hour or a guided tour, not unrestricted tourist access. Check current visitor rules and closures before visiting.",
+      "accessSourceUrl": "https://www.nypl.org/connect/tours/schwarzman",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "User landmark update",
+          "providedAt": "2026-11-14"
+        },
+        {
+          "type": "official",
+          "url": "https://www.nypl.org/spotlight/schwarzman-plan-your-visit",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "476 Fifth Avenue at 42nd Street; main entrance on Fifth Avenue; accessible entrances at 40th and 42nd Streets"
+          ]
+        },
+        {
+          "type": "official",
+          "url": "https://www.nypl.org/connect/tours/schwarzman",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "current Rose Main Reading Room visitor access: designated visiting hour or guided tour"
+          ]
+        },
+        {
+          "type": "official",
+          "url": "https://www.nypl.org/locations/schwarzman",
+          "checkedAt": "2026-11-14",
+          "supports": [
+            "working research library and current renovation notice"
+          ]
         }
       ]
     }

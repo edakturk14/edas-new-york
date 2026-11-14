@@ -1,0 +1,173 @@
+{
+  "central-park": {
+    "src": "/images/places/area-central-park.jpg",
+    "alt": "Bethesda Terrace and Fountain in Central Park.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bethesda_Terrace_and_Fountain,_Central_Park,_2025.jpg",
+    "credit": "Julian Lupyan / Wikimedia Commons",
+    "license": "CC0 1.0"
+  },
+  "brooklyn-bridge-park-and-heights": {
+    "src": "/images/places/area-brooklyn-bridge-park-and-heights.jpg",
+    "alt": "Manhattan skyline at dusk from Brooklyn Bridge Park.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manhattan_Skyline_from_Brooklyn_Bridge_Park.jpg",
+    "credit": "Arribas91 / Wikimedia Commons",
+    "license": "CC BY-SA 3.0"
+  },
+  "brooklyn-bridge-walk": {
+    "src": "/images/places/area-brooklyn-bridge-walk.jpg",
+    "alt": "The Brooklyn Bridge pedestrian walkway in early morning.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brooklyn_Bridge_Upper_Deck_Walkway.jpg",
+    "credit": "Rodolfo Zosel (Realpicr) / Wikimedia Commons",
+    "license": "CC BY-SA 4.0"
+  },
+  "high-line": {
+    "src": "/images/places/area-high-line.jpg",
+    "alt": "Visitors and planted paths on the High Line near West 18th Street in Manhattan.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:High_Line_Park,_Section_1a.jpg",
+    "credit": "Dansnguyen / Wikimedia Commons",
+    "license": "CC0 1.0"
+  },
+  "hudson-river-park": {
+    "src": "/images/places/area-hudson-river-park.jpg",
+    "alt": "Hudson River Park's riverside path in Manhattan.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hudson_River_Park._Morning_bicycle_walk_along_the_Hudson_River_embankment.jpg",
+    "credit": "Tiraspolsky / Wikimedia Commons",
+    "license": "CC BY 4.0"
+  },
+  "prospect-park": {
+    "src": "/images/places/area-prospect-park.jpg",
+    "alt": "A panoramic view of the lake in Brooklyn's Prospect Park.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Prospect_Park_Lake_(78352p).jpg",
+    "credit": "Rhododendrites / Wikimedia Commons",
+    "license": "CC BY-SA 4.0"
+  },
+  "greenpoint-waterfront": {
+    "src": "/images/places/area-greenpoint-waterfront.jpg",
+    "alt": "WNYC Transmitter Park on the Greenpoint waterfront in Brooklyn.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:WNYC_Transmitter_Park_(35401p).jpg",
+    "credit": "Rhododendrites / Wikimedia Commons",
+    "license": "CC BY-SA 4.0"
+  },
+  "west-village": {
+    "src": "/images/places/area-west-village.jpg",
+    "alt": "Commerce and Barrow Streets in Manhattan's West Village.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Commerce_and_Barrow_Streets,_West_Village,_NYC_2012.jpg",
+    "credit": "Teri Tynes / Wikimedia Commons",
+    "license": "CC BY 2.0"
+  },
+  "soho-nolita": {
+    "src": "/images/places/area-soho-nolita.jpg",
+    "alt": "A street lined with historic buildings in Manhattan's SoHo neighborhood.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:NYC,_SoHo_street.jpg",
+    "credit": "Jess Hawsor / Wikimedia Commons",
+    "license": "CC BY-SA 4.0"
+  },
+  "lower-east-side": {
+    "src": "/images/places/area-lower-east-side.jpg",
+    "alt": "Orchard Street in Manhattan's Lower East Side.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lower_East_Side_October_2022_112.jpg",
+    "credit": "Kidfly182 / Wikimedia Commons",
+    "license": "CC BY-SA 4.0"
+  },
+  "east-village": {
+    "src": "/images/places/area-east-village.jpg",
+    "alt": "Buildings at 32–38 East 3rd Street in Manhattan's East Village.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:32-38_East_3rd_Street_(51935952252).jpg",
+    "credit": "Eden, Janine and Jim / Wikimedia Commons",
+    "license": "CC BY 2.0"
+  },
+  "williamsburg": {
+    "src": "/images/places/area-williamsburg.jpg",
+    "alt": "A neighborhood street in Williamsburg, Brooklyn.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Williamsburg_Charm_(5918810751).jpg",
+    "credit": "Alex Proimos / Wikimedia Commons",
+    "license": "CC BY 2.0"
+  },
+  "brooklyn-heights-dumbo": {
+    "src": "/images/places/area-brooklyn-heights-dumbo.jpg",
+    "alt": "The Manhattan Bridge framed by buildings on Washington Street in DUMBO, Brooklyn.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_of_Manhattan_Bridge_from_Washington_Street_in_DUMBO,_Brooklyn.jpg",
+    "credit": "Wgreaves / Wikimedia Commons",
+    "license": "CC BY-SA 4.0"
+  },
+  "upper-west-side": {
+    "src": "/images/places/area-upper-west-side.jpg",
+    "alt": "Brownstone homes on Manhattan's Upper West Side.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2005_New_York_City_upper_West_Side_brownstone.jpg",
+    "credit": "Nicholas Hartmann / Wikimedia Commons",
+    "license": "CC BY-SA 4.0"
+  },
+  "upper-east-side-museum-mile": {
+    "src": "/images/places/area-upper-east-side-museum-mile.jpg",
+    "alt": "Fifth Avenue at East 87th Street on Manhattan's Upper East Side.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:1060_Fifth_Avenue,_corner_of_87th_Street,_Upper_East_Side,_Manhattan,_New_York.jpg",
+    "credit": "Deansfa / Wikimedia Commons",
+    "license": "CC BY-SA 4.0"
+  },
+  "sports": {
+    "src": "/images/places/area-sports.jpg",
+    "alt": "A first pitch at Yankee Stadium, an example of live sports in New York City.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flickr_-_The_U.S._Army_-_First_pitch.jpg",
+    "credit": "The U.S. Army / Wikimedia Commons",
+    "license": "CC BY 2.0"
+  },
+  "broadway": {
+    "src": "/images/places/area-broadway.jpg",
+    "alt": "The Longacre Theatre in Manhattan's Broadway theatre district.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Longacre_Theatre_(4671840625).jpg",
+    "credit": "Tony Hisgett / Wikimedia Commons",
+    "license": "CC BY 2.0"
+  },
+  "nyc-ferry": {
+    "src": "/images/places/area-nyc-ferry.jpg",
+    "alt": "NYC Ferry vessel H-215 approaching the East 34th Street landing.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:NYC_Ferry_Vessel_H-215.jpg",
+    "credit": "Transpoman / Wikimedia Commons",
+    "license": "CC BY-SA 4.0"
+  },
+  "chinatown-dumplings": {
+    "src": "/images/places/area-chinatown-dumplings.jpg",
+    "alt": "Shrimp dumplings photographed at Golden Unicorn in Manhattan's Chinatown, an example rather than a specific shop recommendation.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shrimp_dumplings_at_Golden_Unicorn,_Chinatown,_NYC,_April_2009.jpg",
+    "credit": "young / Wikimedia Commons",
+    "license": "CC BY-SA 2.0"
+  },
+  "empire-state-observatory": {
+    "src": "/images/places/area-empire-state-observatory.jpg",
+    "alt": "An aerial view of the Empire State Building in Midtown Manhattan.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Empire_State_Building_(aerial_view).jpg",
+    "credit": "Sam Valadi / Wikimedia Commons",
+    "license": "CC BY 2.0",
+    "position": "50% 15%"
+  },
+  "edge": {
+    "src": "/images/places/area-edge.jpg",
+    "alt": "Visitors on Edge's outdoor observation deck at Hudson Yards, looking south across Manhattan.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edge_HY.jpg",
+    "credit": "Hypnotoad78 / Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "position": "50% 65%"
+  },
+  "times-square": {
+    "src": "/images/places/area-times-square.jpg",
+    "alt": "Crowds and illuminated buildings in Times Square at night.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Times_Square,_New_York_City,_20231006_1916_2338.jpg",
+    "credit": "Jakub Hałun / Wikimedia Commons",
+    "license": "CC BY 4.0"
+  },
+  "bryant-park": {
+    "src": "/images/places/area-bryant-park.jpg",
+    "alt": "The lawn and green chairs of Bryant Park with the New York Public Library behind them.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:New-York_-_Bryant_Park.jpg",
+    "credit": "Jean-Christophe BENOIST; perspective correction by EdwardPan / Wikimedia Commons",
+    "license": "CC BY 3.0",
+    "position": "50% 70%"
+  },
+  "nypl-schwarzman": {
+    "src": "/images/places/area-nypl-schwarzman.jpg",
+    "alt": "The Fifth Avenue entrance of the New York Public Library's Stephen A. Schwarzman Building.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:N.Y._Public_Library_-_Schwarzman_Bldg._-_exterior.jpg",
+    "credit": "Bestbudbrian / Wikimedia Commons",
+    "license": "CC BY-SA 3.0"
+  }
+}

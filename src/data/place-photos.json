@@ -1,0 +1,185 @@
+{
+  "american-museum-of-natural-history": {
+    "src": "/images/places/venue-amnh.jpg",
+    "alt": "The stone Central Park West facade of the American Museum of Natural History in New York.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Facade_of_the_American_museum_of_natural_history_NYC_(1).jpg",
+    "credit": "Ferfive / Wikimedia Commons. Orientation corrected, resized and JPEG-compressed; displayed crop.",
+    "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+    "position": "center 42%"
+  },
+  "radio-bakery-greenpoint": {
+    "src": "/images/places/venue-radio-bakery.jpg",
+    "sourceUrl": "https://www.radiobakery.nyc/locations-1",
+    "alt": "Radio Bakery's Greenpoint location.",
+    "credit": "Radio Bakery, official location photograph.",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  },
+  "taqueria-ramirez": {
+    "src": "/images/places/venue-taqueria-ramirez.jpg",
+    "sourceUrl": "https://taqueriaramirezbk.com/",
+    "alt": "Taqueria Ramirez in Greenpoint.",
+    "credit": "Taqueria Ramirez, official venue photograph.",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  },
+  "rule-of-thirds": {
+    "src": "/images/places/venue-rule-of-thirds.jpg",
+    "sourceUrl": "https://www.thirdsbk.com/",
+    "alt": "A dish from Rule of Thirds in Brooklyn.",
+    "credit": "Eric Medsker / Rule of Thirds, official menu photograph.",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  },
+  "bakeri": {
+    "src": "/images/places/venue-bakeri.jpg",
+    "sourceUrl": "https://www.bakeribrooklyn.com/",
+    "alt": "A baker working among trays of pastries at Bakeri.",
+    "credit": "Bakeri, official bakery photograph.",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  },
+  "beco": {
+    "src": "/images/places/venue-beco.jpg",
+    "sourceUrl": "https://www.becobar.com/",
+    "alt": "Beco's exterior and sidewalk seating in Williamsburg.",
+    "credit": "Beco, official venue photograph.",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  },
+  "oscar-wilde": {
+    "src": "/images/places/venue-oscar-wilde.jpg",
+    "sourceUrl": "https://www.oscarwildenyc.com/",
+    "alt": "The elaborate Victorian-style interior of Oscar Wilde in Manhattan.",
+    "credit": "Oscar Wilde, official venue photograph.",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  },
+  "bar-pisellino": {
+    "src": "/images/places/venue-bar-pisellino.jpg",
+    "sourceUrl": "https://barpisellino.com/",
+    "alt": "Coffee and pastries at Bar Pisellino.",
+    "credit": "Bar Pisellino, official café photograph.",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  },
+  "dante": {
+    "src": "/images/places/venue-dante.jpg",
+    "sourceUrl": "https://www.dante-nyc.com/",
+    "alt": "Dante's Old Fashioned cocktail served over its menu.",
+    "credit": "Dante, official cocktail photograph.",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  },
+  "apollo-bagels": {
+    "src": "/images/places/venue-apollo-bagels.jpg",
+    "sourceUrl": "https://www.apollobagels.com/",
+    "alt": "Bagels from Apollo Bagels.",
+    "credit": "Apollo Bagels, official bakery photograph.",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  },
+  "caffe-panna": {
+    "src": "/images/places/venue-caffe-panna.jpg",
+    "sourceUrl": "https://www.caffepanna.com/",
+    "alt": "Blackberry and pistachio ice cream from Caffè Panna.",
+    "credit": "Caffè Panna, official ice cream photograph.",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  },
+  "comedy-cellar": {
+    "src": "/images/places/venue-comedy-cellar.jpg",
+    "sourceUrl": "https://www.comedycellar.com/",
+    "alt": "Comedy Cellar's illuminated entrance sign on MacDougal Street.",
+    "credit": "Comedy Cellar, official venue photograph.",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  },
+  "thai-diner": {
+    "src": "/images/places/venue-thai-diner.jpg",
+    "sourceUrl": "https://www.thaidiner.com/",
+    "alt": "The bar and counter stools inside Thai Diner.",
+    "credit": "Thai Diner, official restaurant photograph.",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  },
+  "lucali": {
+    "src": "/images/places/venue-lucali.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mark_makes_pizza_at_Lucali_(2512534782).jpg",
+    "alt": "Pizza being made inside Lucali in Brooklyn.",
+    "credit": "Eric Mueller / Wikimedia Commons. Resized and JPEG-compressed; displayed crop.",
+    "license": "CC BY-SA 2.0 · https://creativecommons.org/licenses/by-sa/2.0/"
+  },
+  "katzs-delicatessen": {
+    "src": "/images/places/venue-katzs-delicatessen.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Katz%27s_Delicatessen.jpg",
+    "alt": "Katz's Delicatessen storefront at Houston and Ludlow streets.",
+    "credit": "Beyond My Ken / Wikimedia Commons. Resized and JPEG-compressed; displayed crop.",
+    "license": "CC BY-SA 4.0 · https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "levain-bakery": {
+    "src": "/images/places/venue-levain-bakery.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Levain_Bakery_-_The_Best_Cookies_in_the_World_-_Chocolate_Chocolate_Chip,_Oatmeal_Raisin,_Chocolate_Chip_Walnut.jpg",
+    "alt": "Chocolate and oatmeal cookies from Levain Bakery.",
+    "credit": "Biskuit / Wikimedia Commons. Resized and JPEG-compressed; displayed crop.",
+    "license": "CC BY-SA 2.0 · https://creativecommons.org/licenses/by-sa/2.0/"
+  },
+  "moma": {
+    "src": "/images/places/venue-moma.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MoMA_exterior_(1629399048).jpg",
+    "alt": "The Museum of Modern Art's exterior on West 53rd Street.",
+    "credit": "Casper Moller / Wikimedia Commons. Resized and JPEG-compressed; displayed crop.",
+    "license": "CC BY 2.0 · https://creativecommons.org/licenses/by/2.0/"
+  },
+  "the-met": {
+    "src": "/images/places/venue-the-met.jpg",
+    "alt": "The Metropolitan Museum of Art's Fifth Avenue facade and steps.",
+    "credit": "Kai Pilger / Wikimedia Commons. Resized and JPEG-compressed; displayed crop.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_MET.jpg",
+    "license": "CC BY-SA 4.0 · https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "guggenheim": {
+    "src": "/images/places/venue-guggenheim.jpg",
+    "alt": "The curved exterior of the Solomon R. Guggenheim Museum in New York.",
+    "credit": "Ajay Suresh / Wikimedia Commons. Resized and JPEG-compressed; displayed crop.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Solomon_R._Guggenheim_Museum_(48059131351).jpg",
+    "license": "CC BY 2.0 · https://creativecommons.org/licenses/by/2.0/"
+  },
+  "bernies": {
+    "src": "/images/places/venue-bernies.jpg",
+    "alt": "Bernie's corner restaurant exterior in Greenpoint.",
+    "credit": "Eden, Janine and Jim / Wikimedia Commons. Resized and JPEG-compressed; displayed crop.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bernie%27s_Restaurant_(54933813471).jpg",
+    "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/"
+  },
+  "westlight": {
+    "src": "/images/places/venue-westlight.jpg",
+    "alt": "Westlight's indoor rooftop dining room overlooking the Manhattan skyline.",
+    "credit": "Westlight, official venue photograph.",
+    "sourceUrl": "https://www.westlightnyc.com/",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  },
+  "xian-famous-foods": {
+    "src": "/images/places/venue-xian-famous-foods.jpg",
+    "alt": "Stir-fried noodles from Xi'an Famous Foods.",
+    "credit": "Xi'an Famous Foods, official menu photograph.",
+    "sourceUrl": "https://www.xianfoods.com/menu",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  },
+  "lindustrie-pizzeria": {
+    "src": "/images/places/venue-lindustrie-pizzeria.jpg",
+    "alt": "A tomato pizza from L'industrie Pizzeria.",
+    "credit": "L'industrie Pizzeria, official ordering-site photograph.",
+    "sourceUrl": "https://massimo-laveglia.squarespace.com/order-now",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  },
+  "tompkins-square-bagels": {
+    "src": "/images/places/venue-tompkins-square-bagels.jpg",
+    "alt": "Bagels baking in the oven at Tompkins Square Bagels.",
+    "credit": "Tompkins Square Bagels, official bakery photograph.",
+    "sourceUrl": "https://www.tompkinssquarebagels.com/",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  },
+  "los-tacos-no-1": {
+    "src": "/images/places/venue-los-tacos-no-1.jpg",
+    "alt": "An overhead spread of tacos and sides from LOS TACOS No.1.",
+    "credit": "LOS TACOS No.1, official restaurant photograph.",
+    "sourceUrl": "https://www.lostacos1.com/",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  },
+  "fish-cheeks": {
+    "src": "/images/places/venue-fish-cheeks.jpg",
+    "alt": "A steamed whole fish dish from Fish Cheeks.",
+    "credit": "Fish Cheeks, official restaurant photograph.",
+    "sourceUrl": "https://www.fishcheeksnyc.com/",
+    "license": "Copyright retained by the respective rights holders; no open license stated."
+  }
+}
