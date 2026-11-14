@@ -8,7 +8,7 @@ DM Sans and Pixelify Sans are bundled from Fontsource under the SIL Open Font Li
 
 ## Place photographs
 
-`src/data/place-photos.json` and `src/data/area-photos.json` record the source, credit and license status for50 local photographs under `public/images/places/`. Wikimedia images retain their stated licenses; displayed images may be resized, JPEG-compressed and cropped. Credits and available license links appear on detail cards. Official-website photographs remain copyrighted by their respective rights holders and have no claimed open license; review reuse permissions before public deployment.
+`src/data/place-photos.json` and `src/data/area-photos.json` record the source, credit and license status for32 openly licensed local photographs under `public/images/places/`. Wikimedia images retain their stated licenses; displayed images may be resized, JPEG-compressed and cropped. Credits and license links appear on detail cards. Per the owner's publication choice, photographs without confirmed reuse permission are excluded from public assets and the affected entries use original category illustrations.
 
 ## Waldo Stripes Soft reference snapshots
 
