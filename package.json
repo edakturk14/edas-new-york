@@ -11,7 +11,7 @@
     "build": "tsc && vite build",
     "lint": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
-    "test:browser": "node scripts/check-marker-layout.mjs",
+    "test:browser": "node scripts/check-marker-layout.mjs && node scripts/check-saved-toggle.mjs",
     "preview": "vite preview"
   },
   "keywords": [],
