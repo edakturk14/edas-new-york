@@ -6,6 +6,10 @@ MapLibre GL JS is BSD-3-Clause licensed. OpenFreeMap/OpenMapTiles map tiles deri
 
 DM Sans and Pixelify Sans are bundled from Fontsource under the SIL Open Font License; license files remain in their installed packages. All application icons/category illustrations are original SVG path artwork. No generated storefront photographs or full reference mockups are runtime imagery. Waldo source was inspected as a design reference, not copied into the runtime.
 
+## Place photographs
+
+`src/data/place-photos.json` and `src/data/area-photos.json` record the source, credit and license status for50 local photographs under `public/images/places/`. Wikimedia images retain their stated licenses; displayed images may be resized, JPEG-compressed and cropped. Credits and available license links appear on detail cards. Official-website photographs remain copyrighted by their respective rights holders and have no claimed open license; review reuse permissions before public deployment.
+
 ## Waldo Stripes Soft reference snapshots
 
 The files in `docs/references/waldo/source/` are unmodified inspection copies from [gokayfem/waldo-stripes-soft](https://github.com/gokayfem/waldo-stripes-soft), commit `ac4f9688f8ed2351a692d75c341c8f261abbfe76`.
