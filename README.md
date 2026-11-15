@@ -88,3 +88,9 @@ Design images are references, not production map tiles or photographs of busines
 Suggested stack: React, TypeScript, Vite, MapLibre GL JS, a customized map style, and browser-local bookmark storage. No AI model, login, database, or paid service is required for the core experience. Verify current dependency compatibility during implementation and commit the lockfile.
 
 The completed app should document its install/dev/build/test commands here, plus how Eda can edit recommendations. Keep these handoff documents available after implementation.
+
+## Creator interest pilot
+
+A small “Make a guide like this” invitation and private creator inbox are included. **Before collecting real requests**, connect the server storage and owner access key using [the activation guide](docs/CREATOR_PILOT.md). Without setup the form shows an honest unavailable state. Saved places still work without an account.
+
+The same document covers follow-up statuses, CSV exports, optional aggregate counts, local testing and how to manually adapt the guide for the next creator/city.

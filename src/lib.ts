@@ -1,3 +1,4 @@
+import {guideConfig} from './data/guide-config';
 import {entries,neighborhoodLabel,type Entry,type Location} from './data/content';
 import {mapGuides,walkDirections} from './data/map-guides';
 export type Filters={category:string;neighborhood:string;query:string};
@@ -8,7 +9,7 @@ export type Saved={entryId:string;saveId?:string;preferredLocationId?:string;sav
 export const saveKey=(saved:Saved)=>saved.saveId??saved.entryId;
 export const defaultLocation=(e:Entry)=>e.resolvedLocations.find(l=>l.id===e.defaultLocationId)??(e.resolvedLocations.length===1?e.resolvedLocations[0]:undefined);
 export const placeSaveId=(e:Entry,l=defaultLocation(e))=>l?.saveId??e.id;
-export const storageKey='edas-new-york:saved:v1';
+export const storageKey=guideConfig.savedStorageKey;
 export function parseSaved(raw:string|null):Saved[]{try{const data=JSON.parse(raw??'null');const items=Array.isArray(data)?data:data?.version===1?data.items:[];if(!Array.isArray(items))return[];const result:Saved[]=[];const seen=new Set<string>();for(const item of items){const e=entries.find(e=>e.id===item?.entryId);if(!e)continue;const location=e.resolvedLocations.find(l=>l.id===item.preferredLocationId)??(e.resolvedLocations.some(l=>l.saveId)?defaultLocation(e):undefined);const key=placeSaveId(e,location);if(seen.has(key))continue;seen.add(key);result.push({entryId:e.id,savedAt:typeof item.savedAt==='string'?item.savedAt:new Date(0).toISOString(),...(location?{preferredLocationId:location.id}:{}),...(location?.saveId?{saveId:location.saveId}:{})});}return result;}catch{return[];}}
 export const mapsUrl=(e:Entry,l?:Location)=>l?.coordinates?'https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(`${e.name}, ${l.address}`):(mapGuides[e.id]&&walkDirections(mapGuides[e.id]!))||'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(`${e.name} ${l?.address??'New York'}`);
 export const entryArea=(e:Entry)=>e.resolvedLocations.length>1?[...new Set(e.resolvedLocations.flatMap(l=>l.neighborhoodIds))].map(neighborhoodLabel).join(' · '):e.resolvedLocations[0]?.neighborhoodIds.map(neighborhoodLabel).join(' · ')||e.neighborhoodHints.map(neighborhoodLabel).join(' · ')||'New York City';
