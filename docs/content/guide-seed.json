@@ -42,14 +42,6 @@
     {
       "id": "neighborhoods",
       "label": "Neighborhood guides"
-    },
-    {
-      "id": "brunch",
-      "label": "Brunch"
-    },
-    {
-      "id": "dinner",
-      "label": "Dinner"
     }
   ],
   "entries": [
@@ -82,7 +74,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "moma",
@@ -113,7 +106,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "american-museum-of-natural-history",
@@ -145,7 +139,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "guggenheim",
@@ -174,7 +169,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "central-park",
@@ -741,7 +737,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "nyc-ferry",
@@ -823,7 +820,8 @@
       "officialUrl": "https://www.esbnyc.com/",
       "defaultLocationId": "empire-state-observatory-midtown",
       "accessNote": "Observation deck visitor entrance: 20 West 34th Street, between Fifth and Sixth Avenues.",
-      "accessSourceUrl": "https://www.esbnyc.com/visit/map-and-directions"
+      "accessSourceUrl": "https://www.esbnyc.com/visit/map-and-directions",
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "apollo-bagels",
@@ -854,7 +852,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "tompkins-square-bagels",
@@ -887,7 +886,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "lindustrie-pizzeria",
@@ -919,7 +919,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "lucali",
@@ -950,7 +951,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "los-tacos-no-1",
@@ -981,7 +983,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "taqueria-ramirez",
@@ -1013,7 +1016,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "xian-famous-foods",
@@ -1046,7 +1050,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "chinatown-dumplings",
@@ -1111,7 +1116,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "levain-bakery",
@@ -1143,7 +1149,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "caffe-panna",
@@ -1175,7 +1182,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "radio-bakery",
@@ -1221,7 +1229,8 @@
         "branch": "Greenpoint",
         "coordinates": null,
         "geocodingStatus": "pending"
-      }
+      },
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "thai-diner",
@@ -1253,7 +1262,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "fish-cheeks",
@@ -1283,7 +1293,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "chez-ma-tante",
@@ -1291,8 +1302,7 @@
       "sourceSection": "Restaurants",
       "kind": "venue",
       "categories": [
-        "food",
-        "brunch"
+        "food"
       ],
       "neighborhoodHints": [
         "greenpoint"
@@ -1340,7 +1350,8 @@
       ],
       "description": "A neighborhood restaurant in Greenpoint.",
       "officialUrl": "https://chezmatantebk.com/",
-      "defaultLocationId": "chez-ma-tante-greenpoint"
+      "defaultLocationId": "chez-ma-tante-greenpoint",
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "bernies",
@@ -1374,7 +1385,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "westlight",
@@ -1405,7 +1417,8 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "bar-pisellino",
@@ -1453,7 +1466,8 @@
         "address": "52 Grove Street & 92 Seventh Avenue, New York, NY",
         "coordinates": null,
         "geocodingStatus": "pending"
-      }
+      },
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "dante",
@@ -1483,15 +1497,14 @@
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "rule-of-thirds",
       "name": "Rule of Thirds",
       "categories": [
-        "food",
-        "brunch",
-        "dinner"
+        "food"
       ],
       "neighborhoodHints": [
         "greenpoint"
@@ -1538,7 +1551,8 @@
             "venue address"
           ]
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "bakeri",
@@ -1646,14 +1660,14 @@
             "venue address"
           ]
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "raouls",
       "name": "Raoul’s",
       "categories": [
-        "food",
-        "dinner"
+        "food"
       ],
       "neighborhoodHints": [
         "soho"
@@ -1711,7 +1725,8 @@
             "official reservation link: https://resy.com/cities/ny/raoulsrestaurant"
           ]
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "id": "oscar-wilde",
@@ -1764,7 +1779,8 @@
             "venue address"
           ]
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "sourceSection": "Activities",
@@ -1823,7 +1839,8 @@
             "outdoor deck, angled glass walls and glass floor"
           ]
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     },
     {
       "sourceSection": "Activities",
@@ -1977,7 +1994,8 @@
             "working research library and current renovation notice"
           ]
         }
-      ]
+      ],
+      "editableIn": "docs/content/places.csv"
     }
   ]
 }

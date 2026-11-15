@@ -6,9 +6,46 @@ The working React/TypeScript app is in `src/`, alongside the original implementa
 
 ## Run locally
 
-Use Node 20 or newer. Run `npm install`, then `npm run dev` for development. Run `npm test` for the 19 focused content/state/photo tests and `npm run lint` for TypeScript checks. For the production preview run `npm run build`, then `npm run preview -- --host 127.0.0.1 --port 4173` and open http://127.0.0.1:4173. With that preview running, `npm run test:browser` runs seven isolated local browser regressions using the installed `agent-browser` CLI. No account, token, or environment secrets are needed. The geographic basemap needs internet access; the list and device-local saves remain usable if the map fails.
+Use Node 20 or newer. Run `npm install`, then `npm run dev` for development. Run `npm test` for the 28 focused content/state/photo/spreadsheet tests and `npm run lint` for TypeScript checks. For the production preview run `npm run build`, then `npm run preview -- --host 127.0.0.1 --port 4173` and open http://127.0.0.1:4173. With that preview running, `npm run test:browser` runs seven isolated local browser regressions using the installed `agent-browser` CLI. No account, token, or environment secrets are needed. The geographic basemap needs internet access; the list and device-local saves remain usable if the map fails.
 
-To edit recommendations, update `docs/content/guide-seed.json`, keeping IDs and Eda's original notes stable. Verified branches live separately in `src/data/locations.json`; include address, geographic coordinates, branch label, source URLs and fact-check date. Areas and broad activities do not need invented point coordinates. Run `npm test` and preview the result after edits. Save data stays in this browser under `edas-new-york:saved:v1`.
+To add or edit an ordinary place, use the spreadsheet described in [Add or edit a place](#add-or-edit-a-place). Other recommendations (walks, areas, activity guides, multi-branch places) are edited directly in `docs/content/guide-seed.json`, keeping IDs and Eda's original notes stable. Verified branches live separately in `src/data/locations.json`; include address, geographic coordinates, branch label, source URLs and fact-check date. Areas and broad activities do not need invented point coordinates. Run `npm test` and preview the result after edits. Save data stays in this browser under `edas-new-york:saved:v1`.
+
+## Add or edit a place
+
+Ordinary places (one address, one map pin) live in a spreadsheet: [`docs/content/places.csv`](docs/content/places.csv). Walks, parks, areas, activity guides, the two-branch Bakeri entry and photos stay in the JSON files described below.
+
+1. Open `docs/content/places.csv` in Google Sheets (File → Import → Upload, then "Replace spreadsheet") or Numbers.
+2. Add a row, or edit an existing one. One row is one place:
+
+   | Column | What to put in it |
+   | --- | --- |
+   | `id` | Leave empty for a new place; the script fills it in from the name. Don't change it later, because visitors' saved places use it. |
+   | `name` | Required. For example `Radio Bakery`. |
+   | `categories` | Required. One or more of `cafes`, `food`, `bars`, `museums`, `walks`, `activities`, separated by commas. The labels work too, like `Cafés & bakeries, Food`. The first one picks the map icon. |
+   | `neighborhood` | Required. A known neighborhood, like `greenpoint`, `Williamsburg` or `West Village`. The checker lists every option if one is not recognized. |
+   | `address` | Required. The full street address used for directions. |
+   | `latitude`, `longitude` | Required. See "Copy coordinates from Google Maps" below. |
+   | `eda_note` | Your note, exactly as visitors should read it. Leave it empty if you have no comment; the app never invents one. |
+   | `description` | Optional. One neutral sentence about the place. |
+   | `website` | Optional. The official link, starting with `https://`. |
+   | `tags` | Optional. Extra search words, separated by commas, like `brunch` or `dinner`. |
+   | `eda_hasnt_been` | Write `yes` to show "Eda hasn't been yet". Otherwise leave it empty. |
+
+3. Download the sheet as CSV (Google Sheets: File → Download → Comma-separated values; Numbers: File → Export To → CSV) and save it over `docs/content/places.csv`.
+4. Run `npm run places:check`. It changes nothing; it lists every problem with its row number (missing fields, unknown categories or neighborhoods, coordinates outside New York or swapped, duplicate ids, links without `https://`) and the changes it would make.
+5. Run `npm run places` to write the changes into `docs/content/guide-seed.json` and `src/data/locations.json`, then `npm test` and `npm run dev` to look at the place on the map.
+
+To remove a place, delete its row and run `npm run places`. A place with a photo cannot be removed this way until its photo record is deleted. `npm run places:export` rewrites the CSV from the current data if you ever need a fresh copy.
+
+### Copy coordinates from Google Maps
+
+1. Find the place in [Google Maps](https://www.google.com/maps) on a computer.
+2. Right-click the exact spot (the entrance, not the middle of the block). The first line of the menu shows two numbers, like `40.73239, -73.95506`.
+3. Click those numbers to copy them.
+4. Paste into the `latitude` cell. You can leave `longitude` empty: the checker splits the pair. Or put the first number (about `40.7`) in `latitude` and the second (about `-73.9`) in `longitude`.
+
+On a phone, press and hold the spot to drop a pin; the coordinates appear in the search box at the top.
+
 
 ![Approved visual direction: a wide miniature New York map](docs/design/approved-city-overview.webp)
 
