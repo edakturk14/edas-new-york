@@ -8,6 +8,7 @@ The map should feel like a neighborhood you can wander into, with readable café
 - Shared geographic 3D geometry for buildings, roof edges, windows, stoops, awnings, tables, planters and trees. No whole-building billboards.
 - Compact centered title, category filters, search and neighborhood navigation. Separate Greenpoint / All New York actions.
 - Smaller welcome note that disappears as browsing starts.
+- Category filters preserve the current camera, including Walks & parks. They update pins and the list; selecting a specific place or an explicit navigation action moves the camera.
 - Persistent place-name labels at neighborhood zoom, a visible raspberry Save action, compact detail and Saved panels.
 - Existing recommendations, licensed photos, notes, directions, branch-specific saves and optional Find Eda game retained.
 - No new paid service, runtime AI generation or backend.
@@ -50,7 +51,7 @@ At approximately 1440 × 900:
 1. Open without a place URL. Confirm Greenpoint fills the viewport and Radio Bakery is easy to identify. Pan/zoom must stay usable, with no intro covering the center after interaction.
 2. Compare the default zoom 17.35 with 17.05 and 17.65 in `MINIATURE_ZOOM` if fine-tuning framing. Keep pitch/bearing fixed. Prefer a few readable blocks over fitting every Greenpoint recommendation at once.
 3. Check walls, roof caps, windows, storefronts and trees at opening zoom and one step closer. Inspect for flickering/coplanar faces, detached decorations, awkward geometry at the pilot boundary, and low frame rate. Correct these before approval if observed.
-4. Choose Cafés & bakeries, search Radio, open the pin, Save, refresh and revisit Saved. Check that persistent labels do not cover neighboring clickable pins.
+4. From a close view, choose Walks & parks: the camera must stay put while the list/pins update. Repeat after panning/zooming and from All New York. Selecting an individual park/walk should still focus that guide. Then choose Cafés & bakeries, search Radio, open the pin, Save, refresh and revisit Saved. Check that persistent labels do not cover neighboring clickable pins.
 5. Try All New York, Long Island City, a Manhattan venue, a walk, and Saved → Show all on map. Return with Back to Greenpoint. Confirm geography and all camera actions retain the intended tilt.
 6. Complete Find Eda and refresh. Verify that game completion and Saved remain separate. Confirm reduced motion stops the ferry/steam/dog and removes camera transitions.
 7. Check a phone-sized window for overflow and usable Save/details, without expanding this into a mobile redesign.

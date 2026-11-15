@@ -24,7 +24,15 @@ assert.match(evaluate('document.querySelector(".detail-actions a").href'),/googl
 button('Close panel');button('All New York');angle('reset city view');
 run('click','.place-pin:has(.cluster-count)');angle('cluster');
 run('click','.desktop-saved');run('wait','--fn','document.querySelectorAll(".place-row").length===1');angle('Saved');run('click','.desktop-saved');
-button('Walks & parks');angle('walks filter');button('All spots');
+// Filtering must preserve both a close view and a manually chosen wider view.
+const cameraState=()=>evaluate('(()=>{const d=document.querySelector(".city-map").dataset;return {zoom:Number(d.zoom),center:d.center,pitch:Number(d.pitch),bearing:Number(d.bearing)}})()');
+for(const view of ['Greenpoint','All New York']){
+button(view);settle();const beforeFilter=cameraState();
+for(const category of ['Walks & parks','Cafés & bakeries','All spots']){
+button(category);settle();assert.deepEqual(cameraState(),beforeFilter,`${category} must preserve the ${view} camera`);
+}
+}
+button('Greenpoint');angle('return from category checks');
 button('Find Eda');button('Reveal her spot');run('wait','--fn','document.activeElement?.classList.contains("eda-avatar")&&Number(document.querySelector(".city-map").dataset.zoom)>17');angle('reveal Eda');
 assert.equal(evaluate('document.querySelector(".eda-avatar").classList.contains("revealed")'),true);
 run('press','Enter');run('wait','--fn','document.querySelector(".eda-celebration")?.textContent.includes("You found Eda")');
