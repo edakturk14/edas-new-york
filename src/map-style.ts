@@ -1,12 +1,15 @@
 import type {StyleSpecification,ExpressionSpecification} from 'maplibre-gl';
-// The illustrated view is locked to one angle so sprites drawn in a 2:1
-// projection line up with Greenpoint's (roughly north-south) street grid.
-export const MAP_PITCH=52;
+// One camera and depth buffer keep the miniature aligned with the geographic map.
+export const MAP_PITCH=55;
 export const MAP_BEARING=38;
 const z=(...stops:number[]):ExpressionSpecification=>['interpolate',['linear'],['zoom'],...stops] as ExpressionSpecification;
+export const MINIATURE_CENTER:[number,number]=[-73.9565,40.7318];
+export const MINIATURE_ZOOM=17.35;
+const pilot={type:'Polygon' as const,coordinates:[[[-73.9617,40.7271],[-73.9508,40.7271],[-73.9508,40.7353],[-73.9617,40.7353],[-73.9617,40.7271]]]};
+const outsidePilot=['!', ['within',pilot]] as ExpressionSpecification;
 const major=['motorway','trunk','primary'],mid=['secondary','tertiary'],minor=['minor','service'];
 const roads=(classes:string[])=>['all',['in',['get','class'],['literal',classes]],['!=',['get','brunnel'],'tunnel']] as ExpressionSpecification;
-export const cityStyle:StyleSpecification={version:8,light:{anchor:'viewport',color:'#fff6ee',intensity:.22},glyphs:'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf',sources:{overview:{type:'geojson',data:'/data/nyc-overview.geojson',maxzoom:13},nyc:{type:'vector',url:'https://tiles.openfreemap.org/planet',attribution:'<a href="https://openfreemap.org/">OpenFreeMap</a> · OpenMapTiles © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}},layers:[
+export const cityStyle:StyleSpecification={version:8,light:{anchor:'map',color:'#fff5e4',intensity:.36,position:[1.5,210,42]},glyphs:'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf',sources:{miniature:{type:'geojson',data:'/data/greenpoint-miniature.geojson',maxzoom:18,tolerance:0},overview:{type:'geojson',data:'/data/nyc-overview.geojson',maxzoom:13},nyc:{type:'vector',url:'https://tiles.openfreemap.org/planet',attribution:'<a href="https://openfreemap.org/">OpenFreeMap</a> · OpenMapTiles © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}},layers:[
 {id:'paper',type:'background',paint:{'background-color':'#fbefd2'}},
 {id:'residential',type:'fill',source:'nyc','source-layer':'landuse',paint:{'fill-color':'#f8e6bf','fill-opacity':z(10,.25,15,.55)}},
 {id:'parks',type:'fill',source:'nyc','source-layer':'park',paint:{'fill-color':'#bcd79e'}},
@@ -24,7 +27,12 @@ export const cityStyle:StyleSpecification={version:8,light:{anchor:'viewport',co
 // Overview: flat pastel footprints and only taller landmarks extruded, so the city reads as a soft map rather than a dense model.
 {id:'overview-footprints',type:'fill',source:'overview',maxzoom:14,paint:{'fill-color':['interpolate',['linear'],['get','height'],0,'#f3cfc6',25,'#f4d6b4',60,'#ddd0ef'],'fill-opacity':z(11,.35,13.5,.7)}},
 {id:'overview-buildings',type:'fill-extrusion',source:'overview',maxzoom:14,filter:['>=',['get','height'],90],paint:{'fill-extrusion-color':['interpolate',['linear'],['get','height'],60,'#efc3cb',120,'#d9c9ee',250,'#c8bfe6'],'fill-extrusion-height':['*',.85,['get','height']],'fill-extrusion-base':['get','base'],'fill-extrusion-opacity':.82}},
-{id:'buildings-flat',type:'fill',source:'nyc','source-layer':'building',minzoom:14,paint:{'fill-color':['interpolate',['linear'],['coalesce',['get','render_height'],8],0,'#f4cdc8',14,'#f6d9b8',30,'#e3d5f0'],'fill-opacity':z(14,.7,16,.9),'fill-outline-color':'#e6bfc3'}},
-{id:'buildings',type:'fill-extrusion',source:'nyc','source-layer':'building',minzoom:14,filter:['>=',['coalesce',['get','render_height'],0],40],paint:{'fill-extrusion-color':['interpolate',['linear'],['coalesce',['get','render_height'],40],40,'#f1cdd2',120,'#dccdf0',250,'#cbc1e8'],'fill-extrusion-height':['coalesce',['get','render_height'],40],'fill-extrusion-base':['coalesce',['get','render_min_height'],0],'fill-extrusion-opacity':.78}},
+{id:'buildings-flat',type:'fill',filter:outsidePilot,source:'nyc','source-layer':'building',minzoom:14,paint:{'fill-color':['interpolate',['linear'],['coalesce',['get','render_height'],8],0,'#f4cdc8',14,'#f6d9b8',30,'#e3d5f0'],'fill-opacity':z(14,.7,16,.9),'fill-outline-color':'#e6bfc3'}},
+{id:'buildings',type:'fill-extrusion',source:'nyc','source-layer':'building',minzoom:14,filter:['all',outsidePilot,['>=',['coalesce',['get','render_height'],0],40]],paint:{'fill-extrusion-color':['interpolate',['linear'],['coalesce',['get','render_height'],40],40,'#f1cdd2',120,'#dccdf0',250,'#cbc1e8'],'fill-extrusion-height':['coalesce',['get','render_height'],40],'fill-extrusion-base':['coalesce',['get','render_min_height'],0],'fill-extrusion-opacity':.78}},
+// Every surface shares the map projection and depth buffer. No separate camera.
+{id:'miniature-shadows',type:'fill',source:'miniature',minzoom:14,filter:['==',['get','kind'],'shadow'],paint:{'fill-color':'#847583','fill-opacity':.16}},
+{id:'miniature-ground',type:'fill-extrusion',source:'miniature',minzoom:14,filter:['in',['get','kind'],['literal',['ground','road-line']]],paint:{'fill-extrusion-color':['get','color'],'fill-extrusion-height':['get','height'],'fill-extrusion-base':['get','base'],'fill-extrusion-opacity':1,'fill-extrusion-vertical-gradient':false}},
+{id:'miniature-architecture',type:'fill-extrusion',source:'miniature',minzoom:14,filter:['in',['get','kind'],['literal',['building','roof']]],paint:{'fill-extrusion-color':['get','color'],'fill-extrusion-height':['get','height'],'fill-extrusion-base':['get','base'],'fill-extrusion-opacity':1,'fill-extrusion-vertical-gradient':true}},
+{id:'miniature-details',type:'fill-extrusion',source:'miniature',minzoom:16,filter:['in',['get','kind'],['literal',['window','detail']]],paint:{'fill-extrusion-color':['get','color'],'fill-extrusion-height':['get','height'],'fill-extrusion-base':['get','base'],'fill-extrusion-opacity':1,'fill-extrusion-vertical-gradient':false}},
 {id:'road-names',type:'symbol',source:'nyc','source-layer':'transportation_name',minzoom:15.4,filter:['in',['get','class'],['literal',[...major,...mid,'minor']]],layout:{'symbol-placement':'line','text-field':['coalesce',['get','name_en'],['get','name']],'text-font':['Noto Sans Regular'],'text-size':z(15.4,10,18,13),'text-letter-spacing':.04},paint:{'text-color':'#7b5677','text-halo-color':'#fff8ea','text-halo-width':2}}
 ]};

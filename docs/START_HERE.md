@@ -1,3 +1,5 @@
+> Latest desktop direction: [Greenpoint miniature review](GREENPOINT_DESKTOP_REVIEW.md). This supersedes the original wide opening camera and decorative building sprites.
+
 # Implementation brief
 
 Owner: Eda Akturk. Repository: `edakturk14/edas-new-york`.
