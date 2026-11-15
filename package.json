@@ -12,7 +12,10 @@
     "lint": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
     "test:browser": "node scripts/check-marker-layout.mjs && node scripts/check-saved-toggle.mjs && node scripts/check-walk-guides.mjs && node scripts/check-venue-additions.mjs && node scripts/check-place-photos.mjs && node scripts/check-landmarks.mjs && node scripts/check-search-reset.mjs && node scripts/check-illustrated-map.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "places": "tsx scripts/places.ts",
+    "places:check": "tsx scripts/places.ts --check",
+    "places:export": "tsx scripts/places.ts --export"
   },
   "keywords": [],
   "author": "Eda Akturk <eda@newyork.guide>",
