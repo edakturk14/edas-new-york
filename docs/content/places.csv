@@ -1,0 +1,31 @@
+id,name,categories,neighborhood,address,latitude,longitude,eda_note,description,website,tags,eda_hasnt_been
+the-met,The Met,museums,upper-east-side,"1000 Fifth Avenue, New York, NY 10028",40.7794366,-73.963244,My favorite.,,https://www.metmuseum.org/plan-your-visit,,
+moma,MoMA,museums,midtown,"11 West 53 Street, New York, NY 10019",40.7615,-73.9774275,More modern/contemporary art.,,https://www.moma.org/visit/,,
+american-museum-of-natural-history,American Museum of Natural History,museums,upper-west-side,"200 Central Park West, New York, NY 10024",40.781017,-73.973366,,,https://www.amnh.org/plan-your-visit,,
+guggenheim,Guggenheim,museums,upper-east-side,"1071 Fifth Avenue, New York, NY 10128",40.7829796,-73.9589706,I haven’t been yet.,,https://www.guggenheim.org/plan-your-visit,,yes
+comedy-cellar,Comedy Cellar,activities,greenwich-village,"117 MacDougal Street, New York, NY 10012",40.730206,-74.00058,,,https://www.comedycellar.com/olive-tree-cafe/,comedy,
+empire-state-observatory,Empire State Building,activities,midtown,"20 West 34th Street, New York, NY 10001",40.7484405,-73.9856644,Empire State,"The classic NYC skyscraper experience, with observation decks above Midtown.",https://www.esbnyc.com/,observation-deck,
+apollo-bagels,Apollo Bagels,"cafes, food",west-village,"73 Greenwich Avenue, New York, NY 10014",40.736641,-74.001359,,,https://apollobagels.com/locations,"bagels, bakery",
+tompkins-square-bagels,Tompkins Square Bagels,"cafes, food",east-village,"165 Avenue A, New York, NY 10009",40.728228,-73.982291,Great if you’re already in the East Village.,,https://www.tompkinssquarebagels.com/location/east-village-bagel-shop-avenue-a/,"bagels, bakery",
+lindustrie-pizzeria,L’industrie Pizzeria,food,williamsburg,"254 South 2nd Street, Brooklyn, NY 11211",40.7115899,-73.9578051,,,https://www.lindustriebk.com/s/order?location=11ee4d8415e0d69ca4123cecef6dbae8,pizza,
+lucali,Lucali,food,carroll-gardens,"575 Henry Street, Brooklyn, NY 11231",40.6818178,-74.0003604,Pizza. I haven’t been yet.,,https://www.lucali.com/location/lucali-brooklyn/,pizza,yes
+los-tacos-no-1,LOS TACOS No.1,food,chelsea,"75 9th Avenue, New York, NY 10011",40.7422137,-74.0059673,A few locations.,,https://www.lostacos1.com/location/los-tacos-chelsea-market/,tacos,
+taqueria-ramirez,Taqueria Ramirez,food,greenpoint,"94 Franklin Street, Brooklyn, NY 11222 (entrance on Oak Street)",40.7278873,-73.9570065,Spicy!!,,https://taqueriaramirezbk.com/,"tacos, spicy",
+xian-famous-foods,Xi’an Famous Foods,food,chinatown,"45 Bayard Street, New York, NY 10013",40.7150821,-73.9973487,Hand-pulled spicy noodles,,https://www.xianfoods.com/locations,"noodles, spicy",
+katzs-delicatessen,Katz’s Delicatessen,food,lower-east-side,"205 East Houston Street, New York, NY 10002",40.7222501,-73.9874804,"I haven’t been, but it’s super popular.",,https://katzsdelicatessen.com/address,deli,yes
+levain-bakery,Levain Bakery,"cafes, food",williamsburg,"164 N 4th Street, Brooklyn, NY 11211",40.7156988,-73.9591843,Cookies!!!,,https://levainbakery.com/pages/williamsburg,"bakery, cookies, dessert",
+caffe-panna,Caffè Panna,food,greenpoint,"16 Norman Avenue, Brooklyn, NY 11222",40.724259,-73.954769,Ice cream!!,,https://www.caffepanna.com/about/,"ice-cream, dessert",
+radio-bakery,Radio Bakery,"cafes, food",greenpoint,"135 India Street, Brooklyn, NY 11222",40.7323915,-73.9550678,"Amazing, in Greenpoint.",,https://www.radiobakery.nyc/locations-1,bakery,
+thai-diner,Thai Diner,food,nolita,"186 Mott Street, New York, NY 10012",40.7207143,-73.99565,,,https://www.thaidiner.com/,"restaurant, thai",
+fish-cheeks,Fish Cheeks,food,noho,"55 Bond Street, New York, NY 10012",40.7257302,-73.9926403,,,https://www.fishcheeksnyc.com/location/fish-cheeks/,"restaurant, thai",
+chez-ma-tante,Chez Ma Tante,food,greenpoint,"90 Calyer Street, Brooklyn, NY 11222",40.7269214,-73.9574205,Go for the pancakes.,A neighborhood restaurant in Greenpoint.,https://chezmatantebk.com/,"pancakes, brunch",
+bernies,Bernie’s,food,greenpoint,"332 Driggs Avenue, Brooklyn, NY 11222",40.7219124,-73.9505848,I haven’t been yet.,,https://www.berniesnyc.com/location/bernies/,restaurant,yes
+westlight,Westlight,bars,williamsburg,"111 N 12th Street, 22nd Floor, Brooklyn, NY 11249",40.722088,-73.956721,Rooftop.,,https://www.westlightnyc.com/location/westlight-/,rooftop,
+bar-pisellino,Bar Pisellino,"bars, cafes",west-village,"52 Grove Street & 92 Seventh Avenue, New York, NY 10014",40.73297,-74.003439,,,https://barpisellino.com/,"bar, cafe",
+dante,Dante,bars,greenwich-village,"79–81 MacDougal Street, New York, NY 10012",40.7288036,-74.0017068,Martini!!,,https://www.dante-nyc.com/location/dante-nyc/,"cocktails, martini",
+rule-of-thirds,Rule of Thirds,food,greenpoint,"171 Banker Street, Brooklyn, NY 11222",40.724648,-73.955074,Brunch or dinner.,A Japanese restaurant inspired by izakaya culture.,https://www.thirdsbk.com/,"Japanese, brunch, dinner",
+beco,Beco,"food, bars",williamsburg,"45 Richardson Street, Brooklyn, NY 11211",40.718358,-73.950448,Brazilian food and a cool vibe.,A Brazilian bar and restaurant.,https://www.becobar.com/,"Brazilian, casual, drinks",
+raouls,Raoul’s,food,soho,"180 Prince Street, New York, NY 10012",40.7262496,-74.0020998,Steak and frites.,A French bistro in SoHo.,https://raouls.com/,"French, steak, dinner",
+oscar-wilde,Oscar Wilde,"bars, food",nomad,"45 West 27th Street, New York, NY 10001",40.7452442,-73.9899638,Cool spot.,A bar and restaurant with elaborate Victorian-style interiors.,https://www.oscarwildenyc.com/,"cocktails, elaborate interiors, drinks",
+edge,Edge,activities,hudson-yards,"30 Hudson Yards, Level 4 of The Shops & Restaurants, New York, NY 10001",40.753798,-74.000609,,"An outdoor sky deck with angled glass walls, a glass-floor section, and sweeping city views.",https://www.edgenyc.com/,"observation-deck, glass-floor",
+nypl-schwarzman,New York Public Library — Stephen A. Schwarzman Building,activities,midtown,"476 Fifth Avenue at 42nd Street, New York, NY 10018",40.753184,-73.982253,,The landmark Fifth Avenue library with the stone lions outside.,https://www.nypl.org/locations/schwarzman,"library, architecture",
