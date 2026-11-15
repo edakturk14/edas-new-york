@@ -1,0 +1,55 @@
+/* Desktop miniature: quiet chrome around a tangible, close neighborhood. */
+@media(min-width:760px){
+ .hud{top:20px;left:28px;right:28px}
+ .title-plaque{background:#fffaf0f5;padding:10px 23px 12px;border-radius:15px;box-shadow:0 5px 18px #49304714;gap:16px}
+ .title-plaque h1{font-size:28px;letter-spacing:-.7px}
+ .title-eyebrow{font-family:'DM Sans',sans-serif;font-size:7px;letter-spacing:2px;color:#9d6477;margin-bottom:5px}
+ .title-building{font-size:23px;color:#b96f86}
+ .before-button,.desktop-saved{min-height:40px;margin-top:8px;font-size:12px;box-shadow:0 3px 10px #49304712}
+ .category-strip{margin-top:33px;gap:6px}
+ .category-chip{min-height:37px;font-size:11px;padding:8px 12px;box-shadow:0 2px 6px #4930470c}
+ .category-chip svg{width:15px;height:15px}
+ .search-controls{margin-top:9px;gap:7px}
+ .search-field{width:218px;min-height:36px}
+ .search-field input{font-size:11px}
+ .neighborhood-select{width:164px;min-height:36px}
+ .neighborhood-select select{font-size:11px}
+ .world-navigation{display:flex;align-items:center;gap:3px;padding:3px 7px;border:1px solid var(--line-soft);border-radius:30px;background:#fffbf3f5;box-shadow:0 2px 10px #4930470a}
+ .world-navigation button{font-size:11px;font-weight:600;min-height:28px;padding:4px 10px}
+ .world-navigation button:first-child{color:#a43860}
+ .world-navigation button svg{margin-left:4px;vertical-align:middle}
+ .world-divider{height:13px;border-left:1px solid #ead3da}
+ .welcome-note{left:28px;bottom:115px;width:264px;padding:24px;border-radius:8px 24px 24px 24px;background:#fffaf1f2;box-shadow:0 8px 30px #49304713;backdrop-filter:blur(8px)}
+ .welcome-note .eyebrow{font-family:'DM Sans';font-size:8px;letter-spacing:2px;color:#a55472}
+ .welcome-note h2{font-size:28px;line-height:1.13;margin:12px 0}
+ .welcome-note p{font-size:12px;line-height:1.7;color:#7c6170;margin-bottom:19px}
+ .welcome-note .text-button{font-size:11px}
+ .welcome-dismiss{position:absolute;right:13px;top:12px;width:26px;height:26px;font-size:18px;color:#957784;border-radius:50%}
+ .drawer{top:187px;bottom:81px;width:350px;max-height:calc(100dvh - 268px);border-radius:18px;box-shadow:0 12px 35px #4930471a}
+ .drawer-top{padding-top:17px}
+ .drawer-top .eyebrow{font-family:'DM Sans';font-size:7px;letter-spacing:1.5px}
+ .detail-copy h2{font-size:30px}
+ .map-controls{bottom:100px;right:26px;gap:7px}
+ .map-controls .icon-button{width:37px;height:37px;min-width:37px;min-height:37px}
+ .pilot-controls{right:26px;bottom:264px}
+ .pilot-chip{font-size:11px;min-height:34px;box-shadow:0 3px 10px #49304713}
+ .find-eda-card{right:26px;bottom:308px}
+ .map-bottom{bottom:30px;left:28px;right:88px}
+ .map-switch{padding:3px}
+ .map-switch button{min-height:31px;font-size:11px}
+ .city-signature{font-family:'DM Sans';letter-spacing:1.5px;font-size:7px;color:#8e5f70}
+ .drag-hint{font-size:9px;color:#866a76}
+ .place-pin{width:34px;height:36px;padding:7px;border-color:#a26c7b;box-shadow:0 3px 8px #49304722}
+ .place-pin svg{width:17px;height:17px}
+ .place-pin:after{left:11px;bottom:-5px}
+ .place-pin.has-label .pin-tooltip{display:block;top:6px;left:39px;transform:none;font-size:10px;max-width:160px;overflow:hidden;text-overflow:ellipsis;line-height:17px;padding:2px 9px;border:1px solid #ecd8d8;background:#fffaf0f2;box-shadow:0 2px 6px #49304712;color:#573749}
+ .place-pin.selected .pin-tooltip{background:#a73d64;color:#fff;border-color:#a73d64}
+ .place-pin.selected{background:#b23d67;outline:4px solid #fff8ea99;border-color:#fff5e5}
+ .map-label{font-size:9px;letter-spacing:2px;background:#fffaf0c9;padding:5px 8px;box-shadow:none}
+ .map-label.borough{font-size:13px}
+}
+.world-navigation{pointer-events:auto}
+@media(max-width:759px){.world-navigation{display:flex;justify-content:center;align-items:center;gap:6px;background:var(--paper);border:1px solid var(--line-soft);border-radius:30px;padding:4px 8px}.world-navigation button{font-size:10px;min-height:30px}.search-controls .search-field{order:-1}.neighborhood-select{flex:1;min-width:140px}.welcome-dismiss{position:absolute;right:9px;top:5px}.welcome-note .eyebrow{font-family:'DM Sans';font-size:8px}}
+.detail-actions .save-button{background:#b53c69;color:#fff;border-color:#b53c69}
+.detail-actions .save-button.saved{background:#efe1e6;color:#8d2b52;border-color:#d8b5c4}
+@media(prefers-reduced-motion:reduce){.world-navigation *{transition:none}}

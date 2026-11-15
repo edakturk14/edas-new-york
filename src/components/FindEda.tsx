@@ -8,7 +8,7 @@ export function FindEda({drawer,found,celebrate,onExplore,onReveal}:{drawer:bool
   useEffect(()=>{if(celebrate)setOpen(false)},[celebrate]);
   return <>
     <div className={'pilot-controls'+(drawer?' with-drawer':'')}>
-      <button className="pilot-chip" onClick={onExplore}><span aria-hidden="true">✿</span>Explore Greenpoint</button>
+
       <button ref={toggle} className={'pilot-chip game-chip'+(found?' is-found':'')} aria-expanded={open} aria-controls="find-eda-card" onClick={()=>setOpen(o=>!o)}><span className="pixel" aria-hidden="true">{found?'♥':'?'}</span>{found?'Eda found':'Find Eda'}</button>
     </div>
     {open&&<section id="find-eda-card" className="find-eda-card" aria-label="Find Eda, an optional little game" onKeyDown={e=>{if(e.key==='Escape'){e.stopPropagation();setOpen(false);toggle.current?.focus()}}}>

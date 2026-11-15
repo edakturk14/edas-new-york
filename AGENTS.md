@@ -12,7 +12,7 @@ Read `docs/START_HERE.md`, then the documents it references. Open the actual ima
 
 - Keep the title **Eda's Travel Guide** centered at the top.
 - Preserve the approved palette: blue water, warm cream panels, dark plum outlines/type, coral selection, green parks, lavender accents.
-- Create a wide, tilted geographic city view that includes Brooklyn and Long Island City. A Manhattan-only skyline fails the brief.
+- Open close inside the Greenpoint miniature on desktop. Keep the wide, tilted geographic city view, including Brooklyn and Long Island City, available through All New York. See docs/GREENPOINT_DESKTOP_REVIEW.md for the latest design direction.
 - A real map with geographic POIs is required. Do not ship a full mockup image with hotspots, a generic unstyled map, or an unrelated map of another city.
 - Make `Cafés & bakeries`, `Food`, and `Saved` easy to find and operate on mobile and desktop.
 - Use a single bookmark collection in v1. Do not replace it with a three-slot itinerary or require account creation.

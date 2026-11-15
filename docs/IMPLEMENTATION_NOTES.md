@@ -20,3 +20,18 @@ Known limitations: most brands still have one researched branch, not an exhausti
 - **Find Eda.** This is an optional game (`src/components/FindEda.tsx`). It has a clue, a "Reveal her spot" action that moves the camera to her and focuses her button for keyboard users, and a short celebration. Completion is stored in `edas-new-york:find-eda:v1`, separate from Saved.
 - **Regression.** `scripts/check-illustrated-map.mjs` checks the fixed angle after each camera action, confirms the Greenpoint pins are clickable and not covered, checks that Find Eda persists separately from Saved, and checks reduced motion and mobile.
 - **Limits.** Detailed art covers only the Greenpoint pilot. Tall real towers (for example on the Greenpoint waterfront) still render as soft extrusions. Waldo reference ideas (seeded variation, a small CPU animation loop, reduced motion) were adapted conceptually. No upstream code was copied.
+
+
+## Greenpoint desktop miniature (2026-11-15)
+
+This supersedes the earlier illustrated-pilot camera and architecture notes above. Desktop opens at zoom 17.35, pitch 55°, bearing 38°, around [-73.9565, 40.7318]. A 26° vertical field of view reduces perspective distortion. All New York remains available as a secondary view; Back to Greenpoint and clearing Explore filters return to the neighborhood.
+
+Building and tree billboards are replaced with real MapLibre fill-extrusion geometry. The checked-in geographic extract supplies walls, roof caps, coping, windows, stoops, striped awnings, café furniture, planters and layered tree crowns. The geometry uses the same projection and depth buffer as the map, so there is no second renderer or camera to synchronize. Only small character accents remain sprites; unused architecture sprites are no longer rasterized on load. Steam anchors come from generated café tables. All named places retain their existing researched coordinates.
+
+The artwork is compiled by `node scripts/build-greenpoint-miniature.mjs`, never generated per visitor. That script makes four bounded tile downloads plus a TileJSON lookup and writes the public GeoJSON and source metadata. The map still fetches the existing free OpenFreeMap basemap and fonts in the browser. No paid map, AI service, new package or backend was added. The asset is approximately 6.3 MB raw / 0.52 MB gzip; actual transfer depends on the host's compression. Detailed façades are limited to a 165 m radius; simple surrounding buildings provide context. Tiny geometry uses zero GeoJSON simplification tolerance so window rectangles survive tiling.
+
+These are stylized buildings, not measured façades. Building footprints and street centerlines derive from OpenStreetMap, but heights are capped, colors and storefront details are invented, and scenery does not identify real businesses or amenities. The derived data is ODbL; attribution remains on the map and in the metadata. The wider city retains the previous map treatment. No map-service terms or host configuration were changed.
+
+Desktop controls, panels, typography, labels and the introduction are smaller. The introduction dismisses on pan, user zoom, search/filter interaction, place selection or explicit close. Save storage and Find Eda storage schemas are unchanged. Ambient motion remains limited to the ferry, steam and dog, with existing reduced-motion and hidden-tab handling.
+
+Validation and remaining browser limitation: see [Greenpoint desktop review](GREENPOINT_DESKTOP_REVIEW.md). Do not describe the 3D view as browser-verified until that checklist is completed on a WebGL2-capable browser.
