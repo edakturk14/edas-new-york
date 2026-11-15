@@ -11,3 +11,82 @@
 .row-description{font-size:11px;line-height:1.5;color:#715d73;margin:7px 0}.note-label{font-size:9px;font-style:normal;font-weight:700}.place-description{font-size:13px;line-height:1.6;margin:13px 0}.availability-note{font-size:10px;line-height:1.6;color:#715d73;border-left:3px solid #bfd293;padding-left:9px}.reservation-link{width:100%;margin:0 0 18px;box-shadow:1px 2px 0 var(--ink);font-size:12px}.branch-rows{margin-top:12px}.branch-row{display:flex;gap:9px;align-items:center;padding:10px 0;border-top:1px solid #cfb9ca}.branch-open{flex:1;text-align:left;min-width:0;min-height:44px;padding:0}.branch-open strong{font-size:11px;display:block}.branch-open small{display:block;font-size:9px;line-height:1.5;color:#715d73;margin-top:4px}.branch-row .bookmark-toggle{min-width:34px;width:34px;height:40px}.category-strip{max-width:100%;overflow-x:auto;scrollbar-width:none;padding-bottom:6px}.category-strip::-webkit-scrollbar{display:none}@media(min-width:760px) and (max-width:1200px){.category-strip{justify-content:flex-start}}
 .walk-pin{width:42px;height:46px;display:flex;align-items:center;justify-content:center;padding:8px;background:#bfd293;color:var(--ink);border:2px solid var(--ink);border-radius:50% 50% 45% 45%;box-shadow:2px 3px 0 #34133f60;z-index:3}.maplibregl-marker.walk-pin{position:absolute;top:0;left:0}.walk-pin:after{content:'';position:absolute;bottom:-6px;left:14px;width:8px;height:8px;transform:rotate(45deg);background:inherit;border-bottom:2px solid var(--ink);border-right:2px solid var(--ink)}.walk-pin.selected{background:var(--coral);outline:5px solid #fff4d9aa;z-index:10}.walk-pin.is-saved{border-width:3px}.walk-pin:hover .pin-tooltip,.walk-pin:focus-visible .pin-tooltip{display:block}.walk-stop-pin{font-weight:800;font-size:17px}.walk-stop-pin .pin-tooltip{display:block;top:-27px;max-width:170px;overflow:hidden;text-overflow:ellipsis;font-weight:600}.guide-label{display:inline-flex;align-items:center;gap:4px;color:#526340;font-size:9px;font-weight:700}.walk-guide{border-top:1px solid #cfb9ca;margin-top:20px;padding-top:15px}.walk-guide-heading{display:flex;align-items:center;gap:9px}.walk-guide h3{font-size:13px;line-height:1.5;margin:0}.walk-stops{list-style:none;padding:0;margin:10px 0}.walk-stops li+li{border-top:1px dashed #cfb9ca}.walk-stops button{display:flex;width:100%;align-items:center;text-align:left;gap:10px;min-height:64px;padding:10px 0}.stop-number{min-width:27px;height:27px;display:grid;place-items:center;border:1px solid var(--ink);border-radius:50%;background:#bfd293;font-weight:700;font-size:12px}.walk-stops button>span:nth-child(2){flex:1;min-width:0}.walk-stops small{display:block;text-transform:uppercase;font-size:8px;letter-spacing:.8px;color:#7b657a;margin-bottom:4px}.walk-stops strong{font-size:12px;line-height:1.4;display:block}.guide-sources,.walk-pairings{display:flex;flex-direction:column;align-items:flex-start;gap:10px;font-size:10px;line-height:1.4;margin:8px 0}.walk-pairings{font-weight:700}.walk-guide .storage-note{font-size:10px}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Illustrated Greenpoint redesign: softer surfaces, readable headings, pixel type only for small game accents. */
+:root{--ink:#3d1f3d;--cream:#fff8ea;--paper:#fffbf3;--coral:#d8457a;--raspberry:#cf3a6e;--butter:#ffe7a6;--blush:#f8dde0;--sage:#bcd79e;--lavender:#e4dbf5;--line-soft:#ead3da;--soft-shadow:0 6px 20px #3d1f3d1a,0 1px 3px #3d1f3d14;--serif:'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif}
+.city-map{background:#fbefd2}
+.button{border:1px solid var(--line-soft);border-radius:999px;box-shadow:var(--soft-shadow);font-weight:600;color:var(--ink)}
+.button:active{transform:translateY(1px);box-shadow:0 2px 6px #3d1f3d1f}
+.button.active,.category-chip.active{background:var(--raspberry);color:#fff;border-color:var(--raspberry)}
+.title-plaque{border:1px solid var(--line-soft);box-shadow:var(--soft-shadow);border-radius:22px;padding:8px 26px 10px;background:#fff8eaf2;backdrop-filter:blur(6px)}
+.title-plaque h1{font-family:var(--serif);font-weight:700;font-size:31px;letter-spacing:-.3px;color:var(--ink)}
+.title-eyebrow{font-family:'Pixelify Sans',monospace;font-size:9px;letter-spacing:2px;color:var(--raspberry);font-weight:600}
+.title-building{font-size:22px;color:#e58fae}
+.desktop-saved{background:var(--blush);border-color:#efbfcd}.desktop-saved .count{background:var(--raspberry);color:#fff;border-radius:999px;padding:1px 6px;font-size:11px}.desktop-saved.active .count{background:#fff;color:var(--raspberry)}
+.category-strip{gap:7px}
+.category-chip{box-shadow:0 2px 8px #3d1f3d14;border-color:#efdcc9;background:#fff8eaf0}
+.category-chip[data-category=cafes]:not(.active){background:var(--butter);border-color:#f1d07a;font-weight:700}
+.category-chip[data-category=food]:not(.active){background:#fdd9c4;border-color:#f2b99c;font-weight:700}
+.search-field,.neighborhood-select{border:1px solid var(--line-soft);border-radius:999px;box-shadow:0 2px 10px #3d1f3d12;background:#fffbf3f2}
+.welcome-note{border:1px solid var(--line-soft);border-radius:22px;box-shadow:var(--soft-shadow);background:#fffbf3f2}
+.welcome-note h2,.drawer h2,.empty-state h3,.visitor-notes h3,.copy-overlay h2{font-family:var(--serif);font-weight:700;letter-spacing:-.2px}
+.welcome-note .eyebrow,.drawer-top .eyebrow{font-family:'Pixelify Sans',monospace;font-weight:600;letter-spacing:1.6px}
+.eyebrow{color:#a8446d}
+.welcome-note .text-button{border-top-color:var(--line-soft)}
+.drawer{border:1px solid var(--line-soft);border-radius:22px;box-shadow:var(--soft-shadow)}
+.results-info,.place-row,.location-facts,.eda-note,.place-pairings,.access-note,.visitor-tip,.seasonal-note,.walk-guide,.branch-row,.drawer-footer{border-color:#eedde2}
+.place-name{font-size:15px}
+.bookmark-toggle{border:1px solid var(--line-soft);border-radius:12px;box-shadow:none}
+.bookmark-toggle.saved,.save-button.saved{background:var(--raspberry);border-color:var(--raspberry);color:#fff}
+.category-art.small{border-radius:12px;border-color:#3d1f3d1a;box-shadow:none}
+.place-photo>img{border-radius:14px;border-color:#3d1f3d22}
+.status-badge{border-radius:999px;border-color:#e6cfe6}
+.short-label{border-radius:999px;border-color:#efd1a2;background:#fdecc8}
+.map-controls .icon-button,.map-controls .compass-control{box-shadow:var(--soft-shadow);border-radius:999px}
+.map-switch{border:1px solid var(--line-soft);border-radius:999px;box-shadow:var(--soft-shadow)}.map-switch button{border-radius:999px}.map-switch .selected-tab{background:var(--raspberry);color:#fff}
+.city-signature,.drag-hint{border-radius:999px;background:#fff8eadd}.city-signature{font-family:'Pixelify Sans',monospace;color:var(--raspberry)}
+.map-label{border:0;border-radius:999px;background:#fffbf3e8;box-shadow:0 2px 8px #3d1f3d18;color:var(--ink);letter-spacing:1.4px}
+.map-label.borough{background:none;box-shadow:none;font-family:var(--serif);letter-spacing:5px;text-shadow:0 0 6px #fff8ea,0 0 3px #fff8ea}
+/* Pins stay absolutely positioned by MapLibre; only their skin changes. */
+.place-pin,.walk-pin{border:1.5px solid var(--ink);box-shadow:0 4px 10px #3d1f3d33}
+.place-pin:after,.walk-pin:after{border-color:var(--ink);border-width:0 1.5px 1.5px 0}
+.place-pin.cafes{background:var(--butter)}.place-pin.food{background:#fdcbb3}
+.place-pin.selected,.walk-pin.selected{background:var(--raspberry);color:#fff;outline:4px solid #fff8eacc}
+.pin-bookmark{background:var(--raspberry);color:#fff;border:1px solid #fff;border-radius:999px}
+.pin-tooltip{border:0;border-radius:999px;padding:5px 9px;box-shadow:var(--soft-shadow);font-weight:600}
+.mobile-nav{border-top:1px solid var(--line-soft);box-shadow:0 -6px 20px #3d1f3d14}.mobile-nav .selected-tab{background:#cf3a6e1a;color:var(--raspberry)}
+.toast,.storage-warning{border-radius:999px;box-shadow:var(--soft-shadow)}
+.save-button.just-saved,.bookmark-toggle.just-saved{position:relative;overflow:visible}
+.save-button.just-saved svg,.bookmark-toggle.just-saved svg{animation:save-pop .45s cubic-bezier(.3,1.6,.5,1)}
+.save-button.just-saved:after,.bookmark-toggle.just-saved:after{content:'♥';position:absolute;left:50%;top:-4px;color:var(--raspberry);font-size:18px;pointer-events:none;animation:heart-rise .7s ease-out forwards}
+@keyframes save-pop{0%{transform:scale(1)}45%{transform:scale(1.45)}100%{transform:scale(1)}}
+@keyframes heart-rise{from{opacity:1;transform:translate(-50%,0) scale(.6)}to{opacity:0;transform:translate(-50%,-26px) scale(1.2)}}
+/* Decorative scenery never takes pointer input and sits below pins. */
+.scene-dom{pointer-events:none;z-index:0}
+.city-map:not([data-detail]) .scene-dom:not(.ferry),.city-map:not([data-detail]) .eda-avatar{display:none}
+.ferry svg{width:calc(62px*var(--fs,1));height:auto;display:block;filter:drop-shadow(0 3px 0 #ffffff70)}.ferry.heading-back svg{transform:scaleX(-1)}
+.steam{width:0;height:0}.steam span{position:absolute;left:calc(var(--s,1)*-10px);bottom:calc(var(--s,1)*7px);width:calc(12px*var(--s,1));opacity:0;animation:steam 4.2s ease-out infinite}.steam span svg{width:100%;height:auto;display:block}
+@keyframes steam{0%{opacity:0;transform:translate(-50%,4px) scaleY(.6)}25%{opacity:.85}100%{opacity:0;transform:translate(-50%,calc(var(--s,1)*-20px)) scaleY(1.15)}}
+.scene-dog svg{width:calc(26px*var(--s,1));height:auto;display:block}
+.dog-tail{transform-box:fill-box;transform-origin:100% 100%;animation:wag 7s ease-in-out infinite}
+@keyframes wag{0%,82%,100%{transform:rotate(0)}86%{transform:rotate(-28deg)}90%{transform:rotate(14deg)}94%{transform:rotate(-24deg)}97%{transform:rotate(8deg)}}
+.city-map[data-paused] *{animation-play-state:paused!important}
+.maplibregl-marker.eda-avatar{position:absolute;top:0;left:0}
+.eda-avatar{z-index:1;padding:6px 8px 0;min-width:34px;min-height:40px;display:flex;align-items:flex-end;justify-content:center;border-radius:12px}
+.eda-avatar svg{width:calc(22px*var(--s,1));height:auto;display:block}
+.eda-avatar.revealed:before{content:'';position:absolute;inset:-8px;border:2px dashed var(--raspberry);border-radius:50%;animation:reveal-ring 1.6s ease-in-out 3}
+.eda-avatar.found:after{content:'♥';position:absolute;top:-6px;right:-2px;color:var(--raspberry);font-size:13px}
+@keyframes reveal-ring{50%{transform:scale(1.15);opacity:.5}}
+.pilot-controls{position:absolute;right:28px;bottom:278px;display:flex;flex-direction:column;align-items:flex-end;gap:8px;z-index:4}
+.pilot-chip{display:inline-flex;align-items:center;gap:7px;min-height:38px;padding:8px 14px;border-radius:999px;background:#fffbf3f2;border:1px solid var(--line-soft);box-shadow:var(--soft-shadow);font-size:12px;font-weight:700;color:var(--ink)}
+.pilot-chip>span{color:var(--raspberry)}
+.game-chip{background:var(--lavender);border-color:#d3c4ef}.game-chip .pixel{font-family:'Pixelify Sans',monospace;font-size:14px;width:18px;height:18px;display:grid;place-items:center;background:#fff;border-radius:6px}.game-chip.is-found{background:var(--blush)}
+.find-eda-card{position:absolute;right:28px;bottom:374px;width:292px;background:var(--paper);border:1px solid var(--line-soft);border-radius:20px;box-shadow:var(--soft-shadow);padding:15px 18px 16px;z-index:7;animation:arrive .2s ease-out}
+.find-eda-top{display:flex;justify-content:space-between;align-items:center}.pixel-eyebrow{font-family:'Pixelify Sans',monospace;font-size:10px;letter-spacing:1.6px;color:var(--raspberry)}
+.icon-close{font-size:20px;line-height:1;width:32px;height:32px;border-radius:50%;margin:-6px -8px 0 0}
+.find-eda-card h3{font-family:var(--serif);font-size:21px;margin:6px 0 6px}.find-eda-card p{font-size:12px;line-height:1.55;margin:0 0 12px}
+.find-eda-actions{display:flex;align-items:center;gap:14px}.find-eda-actions .button{min-height:38px;padding:8px 14px;font-size:12px;background:var(--butter)}.find-eda-actions .text-button{text-decoration:underline}
+.eda-celebration{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);background:var(--paper);border:1px solid var(--line-soft);border-radius:999px;box-shadow:var(--soft-shadow);padding:12px 22px;font-family:var(--serif);font-weight:700;font-size:18px;z-index:20;display:flex;gap:10px;align-items:center;pointer-events:none;animation:celebrate 2.6s ease-out forwards}
+.eda-celebration .burst{color:var(--raspberry);font-family:'Pixelify Sans',monospace}
+@keyframes celebrate{0%{opacity:0;transform:translate(-50%,-40%) scale(.8)}12%{opacity:1;transform:translate(-50%,-50%) scale(1.05)}20%{transform:translate(-50%,-50%) scale(1)}80%{opacity:1}100%{opacity:0}}
+@media(max-width:759px){.title-plaque{border-radius:18px}.title-plaque h1{font-size:23px}.title-eyebrow{font-size:6px;letter-spacing:1.2px}.category-chip{box-shadow:0 2px 6px #3d1f3d14}.before-button{box-shadow:var(--soft-shadow)}.drawer{border-radius:22px 22px 0 0;box-shadow:0 -8px 24px #3d1f3d1f;border-bottom:0}.welcome-note{box-shadow:var(--soft-shadow)}.pilot-controls{right:14px;bottom:302px;gap:7px}.welcome-note{width:236px;padding:13px 16px}.welcome-note h2{font-size:21px;margin:6px 0}.welcome-note p{display:none}.welcome-note .text-button{padding-top:8px;margin-top:4px}.pilot-controls.with-drawer{display:none}.pilot-chip{min-height:36px;font-size:11px;padding:7px 12px}.find-eda-card{left:12px;right:12px;width:auto;bottom:150px}.map-label.borough{letter-spacing:3px}}
