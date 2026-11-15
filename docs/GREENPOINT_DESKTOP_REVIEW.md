@@ -64,3 +64,32 @@ The existing browser regression scripts were adjusted for the close default and 
 `public/data/greenpoint-miniature.geojson` is a checked-in OSM-derived geographic data asset, not a picture with hotspots. Rebuild it with `node scripts/build-greenpoint-miniature.mjs`. Its source/date template, bounds, feature counts and license are recorded in `src/map-art/miniature-bounds.json`. The download is bounded and runs only during development. OSM-derived data is under [ODbL](https://www.openstreetmap.org/copyright).
 
 Façades and storefronts are decorative. They do not depict or brand the actual businesses. Heights, street widths and park furniture are stylized. The live basemap still loads from the project's existing OpenFreeMap source; the miniature adds a static download of roughly 0.52 MB if served with gzip, 6.3 MB uncompressed. Browser performance has not been measured because rendering is blocked here.
+
+## Compact controls and richer previews (follow-up)
+
+- Desktop pins now have a 28 × 30 px visible body for both venue and park/walk markers. An invisible 7 px perimeter extends the pointer target; keyboard activation is unchanged. Mobile marker sizing is retained.
+- The desktop header ends at approximately 130 CSS px in the checked 1363 × 936 browser, with the title still centered. The eyebrow is removed on desktop, and vertical gaps and controls are shorter. The list starts at 150 px.
+- Results and Saved lists can collapse into a 54 px rail using the left-chevron button beside Close. The rail retains category/context and result count. Expand returns to the same list, filters and scroll position. Filtering while collapsed updates its count without reopening it or reframing the map.
+- Hover or keyboard-focus a list item or an individual map marker for a photo-and-note preview. Click the preview to open the existing full details and Save controls. Previews use only existing guide content and sourced photographs, with illustration fallbacks, source credits, favorite flags and explicit not-visited status. Branch rows/markers pass their own location ID.
+- Previews support Escape, remain available while the source or preview has keyboard focus, and stay inside the space between the header and bottom controls. Reduced motion disables their entrance animation. Collapse and previews are desktop-only; shrinking to phone width expands any hidden list.
+
+Browser checks completed for this follow-up:
+
+| Behavior | Result |
+| --- | --- |
+| Header and rail measurements | Header bottom 130 px; rail width 54 px. |
+| Collapse/expand list | Walks & parks retained 8 results and restored scrollTop 129 → 129. Focus moves to the corresponding expand/collapse button. |
+| Change filters while collapsed | Greenpoint retained; switching cafés to Food kept the list collapsed and updated its count to 6. |
+| Keyboard photo preview | The High Line showed its sourced photo, credit, neighborhood and original Eda note. |
+| Escape | Dismissed preview while keeping the list open. |
+| Preview → details → Save | The High Line opened correctly, saved, and appeared alongside Radio Bakery in Saved. |
+| Collapse/expand Saved | Restored both saved entries and the Saved context. |
+| Unsourced-photo fallback | Bakeri showed an illustration and “Date cake and tahini cookies.” |
+| Build and tests | Production build passed; all 30 tests passed. |
+| Actual map marker appearance/hover | Still unverified because this browser lacks WebGL2. |
+
+These screenshots document the working interface with the environment's map fallback visible:
+
+![Compact header and collapsed list](qa/compact-list-rail.jpg)
+
+![Rich place preview from a list item](qa/rich-place-preview.jpg)

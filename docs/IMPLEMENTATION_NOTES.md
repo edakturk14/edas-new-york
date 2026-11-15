@@ -35,3 +35,9 @@ These are stylized buildings, not measured façades. Building footprints and str
 Desktop controls, panels, typography, labels and the introduction are smaller. The introduction dismisses on pan, user zoom, search/filter interaction, place selection or explicit close. Save storage and Find Eda storage schemas are unchanged. Ambient motion remains limited to the ferry, steam and dog, with existing reduced-motion and hidden-tab handling.
 
 Validation and remaining browser limitation: see [Greenpoint desktop review](GREENPOINT_DESKTOP_REVIEW.md). Do not describe the 3D view as browser-verified until that checklist is completed on a WebGL2-capable browser.
+
+### Compact controls and place previews
+
+Desktop-specific styling in `src/desktop.css` reduces both venue and walk markers, shortens the header and adds the narrow list rail. Collapse uses the existing mounted panel's `hidden` state so its list scroll and filters survive; the map receives the actual expanded-panel state without issuing a new camera action. Phone widths restore the panel and retain existing marker dimensions.
+
+`PlacePeek` renders a single transient preview from canonical entries and location IDs. List rows and map marker focus/hover events share this preview. Map callbacks live in refs to avoid rebuilding the map when preview state changes. Images load only while a preview is mounted; existing photos, provenance and illustration fallbacks are reused. No new recommendation data, image sources, services or dependencies were introduced. Browser results and remaining map-rendering limits are recorded in `GREENPOINT_DESKTOP_REVIEW.md`.
