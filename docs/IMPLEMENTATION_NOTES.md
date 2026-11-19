@@ -41,3 +41,7 @@ Validation and remaining browser limitation: see [Greenpoint desktop review](GRE
 Desktop-specific styling in `src/desktop.css` reduces both venue and walk markers, shortens the header and adds the narrow list rail. Collapse uses the existing mounted panel's `hidden` state so its list scroll and filters survive; the map receives the actual expanded-panel state without issuing a new camera action. Phone widths restore the panel and retain existing marker dimensions.
 
 `PlacePeek` renders a single transient preview from canonical entries and location IDs. List rows and map marker focus/hover events share this preview. Map callbacks live in refs to avoid rebuilding the map when preview state changes. Images load only while a preview is mounted; existing photos, provenance and illustration fallbacks are reused. No new recommendation data, image sources, services or dependencies were introduced. Browser results and remaining map-rendering limits are recorded in `GREENPOINT_DESKTOP_REVIEW.md`.
+
+## Editorial layout refresh (2026-11-18)
+
+See [EDITORIAL_GUIDE_REVIEW.md](EDITORIAL_GUIDE_REVIEW.md) for the latest first-mockup layout, actual browser evidence and verification limits. Desktop filters now live in an address-book sidebar, and the existing map sits in an inset frame. Find Eda is removed from the runtime. Data, saved IDs, directions and the geographic miniature are retained. Map camera padding is relative to the new frame and right-hand panels. No dependencies or hosting settings changed. The creator-interest pilot remains separate.

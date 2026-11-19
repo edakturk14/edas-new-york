@@ -1,5 +1,5 @@
 // Run against `npm run preview -- --host 127.0.0.1 --port 4173`.
-// Illustrated Greenpoint pilot: fixed camera angle, decorations never block pins, Find Eda persistence, reduced motion.
+// Illustrated Greenpoint pilot: fixed camera angle, decorations never block pins, no character-hunting UI, reduced motion.
 import assert from 'node:assert/strict';
 import {execFileSync} from 'node:child_process';
 const env={...process.env};delete env.AGENT_BROWSER_CDP;delete env.FACTORY_DESKTOP_CDP_PORT;delete env.AGENT_BROWSER_PIN_TAB;
@@ -33,14 +33,9 @@ button(category);settle();assert.deepEqual(cameraState(),beforeFilter,`${categor
 }
 }
 button('Greenpoint');angle('return from category checks');
-button('Find Eda');button('Reveal her spot');run('wait','--fn','document.activeElement?.classList.contains("eda-avatar")&&Number(document.querySelector(".city-map").dataset.zoom)>17');angle('reveal Eda');
-assert.equal(evaluate('document.querySelector(".eda-avatar").classList.contains("revealed")'),true);
-run('press','Enter');run('wait','--fn','document.querySelector(".eda-celebration")?.textContent.includes("You found Eda")');
-assert.equal(evaluate('JSON.parse(localStorage.getItem("edas-new-york:find-eda:v1")).found'),true);
-run('open',base);run('wait','--fn','!!document.querySelector(".game-chip.is-found")');
+assert.equal(evaluate('document.querySelector(".eda-avatar,.game-chip,.find-eda-card,.eda-celebration")'),null);
 assert.deepEqual(evaluate('JSON.parse(localStorage.getItem("edas-new-york:saved:v1")).items.map(i=>i.entryId)'),['radio-bakery']);
-assert.equal(evaluate('document.querySelector(".desktop-saved .count").textContent'),'1');
-console.log('Find Eda completion survives refresh and is separate from Saved.');
+console.log('Character hunt removed; saved collection remains intact.');
 run('set','media','light','reduced-motion');run('open',base);button('Greenpoint');settle();
 assert.equal(evaluate('getComputedStyle(document.querySelector(".steam span")).animationName'),'none');
 const ferry=()=>evaluate('document.querySelector(".ferry").style.transform');const before=ferry();run('wait','1500');assert.equal(ferry(),before);
