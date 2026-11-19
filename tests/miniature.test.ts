@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {gzipSync} from 'node:zlib';
 import {validateStyleMin} from '@maplibre/maplibre-gl-style-spec';
+import {watercolorLayers,watercolorPattern} from '../src/map-art/watercolor';
 import {cityStyle, MINIATURE_CENTER} from '../src/map-style';
 
 test('the map style validates, including the geographic exclusion and extrusion layers',()=>{
@@ -31,4 +32,16 @@ test('the checked-in miniature has valid closed surfaces, finite heights and a b
     assert(Number.isFinite(base)&&Number.isFinite(height)&&height>=base&&height<60);
     assert.match(color,/^#[0-9a-f]{6}$/i);
   }
+});
+
+test('watercolor layers remain valid and use bounded seamless local textures',()=>{
+  assert.deepEqual(validateStyleMin({...cityStyle,layers:[...cityStyle.layers,...watercolorLayers.map(x=>x.layer)]}),[]);
+  const image=watercolorPattern([69,114,137]);
+  assert.equal(image.data.byteLength,256*256*4);
+  assert.deepEqual(image,watercolorPattern([69,114,137]));
+  for(let i=0;i<256;i++){
+    assert.deepEqual(image.data.slice(i*256*4,i*256*4+4),image.data.slice((i*256+255)*4,(i*256+256)*4));
+    assert.deepEqual(image.data.slice(i*4,i*4+4),image.data.slice((255*256+i)*4,(255*256+i)*4+4));
+  }
+  for(const {before} of watercolorLayers)assert(cityStyle.layers.some(layer=>layer.id===before));
 });

@@ -7,6 +7,7 @@ import type {PeekTarget} from './components/PlacePeek';
 import {cameraTargets,entries,type Entry,type Location} from './data/content';
 import {mapGuides,guidePoints} from './data/map-guides';
 import {cityStyle,MAP_BEARING,MAP_PITCH,MINIATURE_CENTER,MINIATURE_ZOOM} from './map-style';
+import {addWatercolor} from './map-art/watercolor';
 import scene from './map-art/greenpoint-scene.json';
 import miniature from './map-art/miniature-bounds.json';
 import {loadSprites,sceneScale,sceneStops,ferrySvg,steamSvg,dogDomSvg} from './map-art/sprites';
@@ -48,6 +49,8 @@ function fit(m:GLMap,bounds:maplibregl.LngLatBounds,options:maplibregl.FitBounds
 const ease=(t:number)=>1-Math.pow(1-t,3);
 function exploreGreenpoint(duration=reduced()?0:750){const m=map.current;if(!m)return;m.easeTo({center:MINIATURE_CENTER,zoom:innerWidth<760?16.25:MINIATURE_ZOOM,...fixedAngle,padding:{top:0,bottom:0,left:0,right:0},offset:focusOffset(),duration,easing:ease});}
 useEffect(()=>{if(!container.current)return;let m:GLMap;setError(false);try{m=new maplibregl.Map({container:container.current,style:cityStyle,center:MINIATURE_CENTER,zoom:innerWidth<760?16.25:MINIATURE_ZOOM,...fixedAngle,minPitch:MAP_PITCH,maxPitch:MAP_PITCH,dragRotate:false,pitchWithRotate:false,touchPitch:false,minZoom:10,maxZoom:18.5,attributionControl:{compact:true},canvasContextAttributes:{antialias:true}});map.current=m;}catch(error){console.error('Map initialization failed',error);setError(true);return;}
+// Register patterns before adding their layers; restore them after a context/style reload.
+m.on('style.load',()=>addWatercolor(m));
 m.setVerticalFieldOfView(26);
 m.on('dragstart',()=>interaction.current());m.on('zoomstart',e=>{if(e.originalEvent)interaction.current()});
 m.touchZoomRotate.disableRotation();m.keyboard.disableRotation();

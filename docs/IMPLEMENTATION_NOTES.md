@@ -49,3 +49,7 @@ See [EDITORIAL_GUIDE_REVIEW.md](EDITORIAL_GUIDE_REVIEW.md) for the latest first-
 ## November 18 follow-up
 
 The editorial branch now self-hosts Fraunces and Hanken Grotesk using Fontsource 5.3.0. The SVG favicon is local and adds no remote dependency. Added six Greenpoint venues and a Shopping category, preserving IDs/notes for existing recommendations. See `content/greenpoint-november-update.md` for source and geocoding caveats. Build, 31 tests and CSV checks pass; updated browser review was blocked by the preview URL security policy. No map-rendering success is claimed.
+
+## Watercolor map
+
+Added local procedural pigment layers and softer vector/3D colors; original geographic geometry and camera behavior are unchanged. Textures are registered before their layers on style load and sit beneath all UI and labels. No new dependency, tile bill or generated illustrative map is used. Build and 32 tests pass. See EDITORIAL_GUIDE_REVIEW.md for outstanding browser-rendering QA.

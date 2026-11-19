@@ -56,3 +56,11 @@ Use the branch preview in a WebGL2-capable browser. Confirm the inset map render
 - Six new Greenpoint places; updated Ramirez and Rule of Thirds notes without duplicating existing entries. Shopping filter and shopping-bag icon added for Woods Grove. See content/greenpoint-november-update.md for provenance.
 - Production build, all 31 Node tests, and CSV synchronization check pass. The existing MapLibre chunk-size warning remains.
 - Updated visual QA is blocked: the cloud browser refused the local preview reload under its URL security policy. No updated screenshot or font/map visual pass is claimed. Earlier screenshots document only the prior layout. Check the Vercel preview before merging.
+
+## Watercolor map treatment
+
+The actual MapLibre map now uses warm paper land, muted blue water and sage parks, with softened coastline/park-edge pigment and desaturated rose/lavender building colors. Existing 3D extrusion heights, camera, geographic sources, markers, search and Saved are retained.
+
+`src/map-art/watercolor.ts` generates three deterministic 256px repeating pigment textures locally and adds four map-projected layers below roads, buildings and labels. Textures have matching opposite edges, are registered before layers on `style.load`, and are restored when a style/context reloads. No bitmap map replacement, additional tile provider, screen-wide blur, animation loop or paid service is introduced. Three raw RGBA textures total 768 KiB before GPU overhead.
+
+Validation: production build and all 32 tests pass, including full style validation and seam/size checks for the textures. Existing MapLibre bundle-size warning remains. The previous WebGL2/local-preview restrictions prevent an updated rendering screenshot; this is implemented but not visually approved. Review close Greenpoint and All New York in the Vercel preview, confirm subtle texture/no repeat seams, sharp labels, and usable pins.
