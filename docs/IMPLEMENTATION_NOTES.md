@@ -45,3 +45,7 @@ Desktop-specific styling in `src/desktop.css` reduces both venue and walk marker
 ## Editorial layout refresh (2026-11-18)
 
 See [EDITORIAL_GUIDE_REVIEW.md](EDITORIAL_GUIDE_REVIEW.md) for the latest first-mockup layout, actual browser evidence and verification limits. Desktop filters now live in an address-book sidebar, and the existing map sits in an inset frame. Find Eda is removed from the runtime. Data, saved IDs, directions and the geographic miniature are retained. Map camera padding is relative to the new frame and right-hand panels. No dependencies or hosting settings changed. The creator-interest pilot remains separate.
+
+## November 18 follow-up
+
+The editorial branch now self-hosts Fraunces and Hanken Grotesk using Fontsource 5.3.0. The SVG favicon is local and adds no remote dependency. Added six Greenpoint venues and a Shopping category, preserving IDs/notes for existing recommendations. See `content/greenpoint-november-update.md` for source and geocoding caveats. Build, 31 tests and CSV checks pass; updated browser review was blocked by the preview URL security policy. No map-rendering success is claimed.

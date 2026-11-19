@@ -21,7 +21,7 @@
  .world-navigation button svg{margin-left:4px;vertical-align:middle}
  .world-divider{height:13px;border-left:1px solid #ead3da}
  .welcome-note{left:28px;bottom:115px;width:264px;padding:24px;border-radius:8px 24px 24px 24px;background:#fffaf1f2;box-shadow:0 8px 30px #49304713;backdrop-filter:blur(8px)}
- .welcome-note .eyebrow{font-family:'DM Sans';font-size:8px;letter-spacing:2px;color:#a55472}
+ .welcome-note .eyebrow{font-family:'Hanken Grotesk';font-size:8px;letter-spacing:2px;color:#a55472}
  .welcome-note h2{font-size:28px;line-height:1.13;margin:12px 0}
  .welcome-note p{font-size:12px;line-height:1.7;color:#7c6170;margin-bottom:19px}
  .welcome-note .text-button{font-size:11px}
@@ -32,7 +32,7 @@
  .panel-heading-actions{display:flex;gap:2px;align-items:center}
  .panel-heading-actions .icon-button{width:30px;min-width:30px;height:32px;padding:6px;margin:0}
  .collapse-list svg{transform:rotate(90deg)}
- .drawer-top .eyebrow{font-family:'DM Sans';font-size:7px;letter-spacing:1.5px}
+ .drawer-top .eyebrow{font-family:'Hanken Grotesk';font-size:7px;letter-spacing:1.5px}
  .detail-copy h2{font-size:30px}
  .map-controls{bottom:100px;right:26px;gap:7px}
  .map-controls .icon-button{width:37px;height:37px;min-width:37px;min-height:37px}
@@ -42,7 +42,7 @@
  .map-bottom{bottom:30px;left:28px;right:88px}
  .map-switch{padding:3px}
  .map-switch button{min-height:31px;font-size:11px}
- .city-signature{font-family:'DM Sans';letter-spacing:1.5px;font-size:7px;color:#8e5f70}
+ .city-signature{font-family:'Hanken Grotesk';letter-spacing:1.5px;font-size:7px;color:#8e5f70}
  .drag-hint{font-size:9px;color:#866a76}
  .place-pin,.walk-pin{width:28px;height:30px;min-width:0;padding:5px;border-color:#a26c7b;box-shadow:0 3px 8px #49304722}
  .place-pin svg,.walk-pin svg{width:16px;height:16px}
@@ -56,7 +56,7 @@
  .map-label.borough{font-size:13px}
 }
 .world-navigation{pointer-events:auto}
-@media(max-width:759px){.world-navigation{display:flex;justify-content:center;align-items:center;gap:6px;background:var(--paper);border:1px solid var(--line-soft);border-radius:30px;padding:4px 8px}.world-navigation button{font-size:10px;min-height:30px}.search-controls .search-field{order:-1}.neighborhood-select{flex:1;min-width:140px}.welcome-dismiss{position:absolute;right:9px;top:5px}.welcome-note .eyebrow{font-family:'DM Sans';font-size:8px}}
+@media(max-width:759px){.world-navigation{display:flex;justify-content:center;align-items:center;gap:6px;background:var(--paper);border:1px solid var(--line-soft);border-radius:30px;padding:4px 8px}.world-navigation button{font-size:10px;min-height:30px}.search-controls .search-field{order:-1}.neighborhood-select{flex:1;min-width:140px}.welcome-dismiss{position:absolute;right:9px;top:5px}.welcome-note .eyebrow{font-family:'Hanken Grotesk';font-size:8px}}
 .detail-actions .save-button{background:#b53c69;color:#fff;border-color:#b53c69}
 .detail-actions .save-button.saved{background:#efe1e6;color:#8d2b52;border-color:#d8b5c4}
 @media(prefers-reduced-motion:reduce){.world-navigation *{transition:none}}

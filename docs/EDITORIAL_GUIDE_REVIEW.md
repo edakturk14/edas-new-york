@@ -34,7 +34,9 @@ No new dependency, paid service, account requirement, or API key. The creator-in
 | Real 3D rendering, map-pin clicks, frame rate, camera composition | Not verified: this cloud browser cannot initialize the existing WebGL2 map. The application's real map-failure state is deliberately visible in screenshots. |
 | Legacy full-map browser scripts | Updated the illustrated-map script to assert removal of the character hunt. Not run here; they need a WebGL-capable browser. |
 
-## Browser evidence
+## Browser evidence from the initial layout
+
+These images predate the November 18 typography/content follow-up below.
 
 These are real interface screenshots, not generated mockups. The blank map and error message show the QA browser's WebGL limitation.
 
@@ -45,3 +47,12 @@ These are real interface screenshots, not generated mockups. The blank map and e
 ## Review before merging
 
 Use the branch preview in a WebGL2-capable browser. Confirm the inset map renders, a selected place stays left of the right-hand detail card, and pan/zoom plus Greenpoint/All New York still work. Try Walks & parks from a close view; it should change the results without zooming out. Open a walk, use Saved → Show all on map, and check pins/attribution remain clear of the new panels. The map model and data files are unchanged, but its viewport and camera padding have changed and need that visual check.
+
+## November 18 typography and Greenpoint follow-up
+
+- Self-hosted Fraunces 600 headings, 400 body-serif text, and 400 italic “My New York”; Hanken Grotesk for interface and body copy. Existing map model/camera remain unchanged.
+- Sidebar now says “A LITTLE TRANSPLANT KNOWLEDGE”.
+- Added a small cream-and-raspberry NYC skyline SVG favicon.
+- Six new Greenpoint places; updated Ramirez and Rule of Thirds notes without duplicating existing entries. Shopping filter and shopping-bag icon added for Woods Grove. See content/greenpoint-november-update.md for provenance.
+- Production build, all 31 Node tests, and CSV synchronization check pass. The existing MapLibre chunk-size warning remains.
+- Updated visual QA is blocked: the cloud browser refused the local preview reload under its URL security policy. No updated screenshot or font/map visual pass is claimed. Earlier screenshots document only the prior layout. Check the Vercel preview before merging.

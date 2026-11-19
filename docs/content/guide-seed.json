@@ -40,6 +40,10 @@
       "label": "Activities"
     },
     {
+      "id": "shops",
+      "label": "Shopping"
+    },
+    {
       "id": "neighborhoods",
       "label": "Neighborhood guides"
     }
@@ -1003,7 +1007,7 @@
       ],
       "aliases": [],
       "edaNoteOriginal": "spicy!! — Greenpoint",
-      "edaNoteDisplay": "Spicy!!",
+      "edaNoteDisplay": "Best tacos in New York. They’re spicy!",
       "visitStatus": "not-stated",
       "isExplicitFavorite": false,
       "locationScope": "single-or-unspecified",
@@ -1015,6 +1019,11 @@
           "type": "owner-provided",
           "reference": "docs/content/eda-original-notes.md",
           "providedAt": "2026-11-14"
+        },
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/greenpoint-november-update.md",
+          "providedAt": "2026-11-18"
         }
       ],
       "editableIn": "docs/content/places.csv"
@@ -1513,7 +1522,8 @@
       "tags": [
         "Japanese",
         "brunch",
-        "dinner"
+        "dinner",
+        "soufflé pancake"
       ],
       "officialUrl": "https://www.thirdsbk.com/",
       "defaultLocationId": "rule-of-thirds-greenpoint",
@@ -1522,7 +1532,7 @@
       "kind": "venue",
       "aliases": [],
       "edaNoteOriginal": "Brunch or dinner.",
-      "edaNoteDisplay": "Brunch or dinner.",
+      "edaNoteDisplay": "Brunch or dinner. Soufflé pancake!!",
       "visitStatus": "not-stated",
       "isExplicitFavorite": false,
       "locationScope": "single-or-unspecified",
@@ -1550,6 +1560,11 @@
           "supports": [
             "venue address"
           ]
+        },
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/greenpoint-november-update.md",
+          "providedAt": "2026-11-18"
         }
       ],
       "editableIn": "docs/content/places.csv"
@@ -1996,6 +2011,280 @@
         }
       ],
       "editableIn": "docs/content/places.csv"
+    },
+    {
+      "id": "eagle-trading-co",
+      "name": "Eagle Trading Co.",
+      "categories": [
+        "cafes",
+        "food"
+      ],
+      "neighborhoodHints": [
+        "greenpoint"
+      ],
+      "description": "A café in Greenpoint.",
+      "tags": [
+        "coffee",
+        "burritos"
+      ],
+      "aliases": [
+        "Eagle and Co.",
+        "Eagle Trading Company"
+      ],
+      "officialUrl": "https://www.eagletradingco.nyc/",
+      "defaultLocationId": "eagle-trading-co-greenpoint",
+      "sourceSection": "Food",
+      "kind": "venue",
+      "edaNoteOriginal": "Big burritos.",
+      "edaNoteDisplay": "Big burritos.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "venue-location-verified",
+      "editableIn": "docs/content/places.csv",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/greenpoint-november-update.md",
+          "providedAt": "2026-11-18"
+        },
+        {
+          "type": "official",
+          "url": "https://www.eagletradingco.nyc/",
+          "checkedAt": "2026-11-18",
+          "supports": [
+            "venue name, Greenpoint address and category"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taku-sando",
+      "name": "Taku Sando",
+      "categories": [
+        "food"
+      ],
+      "neighborhoodHints": [
+        "greenpoint"
+      ],
+      "description": "Japanese sandwiches in Greenpoint.",
+      "tags": [
+        "sando",
+        "egg",
+        "sandwiches"
+      ],
+      "aliases": [],
+      "officialUrl": "https://www.takusando.com/",
+      "defaultLocationId": "taku-sando-greenpoint",
+      "sourceSection": "Food",
+      "kind": "venue",
+      "edaNoteOriginal": "The egg one is great.",
+      "edaNoteDisplay": "The egg one is great.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "venue-location-verified",
+      "editableIn": "docs/content/places.csv",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/greenpoint-november-update.md",
+          "providedAt": "2026-11-18"
+        },
+        {
+          "type": "official",
+          "url": "https://www.takusando.com/",
+          "checkedAt": "2026-11-18",
+          "supports": [
+            "venue name, Greenpoint address and category"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sweetleaf",
+      "name": "Sweetleaf",
+      "categories": [
+        "cafes"
+      ],
+      "neighborhoodHints": [
+        "greenpoint"
+      ],
+      "description": "Coffee in Greenpoint.",
+      "tags": [
+        "coffee"
+      ],
+      "aliases": [
+        "Sweetleaf Coffee Roasters"
+      ],
+      "officialUrl": "https://www.sweetleafcoffee.com/pages/greenpoint",
+      "defaultLocationId": "sweetleaf-greenpoint",
+      "sourceSection": "Food",
+      "kind": "venue",
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "venue-location-verified",
+      "editableIn": "docs/content/places.csv",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/greenpoint-november-update.md",
+          "providedAt": "2026-11-18"
+        },
+        {
+          "type": "official",
+          "url": "https://www.sweetleafcoffee.com/pages/greenpoint",
+          "checkedAt": "2026-11-18",
+          "supports": [
+            "venue name, Greenpoint address and category"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chinta-thai",
+      "name": "Chinta Thai",
+      "categories": [
+        "food"
+      ],
+      "neighborhoodHints": [
+        "greenpoint"
+      ],
+      "description": "A Thai restaurant in Greenpoint.",
+      "tags": [
+        "Thai"
+      ],
+      "aliases": [],
+      "officialUrl": "https://www.chintathai.com/",
+      "defaultLocationId": "chinta-thai-greenpoint",
+      "sourceSection": "Food",
+      "kind": "venue",
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "venue-location-verified",
+      "editableIn": "docs/content/places.csv",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/greenpoint-november-update.md",
+          "providedAt": "2026-11-18"
+        },
+        {
+          "type": "official",
+          "url": "https://www.chintathai.com/",
+          "checkedAt": "2026-11-18",
+          "supports": [
+            "venue name, Greenpoint address and category"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "me-and-pauls",
+      "name": "Me and Paul’s",
+      "categories": [
+        "bars",
+        "food"
+      ],
+      "neighborhoodHints": [
+        "greenpoint"
+      ],
+      "description": "A neighborhood bar serving Paulie Gee’s wood-fired pizza.",
+      "tags": [
+        "pizza",
+        "bar"
+      ],
+      "aliases": [
+        "Me and Paul's",
+        "Me and Pauls",
+        "Me & Paul’s"
+      ],
+      "officialUrl": "https://pauliegee.com/restaurant/greenpoint/",
+      "defaultLocationId": "me-and-pauls-greenpoint",
+      "sourceSection": "Food",
+      "kind": "venue",
+      "edaNoteOriginal": null,
+      "edaNoteDisplay": null,
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "venue-location-verified",
+      "editableIn": "docs/content/places.csv",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/greenpoint-november-update.md",
+          "providedAt": "2026-11-18"
+        },
+        {
+          "type": "official",
+          "url": "https://pauliegee.com/restaurant/greenpoint/",
+          "checkedAt": "2026-11-18",
+          "supports": [
+            "venue name, Greenpoint address and category"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "woods-grove",
+      "name": "Woods Grove",
+      "categories": [
+        "shops"
+      ],
+      "neighborhoodHints": [
+        "greenpoint"
+      ],
+      "description": "A shop in Greenpoint.",
+      "tags": [
+        "shopping",
+        "gifts"
+      ],
+      "aliases": [],
+      "officialUrl": "https://woodsgrove.com/",
+      "defaultLocationId": "woods-grove-greenpoint",
+      "sourceSection": "Shopping",
+      "kind": "venue",
+      "edaNoteOriginal": "Cute shopping.",
+      "edaNoteDisplay": "Cute shopping.",
+      "visitStatus": "not-stated",
+      "isExplicitFavorite": false,
+      "locationScope": "single-or-unspecified",
+      "locations": [],
+      "geometry": null,
+      "verificationStatus": "venue-location-verified",
+      "editableIn": "docs/content/places.csv",
+      "sources": [
+        {
+          "type": "owner-provided",
+          "reference": "docs/content/greenpoint-november-update.md",
+          "providedAt": "2026-11-18"
+        },
+        {
+          "type": "official",
+          "url": "https://woodsgrove.com/",
+          "checkedAt": "2026-11-18",
+          "supports": [
+            "venue name, Greenpoint address and category"
+          ]
+        }
+      ]
     }
   ]
 }
