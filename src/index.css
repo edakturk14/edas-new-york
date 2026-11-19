@@ -1,6 +1,9 @@
-@import '@fontsource/dm-sans/400.css';
-@import '@fontsource/dm-sans/500.css';
-@import '@fontsource/dm-sans/600.css';
-@import '@fontsource/dm-sans/700.css';
+@import '@fontsource/fraunces/latin-400.css';
+@import '@fontsource/fraunces/latin-600.css';
+@import '@fontsource/fraunces/latin-400-italic.css';
+@import '@fontsource/hanken-grotesk/400.css';
+@import '@fontsource/hanken-grotesk/500.css';
+@import '@fontsource/hanken-grotesk/600.css';
+@import '@fontsource/hanken-grotesk/700.css';
 @import '@fontsource/pixelify-sans/600.css';
-:root{font-family:'DM Sans',sans-serif;color:#34133f;background:#73bfe8;font-synthesis:none;font-weight:400;--ink:#34133f;--cream:#fff4d9;--paper:#fff9ee;--coral:#ff786d}*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit;color:inherit}button,a,input,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:default}button,select{touch-action:manipulation}button svg,a svg{flex-shrink:0}button{background:none;border:0}a{color:inherit}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #6e398b;outline-offset:4px}button:hover,a.button:hover{filter:brightness(.97)}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+:root{font-family:'Hanken Grotesk',sans-serif;color:#34133f;background:#73bfe8;font-synthesis:none;font-weight:400;--ink:#34133f;--cream:#fff4d9;--paper:#fff9ee;--coral:#ff786d}*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit;color:inherit}button,a,input,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:default}button,select{touch-action:manipulation}button svg,a svg{flex-shrink:0}button{background:none;border:0}a{color:inherit}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #6e398b;outline-offset:4px}button:hover,a.button:hover{filter:brightness(.97)}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}

@@ -1,0 +1,128 @@
+/* The guide is an address book beside the existing geographic map. */
+:root{--serif:'Fraunces',Georgia,serif;--ink:#39223e;--cream:#fcf7ee;--paper:#fffaf3;--raspberry:#a94e71;--coral:#a94e71;--line-soft:#e6d8d8;--soft-shadow:0 6px 22px #39223e12}
+.app-shell{background:var(--cream)}
+.hud{inset:0 0 auto;height:76px;padding:0 28px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-bottom:1px solid var(--line-soft);background:var(--cream);pointer-events:auto;z-index:7}
+.guide-byline{font-size:12px;font-weight:700;letter-spacing:2px}
+.title-plaque{position:static;transform:none;padding:0;border:0;border-radius:0;background:none;box-shadow:none;backdrop-filter:none}
+.title-plaque h1{font-family:var(--serif);font-size:34px;letter-spacing:-1px;line-height:1.2}
+.header-actions{display:flex;align-items:center;justify-content:flex-end;gap:22px}
+.before-button{font-family:var(--serif);font-size:16px;min-height:44px;padding:0;text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+.desktop-saved{font-size:14px;min-height:40px;padding:9px 15px;border-radius:9px;background:#a94e71;border-color:#a94e71;color:white;box-shadow:none;gap:8px}
+.desktop-saved .count{background:transparent;color:inherit;padding:0;font-size:14px;min-width:8px}
+.desktop-saved.active{background:#843754;border-color:#843754}
+.guide-sidebar{position:absolute;left:0;top:76px;bottom:0;width:288px;padding:28px 24px 22px;display:flex;flex-direction:column;gap:22px;overflow-y:auto;scrollbar-width:thin;z-index:5}
+.sidebar-intro .eyebrow,.sidebar-categories>.eyebrow,.sidebar-wanders>.eyebrow{color:var(--ink);font-size:10px;letter-spacing:1.8px;font-weight:600}
+.sidebar-intro h2{font-family:var(--serif);font-size:37px;font-weight:600;letter-spacing:-1.2px;line-height:1.1;margin:14px 0 10px}
+.sidebar-intro p{font-size:14px;line-height:1.6;margin:0;color:#705d70}
+.guide-sidebar .search-field{width:100%;min-height:43px;flex-shrink:0;border-radius:9px;padding:0 11px;box-shadow:none;background:transparent}
+.guide-sidebar .search-field input{font-size:13px}
+.search-field:focus-within,.neighborhood-select:focus-within{outline:2px solid #9a759e;outline-offset:2px}
+.sidebar-categories{border-top:1px solid var(--line-soft);padding-top:20px}
+.category-strip{display:flex;flex-direction:column;align-items:stretch;gap:3px;margin:12px -10px 0;padding:0;overflow:visible;max-width:none}
+.category-strip .category-chip{justify-content:flex-start;gap:15px;min-height:43px;padding:10px 14px;font-size:15px;font-weight:400;background:transparent;border:0;border-left:3px solid transparent;border-radius:0 9px 9px 0;box-shadow:none;color:var(--ink);white-space:normal;text-align:left}
+.category-strip .category-chip svg{width:20px;height:20px}
+.category-strip .category-chip[data-category=cafes]:not(.active),.category-strip .category-chip[data-category=food]:not(.active){background:transparent;border-color:transparent;font-weight:400}
+.category-strip .category-chip:hover{background:#f3e8e9;filter:none}
+.category-strip .category-chip.active{background:#f3e1e5;border-left-color:#b66887;color:var(--ink);font-weight:600}
+.sidebar-neighborhood{border-top:1px solid var(--line-soft);padding-top:18px}
+.guide-sidebar .neighborhood-select{width:100%;min-height:43px;border-radius:9px;box-shadow:none;background:transparent;padding:0 9px}
+.neighborhood-select select{font-size:14px;font-weight:400;min-height:40px}
+.sidebar-wanders{display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line-soft);padding-top:18px}
+.sidebar-wanders>.eyebrow{margin-bottom:6px}
+.sidebar-wanders button{display:flex;align-items:center;justify-content:space-between;gap:8px;font-family:var(--serif);font-size:17px;text-align:left;min-height:36px;padding:3px 0}
+.sidebar-wanders button:hover{text-decoration:underline;text-underline-offset:4px;filter:none}
+.sidebar-footer{margin-top:auto;border-top:1px solid var(--line-soft);padding-top:16px;color:#796878;font-size:12px}
+.map-frame{position:absolute;left:288px;top:92px;right:18px;bottom:18px;border:1px solid #d9dce0;border-radius:22px;overflow:hidden;isolation:isolate;background:#e8eff0}
+.city-map{inset:0}
+.map-frame .world-navigation{position:absolute;top:16px;left:16px;z-index:4;border-radius:9px;padding:4px 8px;gap:2px;background:#fffaf3f5;box-shadow:0 3px 12px #39223e14}
+.world-navigation button{font-family:var(--serif);font-size:16px;min-height:34px;padding:4px 9px;font-weight:400}
+.world-navigation button:first-child{color:var(--ink)}
+.world-divider{height:14px;margin:0 3px}
+.map-frame .map-switch{position:absolute;top:16px;right:16px;z-index:4;border-radius:9px;padding:4px;box-shadow:0 3px 12px #39223e14}
+.map-switch button{font-size:14px;min-height:34px;min-width:66px;padding:4px 9px;border-radius:7px;font-weight:500;gap:6px}
+.map-switch button>svg{display:none}
+.map-switch .selected-tab{background:#f0d9e0;color:var(--ink)}
+.map-switch span{font-size:12px}
+.map-controls{bottom:44px;right:16px;gap:6px}
+.map-controls .icon-button{min-width:40px;min-height:40px;width:40px;height:40px;border-radius:9px;box-shadow:0 3px 12px #39223e14}
+.map-controls .compass-control{margin-top:4px}
+.panel-open .map-controls{right:auto;left:16px}
+.map-frame>.drag-hint{position:absolute;bottom:9px;left:16px;z-index:3;font-size:11px;padding:5px 9px;background:#fffaf3df;pointer-events:none}
+.map-status{top:92px;font-size:14px;line-height:1.6;border:1px solid var(--line-soft);box-shadow:var(--soft-shadow);border-radius:12px;width:330px;max-width:calc(100% - 40px);z-index:3}
+.drawer{top:162px;left:auto;right:34px;bottom:36px;width:360px;max-height:calc(100dvh - 198px);border-radius:18px;background:var(--paper);box-shadow:0 12px 35px #39223e1c;z-index:6}
+.drawer-top{padding:18px 20px 14px}
+.drawer-top h2{font-size:28px;margin-top:5px;letter-spacing:-.6px}
+.drawer-top .eyebrow{font-family:'Hanken Grotesk',sans-serif;font-size:9px;letter-spacing:1.4px}
+.panel-heading-actions .icon-button{min-width:36px;width:36px;min-height:36px;height:36px}
+.collapse-list svg{transform:rotate(-90deg)}
+.list-rail{left:auto;right:34px;top:162px;box-shadow:var(--soft-shadow);border-radius:12px}
+.list-rail>button>svg:last-child{transform:rotate(90deg)}
+.results-info{font-size:13px;padding:0 20px 14px}
+.rows{padding:0 20px}
+.place-row{gap:12px;padding:19px 0}
+.place-name{font-size:16px;line-height:1.3}
+.metadata{font-size:13px;line-height:1.5;color:#746174}
+.row-note{font-size:14px;line-height:1.55}
+.row-description{font-size:13px}
+.bookmark-toggle{width:40px;min-width:40px;height:44px;border-radius:10px}
+.guide-label,.status-badge,.short-label{font-size:11px;line-height:1.4}
+.drawer .text-button{font-size:13px}
+.detail-drawer{top:auto;max-height:calc(100dvh - 198px)}
+.detail-drawer .drawer-top h2{display:none}
+.detail-drawer .drawer-top{padding:15px 20px 0}
+.detail-copy{padding:16px 20px 20px}
+.detail-copy h2{font-size:30px;letter-spacing:-.6px;line-height:1.15}
+.detail-copy .eyebrow{font-size:10px}
+.detail-actions .button{font-size:14px;border-radius:9px;box-shadow:none;min-height:44px}
+.detail-actions .save-button{background:#a94e71;border-color:#a94e71}
+.eda-note p{font-family:var(--serif);font-style:normal;font-size:19px;line-height:1.5}
+.detail-copy .metadata,.place-description,.visitor-notes{font-size:14px;line-height:1.6}
+.location-facts{font-size:13px}
+.place-peek{max-height:calc(100dvh - 120px)}
+.peek-category{font-size:10px}.peek-area{font-size:12px}.peek-footer{font-size:13px}.peek-note>small{font-size:9px}
+.place-pin.cafes:not(.selected){background:#d7b1c5;color:#452b48}
+.place-pin.food:not(.selected){background:#e5b7a4}
+.place-pin.bars:not(.selected){background:#cfbfdd}
+.place-pin.selected,.walk-pin.selected{background:#a94e71}
+@media(min-width:760px) and (max-height:950px){.guide-sidebar{padding-top:20px;gap:16px}.sidebar-intro h2{font-size:32px;margin:10px 0 8px}.category-strip{gap:1px;margin-top:8px}.category-strip .category-chip{min-height:39px;padding-top:8px;padding-bottom:8px}.sidebar-categories{padding-top:16px}.sidebar-wanders{padding-top:14px;gap:4px}.sidebar-wanders button{font-size:16px;min-height:32px}}
+@media(min-width:760px) and (max-width:1100px){.guide-sidebar{width:250px;padding-left:20px;padding-right:20px}.map-frame{left:250px}.guide-byline{font-size:10px;letter-spacing:1px}.title-plaque h1{font-size:27px}.hud{padding:0 18px}.header-actions{gap:10px}.before-button{font-size:14px}.desktop-saved{padding:8px 10px}.drawer{width:320px;right:30px}.sidebar-intro h2{font-size:32px}.category-strip .category-chip{font-size:14px}.world-navigation button{font-size:14px;padding:4px 6px}.map-switch button{min-width:48px;padding:4px 6px}}
+@media(max-width:759px){
+ .hud{height:66px;padding:0 14px;grid-template-columns:1fr auto;gap:8px;inset:0 0 auto}
+ .guide-byline{display:none}.title-plaque{min-height:0;padding:0;justify-content:flex-start}.title-plaque h1{font-size:25px;letter-spacing:-.8px}.header-actions{gap:0}.before-button{width:auto;min-width:0;height:44px;font-family:'Hanken Grotesk';font-size:11px;line-height:1.3;max-width:60px;white-space:normal}.desktop-saved{display:none}
+ .guide-sidebar{display:contents}.sidebar-intro,.sidebar-categories>.eyebrow,.sidebar-wanders,.sidebar-footer{display:none}
+ .sidebar-categories{position:absolute;z-index:5;top:66px;left:0;right:0;padding:6px 0 0;border:0;background:var(--cream)}
+ .category-strip{flex-direction:row;margin:0;padding:0 12px 6px;gap:6px;overflow-x:auto;max-width:100%;scrollbar-width:none}
+ .category-strip .category-chip{min-height:44px;flex-shrink:0;padding:8px 12px;gap:7px;font-size:13px;border:1px solid var(--line-soft);border-radius:9px;white-space:nowrap;background:var(--paper)}
+ .category-strip .category-chip[data-category=cafes]:not(.active),.category-strip .category-chip[data-category=food]:not(.active){background:var(--paper);border-color:var(--line-soft)}
+ .category-strip .category-chip.active{border-color:#b66887}.category-strip .category-chip svg{width:17px;height:17px}
+ .guide-sidebar .search-field{position:absolute;top:126px;left:12px;width:calc(100% - 24px);z-index:5;background:var(--paper);min-height:44px}.guide-sidebar .search-field input{font-size:16px}
+ .sidebar-neighborhood{position:absolute;top:178px;right:12px;width:calc(50% - 16px);z-index:5;border:0;padding:0}.guide-sidebar .neighborhood-select{background:var(--paper);min-width:0;min-height:40px;padding:0 7px}.neighborhood-select select{font-size:12px;min-height:38px}.neighborhood-select svg{display:none}
+ .map-frame{inset:118px 0 66px;border:0;border-radius:0}
+ .map-frame .world-navigation{top:60px;left:12px;gap:0;padding:2px 3px;width:calc(50% - 16px);justify-content:space-around;box-shadow:none}.world-navigation button{font-size:11px;min-height:34px;padding:3px}.world-navigation button svg{display:none}.world-divider{margin:0;height:12px}
+ .map-frame .map-switch{top:auto;bottom:14px;left:50%;right:auto;transform:translateX(-50%);border-radius:12px}.map-switch button{min-height:40px;min-width:74px;font-size:14px}
+ .map-controls,.panel-open .map-controls{left:auto;right:12px;bottom:80px}.map-controls .icon-button{min-width:44px;min-height:44px}.map-frame>.drag-hint{display:none}
+ .map-status{top:120px;max-width:calc(100% - 40px);font-size:13px;width:300px}
+ .drawer{top:auto;left:0;right:0;bottom:66px;width:100%;max-height:calc(100dvh - 330px);border-radius:18px 18px 0 0}
+ .drawer:not(.detail-drawer){height:48dvh;max-height:calc(100dvh - 330px)}.detail-drawer{max-height:46dvh}.drawer-top{padding:10px 18px}.drawer-top h2{font-size:25px}.drawer-top .eyebrow{font-size:9px}.detail-drawer .drawer-top{padding:6px 18px 0}.detail-copy{padding:12px 18px 18px}.detail-copy h2{font-size:27px}.detail-drawer .drawer-top .eyebrow{font-size:8px}.place-row{padding:14px 0}.rows{padding:0 18px}.metadata{font-size:12px}.maplibregl-ctrl-bottom-right{bottom:0!important}
+ .mobile-nav{background:var(--cream);border-top:1px solid var(--line-soft)}.mobile-nav .selected-tab{color:#934463;background:#f4e4e8}
+ .panel-open .map-frame .map-switch{display:none}
+}
+
+@media(min-width:760px){
+ .place-heading{flex-direction:row;gap:16px;align-items:flex-start}
+ .place-heading .detail-art{min-height:100px;height:100px;min-width:100px;width:100px;margin:0;border-radius:13px;gap:0}
+ .place-heading .detail-art>svg{width:45px;height:45px;transform:rotate(-8deg);filter:none}
+ .place-heading .detail-art>svg:last-child,.place-heading .art-caption,.place-heading .art-orbit{display:none}
+ .place-heading .place-photo{width:100px;min-width:100px;margin:0}
+ .place-heading .place-photo>img{height:100px;border-radius:13px}
+ .place-heading .place-photo figcaption{display:block;line-height:1.5;font-size:9px}
+ .place-heading .photo-credit{display:block}
+ .place-heading .photo-license{max-width:100%}
+ .place-heading-copy h2{font-size:27px;margin:8px 0}
+ .place-heading-copy .metadata{font-size:12px}
+}
+
+/* Fraunces brings warmth to headings; interface copy stays clear. */
+.title-plaque h1,.drawer h2,.empty-state h3,.visitor-notes h3,.copy-overlay h2{font-weight:600}
+.sidebar-intro h2{font-weight:400;font-style:italic}
+.place-pin.shops,.category-art.shops,.place-mini.shops{background:#e4d9ed}

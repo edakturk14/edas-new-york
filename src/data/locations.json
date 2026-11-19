@@ -579,5 +579,119 @@
     "officialUrl": "https://www.nypl.org/locations/schwarzman",
     "verifiedAt": "2026-11-14",
     "status": "verified"
+  },
+  {
+    "id": "eagle-trading-co-greenpoint",
+    "entryId": "eagle-trading-co",
+    "branchLabel": "Greenpoint",
+    "address": "258 Franklin Street, Brooklyn, NY 11222",
+    "neighborhoodIds": [
+      "greenpoint"
+    ],
+    "coordinates": [
+      -73.9581766,
+      40.7349801
+    ],
+    "coordinateSource": "https://www.eagletradingco.nyc/contact.html",
+    "addressSource": "https://www.eagletradingco.nyc/",
+    "officialUrl": "https://www.eagletradingco.nyc/",
+    "verifiedAt": "2026-11-18",
+    "status": "verified",
+    "coordinateNote": "Official venue map marker."
+  },
+  {
+    "id": "taku-sando-greenpoint",
+    "entryId": "taku-sando",
+    "branchLabel": "Greenpoint",
+    "address": "29 Greenpoint Avenue, Brooklyn, NY 11222",
+    "neighborhoodIds": [
+      "greenpoint"
+    ],
+    "coordinates": [
+      -73.9596357,
+      40.72988
+    ],
+    "coordinateSource": "https://www.takusando.com/contact",
+    "addressSource": "https://www.takusando.com/",
+    "officialUrl": "https://www.takusando.com/",
+    "verifiedAt": "2026-11-18",
+    "status": "verified",
+    "coordinateNote": "Official venue map marker."
+  },
+  {
+    "id": "sweetleaf-greenpoint",
+    "entryId": "sweetleaf",
+    "branchLabel": "Greenpoint",
+    "address": "159 Freeman Street, Brooklyn, NY 11222",
+    "neighborhoodIds": [
+      "greenpoint"
+    ],
+    "coordinates": [
+      -73.955498056238,
+      40.734455939763
+    ],
+    "coordinateSource": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=159+Freeman+Street%2C+Brooklyn%2C+NY+11222&benchmark=Public_AR_Current&format=json",
+    "addressSource": "https://www.sweetleafcoffee.com/pages/greenpoint",
+    "officialUrl": "https://www.sweetleafcoffee.com/pages/greenpoint",
+    "verifiedAt": "2026-11-18",
+    "status": "verified",
+    "coordinateNote": "US Census address-geocoded point; approximate street location, not a verified entrance."
+  },
+  {
+    "id": "chinta-thai-greenpoint",
+    "entryId": "chinta-thai",
+    "branchLabel": "Greenpoint",
+    "address": "157 Franklin Street, Brooklyn, NY 11222",
+    "neighborhoodIds": [
+      "greenpoint"
+    ],
+    "coordinates": [
+      -73.957995058782,
+      40.731859980996
+    ],
+    "coordinateSource": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=157+Franklin+Street%2C+Brooklyn%2C+NY+11222&benchmark=Public_AR_Current&format=json",
+    "addressSource": "https://www.chintathai.com/",
+    "officialUrl": "https://www.chintathai.com/",
+    "verifiedAt": "2026-11-18",
+    "status": "verified",
+    "coordinateNote": "US Census address-geocoded point; approximate street location, not a verified entrance."
+  },
+  {
+    "id": "me-and-pauls-greenpoint",
+    "entryId": "me-and-pauls",
+    "branchLabel": "Greenpoint",
+    "address": "60 Greenpoint Avenue, Brooklyn, NY 11222",
+    "neighborhoodIds": [
+      "greenpoint"
+    ],
+    "coordinates": [
+      -73.958516124481,
+      40.729733466758
+    ],
+    "coordinateSource": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=60+Greenpoint+Avenue%2C+Brooklyn%2C+NY+11222&benchmark=Public_AR_Current&format=json",
+    "addressSource": "https://pauliegee.com/restaurant/greenpoint/",
+    "officialUrl": "https://pauliegee.com/restaurant/greenpoint/",
+    "verifiedAt": "2026-11-18",
+    "status": "verified",
+    "coordinateNote": "US Census address-geocoded point; approximate street location, not a verified entrance."
+  },
+  {
+    "id": "woods-grove-greenpoint",
+    "entryId": "woods-grove",
+    "branchLabel": "Greenpoint",
+    "address": "109 Franklin Street, Brooklyn, NY 11222",
+    "neighborhoodIds": [
+      "greenpoint"
+    ],
+    "coordinates": [
+      -73.957653391946,
+      40.729775406243
+    ],
+    "coordinateSource": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=109+Franklin+Street%2C+Brooklyn%2C+NY+11222&benchmark=Public_AR_Current&format=json",
+    "addressSource": "https://woodsgrove.com/",
+    "officialUrl": "https://woodsgrove.com/",
+    "verifiedAt": "2026-11-18",
+    "status": "verified",
+    "coordinateNote": "US Census address-geocoded point; approximate street location, not a verified entrance."
   }
 ]

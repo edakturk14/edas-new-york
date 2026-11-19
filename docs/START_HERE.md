@@ -1,3 +1,5 @@
+> Latest visual direction: [Editorial guide review](EDITORIAL_GUIDE_REVIEW.md). Use the sidebar/inset-map layout and remove Find Eda; retain the interactive map. This supersedes older desktop HUD layout instructions.
+
 > Latest desktop direction: [Greenpoint miniature review](GREENPOINT_DESKTOP_REVIEW.md). This supersedes the original wide opening camera and decorative building sprites.
 
 # Implementation brief

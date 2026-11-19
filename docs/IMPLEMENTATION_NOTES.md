@@ -41,3 +41,15 @@ Validation and remaining browser limitation: see [Greenpoint desktop review](GRE
 Desktop-specific styling in `src/desktop.css` reduces both venue and walk markers, shortens the header and adds the narrow list rail. Collapse uses the existing mounted panel's `hidden` state so its list scroll and filters survive; the map receives the actual expanded-panel state without issuing a new camera action. Phone widths restore the panel and retain existing marker dimensions.
 
 `PlacePeek` renders a single transient preview from canonical entries and location IDs. List rows and map marker focus/hover events share this preview. Map callbacks live in refs to avoid rebuilding the map when preview state changes. Images load only while a preview is mounted; existing photos, provenance and illustration fallbacks are reused. No new recommendation data, image sources, services or dependencies were introduced. Browser results and remaining map-rendering limits are recorded in `GREENPOINT_DESKTOP_REVIEW.md`.
+
+## Editorial layout refresh (2026-11-18)
+
+See [EDITORIAL_GUIDE_REVIEW.md](EDITORIAL_GUIDE_REVIEW.md) for the latest first-mockup layout, actual browser evidence and verification limits. Desktop filters now live in an address-book sidebar, and the existing map sits in an inset frame. Find Eda is removed from the runtime. Data, saved IDs, directions and the geographic miniature are retained. Map camera padding is relative to the new frame and right-hand panels. No dependencies or hosting settings changed. The creator-interest pilot remains separate.
+
+## November 18 follow-up
+
+The editorial branch now self-hosts Fraunces and Hanken Grotesk using Fontsource 5.3.0. The SVG favicon is local and adds no remote dependency. Added six Greenpoint venues and a Shopping category, preserving IDs/notes for existing recommendations. See `content/greenpoint-november-update.md` for source and geocoding caveats. Build, 31 tests and CSV checks pass; updated browser review was blocked by the preview URL security policy. No map-rendering success is claimed.
+
+## Watercolor map
+
+Added local procedural pigment layers and softer vector/3D colors; original geographic geometry and camera behavior are unchanged. Textures are registered before their layers on style load and sit beneath all UI and labels. No new dependency, tile bill or generated illustrative map is used. Build and 32 tests pass. See EDITORIAL_GUIDE_REVIEW.md for outstanding browser-rendering QA.
